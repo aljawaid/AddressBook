@@ -51,13 +51,13 @@ class ContactsTaskModel extends Base
             ->eq('task_id', $task_id)
             ->columns(
                 self::TABLE.'.contacts_id',
-                ContactsModel::TABLE.'.value'
+                ContactsModel::TABLE.'.contact_item_value'
             )
             ->join(ContactsModel::TABLE, 'contacts_id', 'contacts_id')
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id', ContactsModel::TABLE)
             ->asc(ContactsItemsModel::TABLE.'.position')
             ->groupBy('contacts_id')
-            ->asc(ContactsModel::TABLE.'.value')
+            ->asc(ContactsModel::TABLE.'.contact_item_value')
             ->findAll();
     }
 
@@ -80,13 +80,13 @@ class ContactsTaskModel extends Base
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id', ContactsModel::TABLE)
             ->asc(ContactsItemsModel::TABLE.'.position')
             ->groupBy('contacts_id')
-            ->asc(ContactsModel::TABLE.'.value');
+            ->asc(ContactsModel::TABLE.'.contact_item_value');
 
         return $this->db
             ->table(ContactsModel::TABLE)
             ->columns(
                 ContactsModel::TABLE.'.contacts_id',
-                ContactsModel::TABLE.'.value'
+                ContactsModel::TABLE.'.contact_item_value'
             )
             ->notInSubquery('contacts_id', $subquery)
             ->groupBy('contacts_id')
@@ -146,10 +146,6 @@ class ContactsTaskModel extends Base
     {
         return $this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->eq('task_id', $task_id)->remove();
     }
-
-
-
-
 
     /**
      * Get available colors from application and replace with colors from board if not in ColorsController settings

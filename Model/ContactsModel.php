@@ -55,7 +55,7 @@ class ContactsModel extends Base
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
             ->asc(ContactsItemsModel::TABLE.'.position')
             ->groupBy('contacts_id')
-            ->asc(self::TABLE.'.value')
+            ->asc(self::TABLE.'.contact_item_value')
             ->findAll();
     }
 
@@ -71,7 +71,7 @@ class ContactsModel extends Base
             ->table(self::TABLE)
             ->columns(
                 ContactsItemsModel::TABLE.'.item',
-                self::TABLE.'.value'
+                self::TABLE.'.contact_item_value'
             )
             ->eq('contacts_id', $contacts_id)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
@@ -92,7 +92,7 @@ class ContactsModel extends Base
 
         $return = array();
         foreach ($headings as $key => $value){
-            $return[$key . '_' . $value] = (empty($contact[$key]))?'':$contact[$key]['value'];
+            $return[$key . '_' . $value] = (empty($contact[$key]))?'':$contact[$key]['contact_item_value'];
         }
        return $return;
     }
@@ -139,7 +139,7 @@ class ContactsModel extends Base
                 $create['contacts_id'] = $maxContacts_id + 1;
                 $item = explode('_', $key);
                 $create['item_id'] = $item[0];
-                $create['value'] = $value;
+                $create['contact_item_value'] = $value;
                 $results[] = $this->db->table(self::TABLE)->persist($create);
             }
        }
@@ -164,7 +164,7 @@ class ContactsModel extends Base
             if (!empty($value)){
                 $create['contacts_id'] = $contacts_id;
                 $create['item_id'] = $item_id;
-                $create['value'] = $value;
+                $create['contact_item_value'] = $value;
                 if ($this->db
                     ->table(self::TABLE)
                     ->eq('contacts_id', $contacts_id)
