@@ -1,15 +1,15 @@
-# `Plugin Name`
+# AddressBook
 
 #### _Plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_
 
-`Brief intro`
+Create and manage contacts to associate them with projects and tasks.
 
 
 Features
 -------------
 
-- `main features list`
-- `main features list`
+- Create contacts per project
+- Create contacts per task
 
 
 Screenshots
@@ -23,7 +23,7 @@ Screenshots
 Usage
 -------------
 
-Go to `Settings` &#10562;
+Go to `Task` &#10562; Contacts
 
 
 Compatibility
@@ -34,7 +34,7 @@ Compatibility
 #### Other Plugins & Action Plugins
 - _No known issues_
 #### Core Files & Templates
-- `01` Template override
+- _No template overrides_
 - _No database changes_
 
 
@@ -83,6 +83,7 @@ Authors & Contributors
 ----------------------
 
 - [@](https://github.com/url) - Author
+- [Martin Middeke](https://github.com/Busfreak/plugin-contacts) - Author (imported features from the Contacts plugin)
 - _Contributors welcome_
 
 
