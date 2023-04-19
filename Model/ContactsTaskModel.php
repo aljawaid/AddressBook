@@ -20,7 +20,7 @@ class ContactsTaskModel extends Base
      *
      * @var string
      */
-    const TABLE = 'contacts_task_has_contact';
+    const TABLE = 'address_book_contacts_task_has_contact';
 
     /**
      * Return all contact items

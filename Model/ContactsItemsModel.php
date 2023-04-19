@@ -17,7 +17,7 @@ class ContactsItemsModel extends Base
      *
      * @var string
      */
-    const TABLE = 'contacts_items';
+    const TABLE = 'address_book_contacts_items';
 
     /**
      * Return all contact items

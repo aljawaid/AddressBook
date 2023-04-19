@@ -17,7 +17,7 @@ class ContactsModel extends Base
      *
      * @var string
      */
-    const TABLE = 'contacts_contact';
+    const TABLE = 'address_book_contacts_contact';
 
     /**
      * Return contact by id
