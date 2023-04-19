@@ -4,8 +4,8 @@ namespace Kanboard\Plugin\AddressBook;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
-// use Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\AgeHelper;  // Helper Class and Filename should be exact
-// use Kanboard\Helper;  // Add core Helper for using forms etc. inside external templates
+use Kanboard\Plugin\AddressBook\Helper\ContactsHelper;  // Helper Class and Filename should be exact
+use Kanboard\Helper;  // Add core Helper for using forms etc. inside external templates
 
 class Plugin extends Base
 {
@@ -25,7 +25,13 @@ class Plugin extends Base
 
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
-        $this->template->hook->attach('template:project-header:view-switcher-before-project-overview', 'pluginNameExampleCamelCase:project_header/actions');
+        $this->template->hook->attach('template:config:sidebar', 'addressBook:config/sidebar');
+        $this->template->hook->attach('template:project:sidebar', 'addressBook:project/sidebar');
+        $this->template->hook->attach('template:task:sidebar:actions', 'addressBook:task/sidebar');
+        $this->template->hook->attach('template:board:task:footer', 'addressBook:task/footer_icon');
+        $this->template->hook->attach('template:task:details:first-column', 'addressBook:task/footer_icon');
+        $this->template->hook->attach('template:user:sidebar:information', 'metadata:user/sidebar');
+        $this->template->hook->attach('template:task:show:bottom', 'addressBook:task/bottom');
 
         // Views - Add Menu Item - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
@@ -39,12 +45,23 @@ class Plugin extends Base
         // Helper
         //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
         //  - Add each Helper in the 'use' section at the top of this file
-        $this->helper->register(' ', '\Kanboard\Plugin\AddressBook\Helper\  ');
+        $this->helper->register('ContactsHelper', '\Kanboard\Plugin\AddressBook\Helper\ContactsHelper');
     }
 
     public function onStartup()
     {
         Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
+    }
+
+    public function getClasses() {
+        return array(
+            'Plugin\AddressBook\Model' => array(
+                'ContactsItemsModel',
+                'ContactsTaskModel',
+                'ContactsModel',
+            ),
+            'Plugin\AddressBook\Validator' => array('ContactsValidator')
+        );
     }
 
     public function getPluginName()

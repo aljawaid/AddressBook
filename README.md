@@ -82,7 +82,7 @@ Translations
 Authors & Contributors
 ----------------------
 
-- [@](https://github.com/url) - Author
+- [@aljawaid](https://github.com/aljawaid) - Author
 - [Martin Middeke](https://github.com/Busfreak/plugin-contacts) - Author (imported features from the Contacts plugin)
 - _Contributors welcome_
 
