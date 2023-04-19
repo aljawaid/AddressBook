@@ -30,7 +30,7 @@ class Plugin extends Base
         $this->template->hook->attach('template:task:sidebar:actions', 'addressBook:task/sidebar');
         $this->template->hook->attach('template:board:task:footer', 'addressBook:task/footer_icon');
         $this->template->hook->attach('template:task:details:first-column', 'addressBook:task/footer_icon');
-        $this->template->hook->attach('template:user:sidebar:information', 'metadata:user/sidebar');
+        //$this->template->hook->attach('template:user:sidebar:information', 'metadata:user/sidebar'); doesnt exist
         $this->template->hook->attach('template:task:show:bottom', 'addressBook:task/bottom');
 
         // Views - Add Menu Item - Template Hook
