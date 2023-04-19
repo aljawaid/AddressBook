@@ -2,7 +2,7 @@
 
 #### _Plugin for [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software")_
 
-Create and manage contacts to associate them with projects and tasks.
+Use the new Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact including notes to log a relationship between tasks and people or organisations. 
 
 
 Features
@@ -10,7 +10,20 @@ Features
 
 - Create contacts per project
 - Create contacts per task
+- Add contacts and organisations to tasks using default properties
+- Easily assign contacts to tasks
+- Show contacts at a glance on the task page
 
+**Contact Properties**
+- Name
+- Organisation
+- Address
+- Telephone
+- Mobile
+- Email
+- Website
+- Reference
+- Status
 
 Screenshots
 ----------
