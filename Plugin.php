@@ -33,14 +33,10 @@ class Plugin extends Base
         $this->template->hook->attach('template:task:show:before-description', 'addressBook:task/description');
         //$this->template->hook->attach('template:user:sidebar:information', 'metadata:user/sidebar'); doesnt exist
 
-        // Views - Add Menu Item - Template Hook
-        //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
-        //  - Example for menu item in kanboard settings page: $this->template->hook->attach('template:config:sidebar', 'pluginNameExampleCamelCase:config/sidebar');
-
         // Extra Page - Routes
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         //  - Must have the corresponding action in the matching controller
-        $this->route->addRoute('/ / ', ' ', ' ', 'AddressBook');
+        //$this->route->addRoute('/ / ', ' ', ' ', 'AddressBook');
 
         // Helper
         //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
@@ -73,7 +69,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Create and manage contacts to associate them with projects and tasks.');
+        return t('Create and manage contacts and organisations to associate them with projects and tasks.');
     }
 
     public function getPluginAuthor()
