@@ -15,7 +15,7 @@
 
 Use the new Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact including notes to log a relationship between tasks and people or organisations. 
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>]</p>
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Features
 
@@ -36,7 +36,7 @@ Use the new Address Book to create and manage contacts associating them with pro
 - Reference
 - Status
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
 
@@ -44,11 +44,13 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ![Screenshot Name](../master/Screenshots/screenshot-name.png "Read Screenshot Name")
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Usage
 
 Go to `Task` &#10562; Contacts
 
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
 
@@ -77,7 +79,7 @@ Go to `Task` &#10562; Contacts
 
 </details>
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#usage">&#8592; Previous</a>] [<a href="#license">&#8594; Next</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## Authors & Contributors
 
@@ -85,7 +87,7 @@ Go to `Task` &#10562; Contacts
 - [Martin Middeke](https://github.com/Busfreak/plugin-contacts) - Author (imported features from the Contacts plugin)
 - _Contributors welcome_
 
-<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
+<p align="right">[<a href="#readme-bottom">&#8595; Bottom</a>] [<a href="#installation--compatibility">&#8592; Previous</a>] [<a href="#readme-top">&#8593; Top</a>]</p>
 
 ## License
 
