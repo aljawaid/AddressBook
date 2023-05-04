@@ -32,7 +32,7 @@ class ContactsModel extends Base
             ->table(self::TABLE)
             ->eq('contacts_id', $contacts_id)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
         $return = array();
         foreach ($contact as $key => $value){
@@ -53,9 +53,9 @@ class ContactsModel extends Base
         return $this->db
             ->table(self::TABLE)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->groupBy('contacts_id')
-            ->asc(self::TABLE.'.contact_item_value')
+            ->asc(self::TABLE . '.contact_item_value')
             ->findAll();
     }
 
@@ -70,12 +70,12 @@ class ContactsModel extends Base
         return $this->db
             ->table(self::TABLE)
             ->columns(
-                ContactsItemsModel::TABLE.'.item',
-                self::TABLE.'.contact_item_value'
+                ContactsItemsModel::TABLE . '.item',
+                self::TABLE . '.contact_item_value'
             )
             ->eq('contacts_id', $contacts_id)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
     }
 
@@ -108,10 +108,10 @@ class ContactsModel extends Base
         $headings = $this->db
             ->table(ContactsItemsModel::TABLE)
             ->columns(
-                ContactsItemsModel::TABLE.'.id',
-                ContactsItemsModel::TABLE.'.item'
+                ContactsItemsModel::TABLE . '.id',
+                ContactsItemsModel::TABLE . '.item'
             )
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
         $return = array();
         foreach ($headings as $key => $value){
@@ -120,7 +120,6 @@ class ContactsModel extends Base
         return $return;
     }
 
-    
     /**
      * Create a new contact
      *
@@ -281,8 +280,8 @@ class ContactsModel extends Base
                 }
             }
         }
-        return $colors;
 
+        return $colors;
 	}
 
     /**
@@ -314,5 +313,4 @@ class ContactsModel extends Base
     {
 		return $this->projectMetadataModel->remove($project_id, 'color_filter_' . $name);
     }
-
 }

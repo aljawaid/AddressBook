@@ -32,7 +32,7 @@ class ContactsTaskModel extends Base
     {
         return $this->db
                     ->table(self::TABLE)
-                    ->columns(self::TABLE.'.contacts_id')
+                    ->columns(self::TABLE . '.contacts_id')
                     ->eq('task_id', $task_id)
                     ->findAll();
     }
@@ -51,13 +51,13 @@ class ContactsTaskModel extends Base
             ->eq('task_id', $task_id)
             ->columns(
                 self::TABLE.'.contacts_id',
-                ContactsModel::TABLE.'.contact_item_value'
+                ContactsModel::TABLE . '.contact_item_value'
             )
             ->join(ContactsModel::TABLE, 'contacts_id', 'contacts_id')
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id', ContactsModel::TABLE)
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->groupBy('contacts_id')
-            ->asc(ContactsModel::TABLE.'.contact_item_value')
+            ->asc(ContactsModel::TABLE . '.contact_item_value')
             ->findAll();
     }
 
@@ -74,25 +74,24 @@ class ContactsTaskModel extends Base
             ->table(self::TABLE)
             ->eq('task_id', $task_id)
             ->columns(
-                self::TABLE.'.contacts_id'
+                self::TABLE . '.contacts_id'
             )
             ->join(ContactsModel::TABLE, 'contacts_id', 'contacts_id')
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id', ContactsModel::TABLE)
-            ->asc(ContactsItemsModel::TABLE.'.position')
+            ->asc(ContactsItemsModel::TABLE . '.position')
             ->groupBy('contacts_id')
-            ->asc(ContactsModel::TABLE.'.contact_item_value');
+            ->asc(ContactsModel::TABLE . '.contact_item_value');
 
         return $this->db
             ->table(ContactsModel::TABLE)
             ->columns(
-                ContactsModel::TABLE.'.contacts_id',
-                ContactsModel::TABLE.'.contact_item_value'
+                ContactsModel::TABLE . '.contacts_id',
+                ContactsModel::TABLE . '.contact_item_value'
             )
             ->notInSubquery('contacts_id', $subquery)
             ->groupBy('contacts_id')
             ->findAll();
     }
-
 
     /**
      * Get a item by the id
@@ -107,8 +106,8 @@ class ContactsTaskModel extends Base
         if ($more) {
             return $this->db
                         ->table(self::TABLE)
-                        ->eq(self::TABLE.'.id', $item_id)
-                        ->columns(self::TABLE.'.*', UserModel::TABLE.'.username', UserModel::TABLE.'.name')
+                        ->eq(self::TABLE . '.id', $item_id)
+                        ->columns(self::TABLE . '.*', UserModel::TABLE.'.username', UserModel::TABLE.'.name')
                         ->subquery($this->subtaskTimeTrackingModel->getTimerQuery($this->userSession->getId()), 'timer_start_date')
                         ->join(UserModel::TABLE, 'id', 'user_id')
                         ->callback(array($this, 'addStatusName'))
@@ -212,8 +211,8 @@ class ContactsTaskModel extends Base
                 }
             }
         }
-        return $colors;
 
+        return $colors;
 	}
 
     /**
@@ -229,7 +228,7 @@ class ContactsTaskModel extends Base
         foreach ($colors as $color_id => $color_name) {
             $app_colors[$color_id] = array('color_name' => $color_name, 'app_color' => $this->configModel->get('colors_' . $color_id, $color_name));
         }
-            
+
         return $app_colors;
     }
 

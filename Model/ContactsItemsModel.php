@@ -27,7 +27,7 @@ class ContactsItemsModel extends Base
      */
     public function getAllItems()
     {
-        return $this->db->table(self::TABLE)->asc(self::TABLE.'.position')->findAll();
+        return $this->db->table(self::TABLE)->asc(self::TABLE . '.position')->findAll();
     }
 
     /**
@@ -116,7 +116,7 @@ class ContactsItemsModel extends Base
      */
     public function save(array $values)
     {
-        $max = $this->db->table(self::TABLE)->columns('max('.self::TABLE.'.position) maxid')->findOne();
+        $max = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.position) maxid')->findOne();
         $values += array('position' => $max['maxid'] + 1);
         return $this->db
             ->table(self::TABLE)
