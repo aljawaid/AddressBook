@@ -3,8 +3,6 @@
 
 ## v1.0
 
-### What's Changed
-
 _(most recent changes are listed on top):_
 - Initial release
 - Translations starter template included
