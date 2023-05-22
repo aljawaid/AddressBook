@@ -31,7 +31,7 @@
     </a>
 </p>
 
-Use the new Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact including notes to log a relationship between tasks and people or organisations. 
+Use the new Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact including notes to log a relationship between tasks and people or organisations.
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
@@ -71,6 +71,21 @@ Go to `Task` &#10562; Contacts
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Installation & Compatibility
+
+<p align="left">
+    <a href="https://github.com/aljawaid/AddressBook/actions/workflows/linter.yml">
+        <img src="https://github.com/aljawaid/AddressBook/actions/workflows/linter.yml/badge.svg?branch=master&event=push" alt="Code Scanning" title="View Test">
+    </a>
+    <a href="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-7.4.yaml">
+        <img src="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-7.4.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
+    </a>
+    <a href="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-8.0.yaml">
+        <img src="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-8.0.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
+    </a>
+    <a href="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-8.2.yaml">
+        <img src="https://github.com/aljawaid/AddressBook/actions/workflows/php-compatibility-8.2.yaml/badge.svg?branch=master&event=push" alt="PHP Compatibility Test" title="View Test">
+    </a>
+</p>
 
 <details>
     <summary><strong>Installation</strong></summary>

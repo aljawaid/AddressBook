@@ -8,6 +8,7 @@ use Kanboard\Core\Plugin\Directory;
 /**
  * Plugin PluginNameExampleStudlyCaps
  * Class myController
+ *
  * @author 
  */
 
@@ -20,13 +21,14 @@ class MyController extends \Kanboard\Controller\PluginController
      * This function must be checked with 'Extra Page - Routes' in Plugin.php
      * Use: $this->helper->layout->config for config settings menu sidebar
      * Use: $this->helper->layout->plugin for plugin menu sidebar
+     *
      * @access public
      */
 
     public function show()
     {
         $this->response->html($this->helper->layout->config('pluginNameExampleCamelCase:folder/filename', array(
-            'title' => t('PluginNameExampleStudlyCaps').' &#10562; '.t('Settings'),
+            'title' => t('PluginNameExampleStudlyCaps') . ' &#10562; ' . t('Settings'),
         )));
     }
 }
