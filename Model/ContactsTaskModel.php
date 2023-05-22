@@ -50,7 +50,7 @@ class ContactsTaskModel extends Base
             ->table(self::TABLE)
             ->eq('task_id', $task_id)
             ->columns(
-                self::TABLE.'.contacts_id',
+                self::TABLE . '.contacts_id',
                 ContactsModel::TABLE . '.contact_item_value'
             )
             ->join(ContactsModel::TABLE, 'contacts_id', 'contacts_id')
@@ -107,7 +107,7 @@ class ContactsTaskModel extends Base
             return $this->db
                         ->table(self::TABLE)
                         ->eq(self::TABLE . '.id', $item_id)
-                        ->columns(self::TABLE . '.*', UserModel::TABLE.'.username', UserModel::TABLE.'.name')
+                        ->columns(self::TABLE . '.*', UserModel::TABLE . '.username', UserModel::TABLE . '.name')
                         ->subquery($this->subtaskTimeTrackingModel->getTimerQuery($this->userSession->getId()), 'timer_start_date')
                         ->join(UserModel::TABLE, 'id', 'user_id')
                         ->callback(array($this, 'addStatusName'))
@@ -155,7 +155,8 @@ class ContactsTaskModel extends Base
      */
     public function getList($listing)
     {
-		// don nothing if in colors settings
+        // don nothing if in colors settings
+        // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
 		if ($this->router->getController() === 'ColorsController') return $listing;
 
         $project_id = $this->request->getIntegerParam('project_id', 0);
@@ -171,10 +172,11 @@ class ContactsTaskModel extends Base
      * @param  integer   $project_id
      * @return array
      */
-    public function getProjectColors($project_id, $app_colors = NULL)
+    public function getProjectColors($project_id, $app_colors = null)
     {
 
-        if(! isset($app_colors)) $app_colors = $this->getAppColors($this->helper->task->getColors());
+        // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
+        if (!isset($app_colors)) $app_colors = $this->getAppColors($this->helper->task->getColors());
         $projectMetadata = $this->projectMetadataModel->getAll($project_id);
         $project_colors = array();
 
@@ -182,7 +184,7 @@ class ContactsTaskModel extends Base
             $project_color = $projectMetadata['color_filter_' . $color_id];
 
             $color_hide = false;
-            if (array_key_exists ('color_filter_' . $color_id . '_hide', $projectMetadata)) {
+            if (array_key_exists('color_filter_' . $color_id . '_hide', $projectMetadata)) {
                 $color_hide = true;
             }
             $project_colors[$color_id] = array('color_name' => $color_names['color_name'], 'app_color' => $color_names['app_color'], 'project_color' => $project_color, 'color_hide' => $color_hide);
@@ -203,10 +205,12 @@ class ContactsTaskModel extends Base
         $colors = array();
 
 		foreach ($project_colors as $color_id => $color_values) {
-            if (! array_key_exists ('color_filter_' . $color_id, $project_colors)) {
-                if(! $color_values['color_hide']){
+            if (!array_key_exists ('color_filter_' . $color_id, $project_colors)) {
+                if (!$color_values['color_hide']) {
                     $colors[$color_id] = $color_values['color_name'];
+                    // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
                     if (strlen($color_values['app_color']) > 0) $colors[$color_id] = $color_values['app_color'];
+                    // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
                     if (strlen($color_values['project_color']) > 0) $colors[$color_id] = $color_values['project_color'];
                 }
             }
@@ -242,7 +246,7 @@ class ContactsTaskModel extends Base
      */
     public function remove($project_id, $name)
     {
-		return $this->projectMetadataModel->remove($project_id, 'color_filter_' . $name);
+        return $this->projectMetadataModel->remove($project_id, 'color_filter_' . $name);
     }
 
     /**

@@ -46,8 +46,8 @@ class ContactsHelper extends Base
      * @param  integer   $project_id
      * @return array
      */
-     public function getColors($project_id)
+    public function getColors($project_id)
     {
-		return $this->colorsModel->getProjectColorNames($this->colorsModel->getProjectColors($project_id));
+        return $this->colorsModel->getProjectColorNames($this->colorsModel->getProjectColors($project_id));
     }
 }

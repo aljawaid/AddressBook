@@ -1,7 +1,7 @@
 <div class="dropdown">
     <a href="#" class="dropdown-menu dropdown-menu-link-icon"><i class="fa fa-cog fa-fw"></i><i class="fa fa-caret-down"></i></a>
     <ul>
-        <?php if($more): ?>
+        <?php if ($more): ?>
         <li>
             <i class="fa  fa-book" aria-hidden="true"></i>
             <?= $this->modal->medium('', t('additional'), 'ContactsController', 'details', array('plugin' => 'AddressBook', 'project_id' => $project['id'], 'contacts_id' => $contacts_id)) ?>

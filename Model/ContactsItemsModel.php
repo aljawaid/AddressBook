@@ -64,9 +64,13 @@ class ContactsItemsModel extends Base
      */
     public function changePosition($item_id, $direction)
     {
-        if ($direction === 'up') $offset = -1;
-        elseif ($direction === 'down') $offset = 1;
-        else return false;
+        if ($direction === 'up') {
+            $offset = -1;
+        } elseif ($direction === 'down') {
+            $offset = 1;
+        } else {
+            return false;
+        }
         $results = array();
         $old = $this->getByID($item_id);
         $old_position = $old['position'];
@@ -76,7 +80,7 @@ class ContactsItemsModel extends Base
 
         $results[] = $this->db->table(self::TABLE)->eq('id', $item_id)->update(array('position' => $new_position));
         $results[] = $this->db->table(self::TABLE)->eq('id', $current_item_id)->update(array('position' => $old_position));
-        
+
         return !in_array(false, $results, true);
     }
 

@@ -1,6 +1,7 @@
 <div class="page-header">
     <h2><?= t('Contact settings') ?></h2>
-</div><?php if (! empty($items)): ?>
+</div>
+<?php if (!empty($items)): ?>
     <table class="stable-striped table-scrolling">
     <thead>
         <tr>
@@ -11,10 +12,10 @@
     <tbody>
         <?php $end = end($items) ?>
         <?php foreach ($items as $item): ?>
-        <tr>
-            <td><?= $item['item'] ?></td>
-            <td><?= $this->render('addressBook:config/menu', array('item_id' => $item['id'], 'start_id' => $items[0]['id'], 'end_id' => $end['id'])) ?></td>
-        </tr>
+            <tr>
+                <td><?= $item['item'] ?></td>
+                <td><?= $this->render('addressBook:config/menu', array('item_id' => $item['id'], 'start_id' => $items[0]['id'], 'end_id' => $end['id'])) ?></td>
+            </tr>
         <?php endforeach ?>
     </tbody>
     </table>

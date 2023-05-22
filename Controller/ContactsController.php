@@ -11,7 +11,6 @@ use Kanboard\Controller\BaseController;
  * @author  Martin Middeke
  */
 class ContactsController extends BaseController {
-
     /**
      * Display list of contacts and create new contacts
      *
@@ -76,7 +75,9 @@ class ContactsController extends BaseController {
      * @access public
      */
 
-    public function task_footer() {
+    // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
+    public function task_footer()
+    {
         $task = $this->getTask();
 
         $this->response->html($this->helper->layout->app('addressBook:task/contacts', array(
@@ -188,7 +189,8 @@ class ContactsController extends BaseController {
      *
      * @access public
      */
-    public function task() {
+    public function task()
+    {
         $project = $this->getProject();
         $task = $this->getTask();
 

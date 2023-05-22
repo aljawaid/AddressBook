@@ -4,8 +4,8 @@ namespace Kanboard\Plugin\AddressBook;
 
 use Kanboard\Core\Plugin\Base;
 use Kanboard\Core\Translator;
-use Kanboard\Plugin\AddressBook\Helper\ContactsHelper;  // Helper Class and Filename should be exact
-use Kanboard\Helper;  // Add core Helper for using forms etc. inside external templates
+use Kanboard\Plugin\AddressBook\Helper\ContactsHelper;
+use Kanboard\Helper;
 
 class Plugin extends Base
 {
@@ -49,7 +49,8 @@ class Plugin extends Base
         Translator::load($this->languageModel->getCurrentLanguage(), __DIR__ . '/Locale');
     }
 
-    public function getClasses() {
+    public function getClasses()
+    {
         return array(
             'Plugin\AddressBook\Model' => array(
                 'ContactsItemsModel',

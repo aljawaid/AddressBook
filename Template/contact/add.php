@@ -5,10 +5,8 @@
 
     <?= $this->form->csrf() ?>
     <?php foreach ($items as $key => $value): ?>
-
-    <?= $this->form->label($value['item'], $value['item']) ?>
-    <?= $this->form->text($value['id'] . '_' . $value['item'], $values, $errors, array('maxlength="100"')) ?>
-
+        <?= $this->form->label($value['item'], $value['item']) ?>
+        <?= $this->form->text($value['id'] . '_' . $value['item'], $values, $errors, array('maxlength="100"')) ?>
     <?php endforeach ?>
 
     <div class="form-actions">

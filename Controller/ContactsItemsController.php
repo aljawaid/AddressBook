@@ -11,8 +11,8 @@ use Kanboard\Core\Controller\PageNotFoundException;
  * @package controller
  * @author  Martin Middeke
  */
-class ContactsItemsController extends BaseController {
-
+class ContactsItemsController extends BaseController
+{
     /**
      * Get the current item
      *
@@ -39,7 +39,7 @@ class ContactsItemsController extends BaseController {
     public function config()
     {
         $this->response->html($this->helper->layout->config('addressBook:config/index', array(
-            'title' => t('Settings').' &gt; '.t('Contacts'),
+            'title' => t('Settings') . ' &gt; ' . t('Contacts'),
             'items' => $this->contactsItemsModel->getAllItems()
         )));
     }
@@ -88,6 +88,7 @@ class ContactsItemsController extends BaseController {
         $direction = $this->request->getStringParam('direction');
         $result = $this->contactsItemsModel->changePosition($item_id, $direction);
 
+        // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
         if ($result) return $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')), true);
     }
 

@@ -35,7 +35,7 @@ class ContactsModel extends Base
             ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
         $return = array();
-        foreach ($contact as $key => $value){
+        foreach ($contact as $key => $value) {
             $return[$value['id']] = $value;
         }
         return $return;
@@ -91,10 +91,11 @@ class ContactsModel extends Base
         $contact = $this->getByID($contacts_id);
 
         $return = array();
-        foreach ($headings as $key => $value){
-            $return[$key . '_' . $value] = (empty($contact[$key]))?'':$contact[$key]['contact_item_value'];
+        foreach ($headings as $key => $value) {
+            $return[$key . '_' . $value] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
         }
-       return $return;
+
+        return $return;
     }
 
     /**
@@ -114,7 +115,7 @@ class ContactsModel extends Base
             ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
         $return = array();
-        foreach ($headings as $key => $value){
+        foreach ($headings as $key => $value) {
             $return[$value['id']] = $value['item'];
         }
         return $return;
@@ -131,17 +132,17 @@ class ContactsModel extends Base
     {
         $create = array();
         $results = array();
-        $maxContacts = $this->db->table(self::TABLE)->columns('max('.self::TABLE.'.contacts_id) maxid')->findOne();
+        $maxContacts = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.contacts_id) maxid')->findOne();
         $maxContacts_id = $maxContacts['maxid'];
         foreach ($values as $key => $value) {
-            if (!empty($value)){
+            if (!empty($value)) {
                 $create['contacts_id'] = $maxContacts_id + 1;
                 $item = explode('_', $key);
                 $create['item_id'] = $item[0];
                 $create['contact_item_value'] = $value;
                 $results[] = $this->db->table(self::TABLE)->persist($create);
             }
-       }
+        }
 
         return !in_array(false, $results, true);
     }
@@ -160,45 +161,33 @@ class ContactsModel extends Base
         foreach ($values as $key => $value) {
             $item = explode('_', $key);
             $item_id = $item[0];
-            if (!empty($value)){
+            if (!empty($value)) {
                 $create['contacts_id'] = $contacts_id;
                 $create['item_id'] = $item_id;
                 $create['contact_item_value'] = $value;
-                if ($this->db
-                    ->table(self::TABLE)
-                    ->eq('contacts_id', $contacts_id)
-                    ->eq('item_id', $item_id)
-                    ->exists())
-                    {
-                        $results[] = $this->db
-                            ->table(self::TABLE)
-                            ->eq('contacts_id', $contacts_id)
-                            ->eq('item_id', $item_id)
-                            ->update($create);
-                    }
-                    else {
-                        $results[] = $this->db
-                            ->table(self::TABLE)
-                            ->eq('contacts_id', $contacts_id)
-                            ->eq('item_id', $item_id)
-                            ->persist($create);
-                    }
-            }
-            else {
-                if ($this->db
-                    ->table(self::TABLE)
-                    ->eq('contacts_id', $contacts_id)
-                    ->eq('item_id', $item_id)
-                    ->exists())
-                    {
+                if ($this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->eq('item_id', $item_id)->exists()) {
+                    $results[] = $this->db
+                        ->table(self::TABLE)
+                        ->eq('contacts_id', $contacts_id)
+                        ->eq('item_id', $item_id)
+                        ->update($create);
+                } else {
+                    $results[] = $this->db
+                        ->table(self::TABLE)
+                        ->eq('contacts_id', $contacts_id)
+                        ->eq('item_id', $item_id)
+                        ->persist($create);
+                }
+            } else {
+                if ($this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->eq('item_id', $item_id)->exists()) {
                     $results[] = $this->db
                         ->table(self::TABLE)
                         ->eq('contacts_id', $contacts_id)
                         ->eq('item_id', $item_id)
                         ->remove();
-                    }
+                }
             }
-       }
+        }
 
         return !in_array(false, $results, true);
     }
@@ -224,8 +213,9 @@ class ContactsModel extends Base
      */
     public function getList($listing)
     {
-		// don nothing if in colors settings
-		if ($this->router->getController() === 'ColorsController') return $listing;
+        // don nothing if in colors settings
+        // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
+        if ($this->router->getController() === 'ColorsController') return $listing;
 
         $project_id = $this->request->getIntegerParam('project_id', 0);
         $project_colors = $this->getProjectColors($project_id, $this->getAppColors($listing));
@@ -240,10 +230,11 @@ class ContactsModel extends Base
      * @param  integer   $project_id
      * @return array
      */
-    public function getProjectColors($project_id, $app_colors = NULL)
+    public function getProjectColors($project_id, $app_colors = null)
     {
 
-        if(! isset($app_colors)) $app_colors = $this->getAppColors($this->helper->task->getColors());
+        // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
+        if (!isset($app_colors)) $app_colors = $this->getAppColors($this->helper->task->getColors());
         $projectMetadata = $this->projectMetadataModel->getAll($project_id);
         $project_colors = array();
 
@@ -251,7 +242,7 @@ class ContactsModel extends Base
             $project_color = $projectMetadata['color_filter_' . $color_id];
 
             $color_hide = false;
-            if (array_key_exists ('color_filter_' . $color_id . '_hide', $projectMetadata)) {
+            if (array_key_exists('color_filter_' . $color_id . '_hide', $projectMetadata)) {
                 $color_hide = true;
             }
             $project_colors[$color_id] = array('color_name' => $color_names['color_name'], 'app_color' => $color_names['app_color'], 'project_color' => $project_color, 'color_hide' => $color_hide);
@@ -271,18 +262,20 @@ class ContactsModel extends Base
     {
         $colors = array();
 
-		foreach ($project_colors as $color_id => $color_values) {
-            if (! array_key_exists ('color_filter_' . $color_id, $project_colors)) {
-                if(! $color_values['color_hide']){
+        foreach ($project_colors as $color_id => $color_values) {
+            if (!array_key_exists ('color_filter_' . $color_id, $project_colors)) {
+                if (!$color_values['color_hide']){
                     $colors[$color_id] = $color_values['color_name'];
+                    // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
                     if (strlen($color_values['app_color']) > 0) $colors[$color_id] = $color_values['app_color'];
+                    // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
                     if (strlen($color_values['project_color']) > 0) $colors[$color_id] = $color_values['project_color'];
                 }
             }
         }
 
         return $colors;
-	}
+    }
 
     /**
      * Get all assigned colornames for the application
@@ -297,7 +290,7 @@ class ContactsModel extends Base
         foreach ($colors as $color_id => $color_name) {
             $app_colors[$color_id] = array('color_name' => $color_name, 'app_color' => $this->configModel->get('colors_' . $color_id, $color_name));
         }
-            
+
         return $app_colors;
     }
 
@@ -311,6 +304,6 @@ class ContactsModel extends Base
      */
     public function xxxremove($project_id, $name)
     {
-		return $this->projectMetadataModel->remove($project_id, 'color_filter_' . $name);
+        return $this->projectMetadataModel->remove($project_id, 'color_filter_' . $name);
     }
 }
