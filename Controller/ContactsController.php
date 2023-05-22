@@ -10,7 +10,8 @@ use Kanboard\Controller\BaseController;
  * @package controller
  * @author  Martin Middeke
  */
-class ContactsController extends BaseController {
+class ContactsController extends BaseController
+{
     /**
      * Display list of contacts and create new contacts
      *

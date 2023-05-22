@@ -263,8 +263,8 @@ class ContactsModel extends Base
         $colors = array();
 
         foreach ($project_colors as $color_id => $color_values) {
-            if (!array_key_exists ('color_filter_' . $color_id, $project_colors)) {
-                if (!$color_values['color_hide']){
+            if (!array_key_exists('color_filter_' . $color_id, $project_colors)) {
+                if (!$color_values['color_hide']) {
                     $colors[$color_id] = $color_values['color_name'];
                     // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
                     if (strlen($color_values['app_color']) > 0) $colors[$color_id] = $color_values['app_color'];

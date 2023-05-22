@@ -157,7 +157,7 @@ class ContactsTaskModel extends Base
     {
         // don nothing if in colors settings
         // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
-		if ($this->router->getController() === 'ColorsController') return $listing;
+        if ($this->router->getController() === 'ColorsController') return $listing;
 
         $project_id = $this->request->getIntegerParam('project_id', 0);
         $project_colors = $this->getProjectColors($project_id, $this->getAppColors($listing));
@@ -204,8 +204,8 @@ class ContactsTaskModel extends Base
     {
         $colors = array();
 
-		foreach ($project_colors as $color_id => $color_values) {
-            if (!array_key_exists ('color_filter_' . $color_id, $project_colors)) {
+        foreach ($project_colors as $color_id => $color_values) {
+            if (!array_key_exists('color_filter_' . $color_id, $project_colors)) {
                 if (!$color_values['color_hide']) {
                     $colors[$color_id] = $color_values['color_name'];
                     // phpcs:ignore Generic.ControlStructures.InlineControlStructure.NotAllowed
@@ -217,7 +217,7 @@ class ContactsTaskModel extends Base
         }
 
         return $colors;
-	}
+    }
 
     /**
      * Get all assigned colornames for the application
