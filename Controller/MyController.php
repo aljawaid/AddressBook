@@ -9,7 +9,7 @@ use Kanboard\Core\Plugin\Directory;
  * Plugin PluginNameExampleStudlyCaps
  * Class myController
  *
- * @author 
+ * @author
  */
 
 class MyController extends \Kanboard\Controller\PluginController
