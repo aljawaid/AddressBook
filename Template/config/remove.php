@@ -1,4 +1,4 @@
-<section id="main">
+<section id="main" class="">
     <div class="page-header">
         <h2><?= t('Remove Item') ?></h2>
     </div>
@@ -9,7 +9,6 @@
         <p class="alert alert-info">
             <?= t('Do you really want to remove this item: "%s"?', $item['item']) ?>
         </p>
-
         <div class="form-actions">
             <?= $this->url->link(t('Yes'), 'ContactsItemsController', 'remove', array('plugin' => 'AddressBook', 'item_id' => $item['id']), true, 'btn btn-red') ?>
             <?= t('or') ?>
