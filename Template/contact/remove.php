@@ -1,8 +1,7 @@
 <section id="main">
     <div class="page-header">
-        <h2><?= t('Remove Contact') ?></h2>
+        <h2 class=""><?= t('Remove Contact') ?></h2>
     </div>
-
     <div class="confirm">
         <p class="alert alert-info">
             <?= t('Do you really want to remove this contact: "%s"?', $contact['value']) ?>

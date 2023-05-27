@@ -1,6 +1,6 @@
 <section id="main" class="">
     <div class="page-header">
-        <h2><?= t('Remove Item') ?></h2>
+        <h2 class=""><?= t('Remove Item') ?></h2>
     </div>
 <pre>
 
