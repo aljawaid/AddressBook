@@ -38,7 +38,6 @@ class ContactsHelper extends Base
         return $this->contactsTaskModel->getByTaskId($task_id);
     }
 
-
     /**
      * Get all colornames from system and overwrite with custom board names
      *

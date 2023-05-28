@@ -13,7 +13,7 @@ class Plugin extends Base
     {
         // Template Override
         //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
-        $this->template->setTemplateOverride('action/index', 'pluginNameExampleCamelCase:action/index');
+        //$this->template->setTemplateOverride('action/index', 'pluginNameExampleCamelCase:action/index');
 
         // CSS - Asset Hook
         //  - Keep filename lowercase
@@ -53,9 +53,7 @@ class Plugin extends Base
     {
         return array(
             'Plugin\AddressBook\Model' => array(
-                'ContactsItemsModel',
-                'ContactsTaskModel',
-                'ContactsModel',
+                'ContactsItemsModel', 'ContactsTaskModel', 'ContactsModel',
             ),
             'Plugin\AddressBook\Validator' => array('ContactsValidator')
         );
