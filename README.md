@@ -37,22 +37,15 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ## Features
 
-- Create contacts per project
-- Create contacts per task
-- Add contacts and organisations to tasks using default properties
+- Create contacts per project or per task
 - Easily assign contacts to tasks
 - Show contacts at a glance on the task page
+- Works with MySQL, SQLite and PostgreSQL database types
 
 **Contact Properties**
-- Name
-- Organisation
-- Address
-- Telephone
-- Mobile
-- Email
-- Website
-- Reference
-- Status
+- Add contacts and organisations to tasks using default properties
+- Default properties include:
+  - Name, Organisation, Address, Telephone, Mobile, Email, Website, Reference, Status
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
