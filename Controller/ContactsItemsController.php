@@ -39,7 +39,7 @@ class ContactsItemsController extends BaseController
     public function config()
     {
         $this->response->html($this->helper->layout->config('addressBook:config/index', array(
-            'title' => t('Settings') . ' &gt; ' . t('Contacts'),
+            'title' => t('Address Book Settings'),
             'items' => $this->contactsItemsModel->getAllItems()
         )));
     }

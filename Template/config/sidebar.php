@@ -1,3 +1,3 @@
 <li <?= $this->app->checkMenuSelection('ContactsItemsController', 'config') ?>>
-    <?= $this->url->link(t('Contacts'), 'ContactsItemsController', 'config', array('plugin' => 'AddressBook')) ?>
+    <?= $this->url->link(t('Address Book'), 'ContactsItemsController', 'config', array('plugin' => 'AddressBook')) ?>
 </li>
