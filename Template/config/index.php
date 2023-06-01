@@ -34,7 +34,33 @@
                             <td class=""><?= $item['item'] ?></td>
                             <td class=""><?= $item['item_type'] ?></td>
                             <td class="">
-                                <?= $this->render('addressBook:config/menu', array('item_id' => $item['id'], 'start_id' => $items[0]['id'], 'end_id' => $end['id'])) ?>
+                                <?php
+                                    $item_id = $item['id'];
+                                    $start_id = $items[0]['id'];
+                                    $end_id = $end['id'];
+                                ?>
+                                <ul class="property-action-bar">
+                                    <li class="property-action-item">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <?= $this->modal->medium('', t('Edit'), 'ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>
+                                    </li>
+                                    <li class="property-action-item">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        <?= $this->modal->medium('', t('Remove'), 'ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>
+                                    </li>
+                                    <?php if ($item_id != $start_id): ?>
+                                        <li class="property-action-item">
+                                            <i class="fa  fa-arrow-up" aria-hidden="true"></i>
+                                            <?= $this->url->link(t('Move up'), 'ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'up', 'plugin' => 'AddressBook'), false, '') ?>
+                                        </li>
+                                    <?php endif ?>
+                                    <?php if ($item_id != $end_id): ?>
+                                        <li class="property-action-item">
+                                            <i class="fa  fa-arrow-down" aria-hidden="true"></i>
+                                                <?= $this->url->link(t('Move down'), 'ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'down', 'plugin' => 'AddressBook'), false, '') ?>
+                                            </li>
+                                    <?php endif ?>
+                                </ul>
                             </td>
                         </tr>
                     <?php endforeach ?>
