@@ -17,21 +17,28 @@
         </div>
     </form>
     <?php if (!empty($items)): ?>
-        <table class="stable-striped table-scrolling">
-            <thead>
-                <tr class="">
-                    <th class="column-15"><?= t('Item') ?></th>
-                    <th class="column-5"><?= t('Action') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $end = end($items) ?>
-                <?php foreach ($items as $item): ?>
+        <fieldset class="">
+            <legend><?= t('Contact Profile') ?></legend>
+            <table class="stable-striped table-scrolling">
+                <thead>
                     <tr class="">
-                        <td class=""><?= $item['item'] ?></td>
-                        <td class=""><?= $this->render('addressBook:config/menu', array('item_id' => $item['id'], 'start_id' => $items[0]['id'], 'end_id' => $end['id'])) ?></td>
+                        <th class="column-15"><?= t('Property') ?></th>
+                        <th class="column-15"><?= t('Type') ?></th>
+                        <th class="column-5"><?= t('Action') ?></th>
                     </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php $end = end($items) ?>
+                    <?php foreach ($items as $item): ?>
+                        <tr class="">
+                            <td class=""><?= $item['item'] ?></td>
+                            <td class=""><?= $item['item_type'] ?></td>
+                            <td class="">
+                                <?= $this->render('addressBook:config/menu', array('item_id' => $item['id'], 'start_id' => $items[0]['id'], 'end_id' => $end['id'])) ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </fieldset>
     <?php endif ?>
