@@ -24,7 +24,7 @@ class ContactsController extends BaseController
     {
         $project = $this->getProject();
         $this->response->html($this->helper->layout->project('addressBook:project/contacts', array(
-            'title' => t('Contacts'),
+            'title' => t('Address Book'),
             'values' => $values,
             'errors' => $errors,
             'project' => $project,
@@ -200,8 +200,8 @@ class ContactsController extends BaseController
 
         $this->response->html($this->helper->layout->task('addressBook:task/add', array(
             'title' => t('Contacts'),
-            'formtitle' => t('Assigned contacts'),
-            'addformtitle' => t('Available contacts'),
+            'formtitle' => t('Assigned Contacts'),
+            'addformtitle' => t('Available Contacts'),
             'task' => $task,
             'project' => $project,
             'contacts' => $contacts,
