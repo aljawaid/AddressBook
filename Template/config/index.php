@@ -2,6 +2,20 @@
     <div class="page-header">
         <h2 class=""><?= t('Contact settings') ?></h2>
     </div>
+    <div class="page-header">
+        <h2 class=""><?= t('Add new item') ?></h2>
+    </div>
+    <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="off">
+
+        <?= $this->form->csrf() ?>
+
+        <?= $this->form->label(t('Item'), 'action_name') ?>
+        <?= $this->form->text('item', $values) ?>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
+        </div>
+    </form>
     <?php if (!empty($items)): ?>
         <table class="stable-striped table-scrolling">
             <thead>
@@ -21,17 +35,3 @@
             </tbody>
         </table>
     <?php endif ?>
-    <div class="page-header">
-        <h2 class=""><?= t('Add new item') ?></h2>
-    </div>
-    <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="off">
-
-        <?= $this->form->csrf() ?>
-
-        <?= $this->form->label(t('Item'), 'action_name') ?>
-        <?= $this->form->text('item', $values) ?>
-
-        <div class="form-actions">
-            <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
-        </div>
-    </form>
