@@ -40,14 +40,6 @@
                                     $end_id = $end['id'];
                                 ?>
                                 <ul class="property-action-bar">
-                                    <li class="property-action-item">
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                        <?= $this->modal->medium('', t('Edit'), 'ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>
-                                    </li>
-                                    <li class="property-action-item">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                        <?= $this->modal->medium('', t('Remove'), 'ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>
-                                    </li>
                                     <?php if ($item_id != $start_id): ?>
                                         <li class="property-action-item">
                                             <i class="fa  fa-arrow-up" aria-hidden="true"></i>
@@ -60,6 +52,16 @@
                                                 <?= $this->url->link(t('Move down'), 'ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'down', 'plugin' => 'AddressBook'), false, '') ?>
                                             </li>
                                     <?php endif ?>
+                                    <li class="property-action-item">
+                                        <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-blue js-modal-medium" title="<?=t('Edit Property') ?>">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?= t('Edit') ?>
+                                        </a>
+                                    </li>
+                                    <li class="property-action-item">
+                                        <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-red js-modal-medium" title="<?=t('Delete Property') ?>">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
+                                        </a>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
