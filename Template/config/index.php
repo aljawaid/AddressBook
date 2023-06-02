@@ -32,7 +32,7 @@
     </form>
     <?php if (!empty($items)): ?>
         <fieldset class="ab-contact-profile">
-            <legend><?= t('Contact Profile') ?></legend>
+            <legend><span class="contact-profile-icon"></span> <?= t('Contact Profile') ?></legend>
             <p class="contact-profile-intro">
                 <?= t('There are currently %s properties which form a standard contact profile.', count($items)) ?>
             </p>
@@ -76,7 +76,7 @@
                                     <div class="action-buttons">
                                         <li class="property-action-item">
                                             <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-blue js-modal-medium" title="<?=t('Edit Property') ?>">
-                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> <?= t('Rename') ?>
+                                                <span class="rename-icon"></span> <?= t('Rename') ?>
                                             </a>
                                         </li>
                                         <li class="property-action-item">
