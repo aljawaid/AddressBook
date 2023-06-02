@@ -29,9 +29,9 @@
             <table class="stable-striped table-scrolling">
                 <thead>
                     <tr class="">
-                        <th class="column-15"><?= t('Property') ?></th>
-                        <th class="column-15"><?= t('Type') ?></th>
-                        <th class="column-5"><?= t('Action') ?></th>
+                        <th class="column-25"><?= t('Contact Property') ?></th>
+                        <th class="column-8 text-center"><?= t('Property Type') ?></th>
+                        <th class="column-18"><?= t('Actions') ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,7 +39,7 @@
                     <?php foreach ($items as $item): ?>
                         <tr class="">
                             <td class=""><?= $item['item'] ?></td>
-                            <td class=""><?= $item['item_type'] ?></td>
+                            <td class="text-center"><?= $item['item_type'] ?></td>
                             <td class="">
                                 <?php
                                     $item_id = $item['id'];
