@@ -6,8 +6,18 @@
 
         <?= $this->form->csrf() ?>
 
-        <?= $this->form->label(t('Item'), 'action_name') ?>
-        <?= $this->form->text('item', $values) ?>
+            <div class="input-section">
+                <?= $this->form->label(t('Property Name'), 'item', array('class="property-label"')) ?>
+                <?= $this->form->text('item', $values, array(), array('autofocus', 'required', 'placeholder="' . t('Social Media Handle') . '"'), 'property-input') ?>
+                <p class="form-help"><?= t('Add properties individually') ?></p>
+            </div>
+            <div class="input-section">
+                <?= $this->form->label(t('Property Type'), 'item_type', array('class="property-label"')) ?>
+                <?= $this->form->text('item_type', $values, array(), array('required', 'placeholder="' . t('text') . '"'), 'property-input') ?>
+                <p class="form-help" title="<?= t('Allowed Types') ?>">
+                    <code><?= t('text') ?></code><code><?= t('number') ?></code><code><?= t('address') ?></code><code><?= t('telephone') ?></code><code><?= t('email') ?></code><code><?= t('website') ?></code>
+                </p>
+            </div>
 
         <div class="form-actions">
             <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
