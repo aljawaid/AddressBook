@@ -1,9 +1,6 @@
-<div class="">
-    <div class="page-header">
-        <h2 class=""><?= t('Contact settings') ?></h2>
-    </div>
-    <div class="page-header">
-        <h2 class=""><?= t('Add new item') ?></h2>
+<div id="ABConfigPage" class="ab-config-page">
+    <div class="ab-page-header">
+        <h2 class=""><?= t('Contact Settings') ?></h2>
     </div>
     <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="off">
 
@@ -70,3 +67,4 @@
             </table>
         </fieldset>
     <?php endif ?>
+</div>
