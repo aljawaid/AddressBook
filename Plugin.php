@@ -18,6 +18,7 @@ class Plugin extends Base
         // CSS - Asset Hook
         //  - Keep filename lowercase
         $this->hook->on('template:layout:css', array('template' => 'plugins/AddressBook/Assets/css/address-book.css'));
+        $this->hook->on('template:layout:css', array('template' => 'plugins/AddressBook/Assets/css/address-book-icons.css'));
 
         // JS - Asset Hook
         //  - Keep filename lowercase

@@ -1,6 +1,8 @@
 <div id="ABConfigPage" class="ab-config-page">
     <div class="ab-page-header">
-        <h2 class=""><?= t('Contact Settings') ?></h2>
+        <h2 class="">
+            <span class="address-book-icon"></span> <?= t('Contact Settings') ?>
+        </h2>
     </div>
     <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
         <?= $this->form->csrf() ?>
