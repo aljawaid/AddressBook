@@ -6,6 +6,7 @@
     --pp-red: #B71234;
     --pp-red-alt: #DA004C;
     --pp-red-alt-2: #AE003D;
+    --pp-red-alt-3: #D50000;
     --pp-black: #000000;
     --pp-light-grey: #8F8F8F;
     --pp-grey: #4D4D4D;
@@ -14,6 +15,8 @@
     --pp-green-dark: #055D20;
     --pp-orange: #FF6500;
     --blue-icon-dark: #034CA6;
+    --ab-blue: #20369F;
+    --ab-button: rgba(32, 54, 159, .8);
     --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
     --blue-border-gradient-match: #476E9E;
     --button-background-delete: #D05C84;
@@ -46,3 +49,22 @@
 .text-center { text-align: center; }
 
 .relative { position: relative; }
+
+.btn-ab-move {
+    background: var(--ab-button);
+    border-radius: var(--border-radius-address-book);
+    transition: var(--transition-address-book);
+    border: 1px solid var(--ab-button);
+}
+
+.btn-ab-move i {
+    color: var(--pp-white);
+}
+
+.btn-ab-move:focus, .btn-ab-move:hover {
+    border: 1px solid var(--ab-button);
+}
+
+.btn-ab-move:focus i, .btn-ab-move:hover i {
+    color: var(--ab-blue);
+}

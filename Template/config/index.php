@@ -60,14 +60,14 @@
                                     <div class="move-buttons">
                                         <?php if ($item_id != $start_id): ?>
                                             <li class="property-action-item">
-                                                <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'up', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-blue" title="<?=t('Move Property') ?>">
+                                                <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'up', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move" title="<?=t('Move Property') ?>">
                                                     <i class="fa fa-arrow-up" aria-hidden="true"></i>
                                                 </a>
                                             </li>
                                         <?php endif ?>
                                         <?php if ($item_id != $end_id): ?>
                                             <li class="property-action-item">
-                                                <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'down', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-blue" title="<?=t('Move Property') ?>">
+                                                <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'down', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move" title="<?=t('Move Property') ?>">
                                                     <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                 </a>
                                             </li>
