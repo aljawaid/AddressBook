@@ -14,7 +14,7 @@
 
             <div class="input-section">
                 <?= $this->form->label(t('Property Name'), 'item', array('class="property-label"')) ?>
-                <?= $this->form->text('item', $values, array(), array('autofocus', 'required', 'placeholder="' . t('Social Media Handle') . '"'), 'property-input') ?>
+                <?= $this->form->text('item', $values, array(), array('autofocus', 'required', 'placeholder="' . t('Department') . '"'), 'property-input') ?>
                 <p class="form-help"><?= t('Add properties individually') ?></p>
             </div>
             <div class="input-section">
