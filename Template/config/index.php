@@ -2,9 +2,13 @@
     <div class="ab-page-header">
         <h2 class=""><?= t('Contact Settings') ?></h2>
     </div>
-    <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="off">
-
+    <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
         <?= $this->form->csrf() ?>
+        <fieldset class="ab-new-item">
+            <legend class=""><?= t('Add New Property') ?></legend>
+            <p class="new-item-intro">
+                <?= t('A single contact consists of many properties. Add your custom properties to adjust the standard contact profile according to your needs.') ?>
+            </p>
 
             <div class="input-section">
                 <?= $this->form->label(t('Property Name'), 'item', array('class="property-label"')) ?>
@@ -19,14 +23,18 @@
                 </p>
             </div>
 
-        <div class="form-actions">
-            <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
-        </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-blue"><?= t('Add Property') ?></button>
+            </div>
+        </fieldset>
     </form>
     <?php if (!empty($items)): ?>
-        <fieldset class="">
+        <fieldset class="ab-contact-profile">
             <legend><?= t('Contact Profile') ?></legend>
-            <table class="stable-striped table-scrolling">
+            <p class="contact-profile-intro">
+                <?= t('There are currently %s properties which form a standard contact profile.', count($items)) ?>
+            </p>
+            <table id="ContactProfileTable" class="contact-profile-table">
                 <thead>
                     <tr class="">
                         <th class="column-25"><?= t('Contact Property') ?></th>
