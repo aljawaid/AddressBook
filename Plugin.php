@@ -36,8 +36,10 @@ class Plugin extends Base
 
         // Extra Page - Routes
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
-        //  - Must have the corresponding action in the matching controller
-        //$this->route->addRoute('/ / ', ' ', ' ', 'AddressBook');
+        $this->route->addRoute('/settings/address-book', 'ContactsItemsController', 'config', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property/:item_id/move/:direction', 'ContactsItemsController', 'movePosition', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property/:item_id/rename', 'ContactsItemsController', 'edit', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property/:item_id/delete', 'ContactsItemsController', 'confirm', 'AddressBook');
 
         // Helper
         //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
