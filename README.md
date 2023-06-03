@@ -51,9 +51,9 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ## Screenshots
 
-**title**  
+**Plugin Settings**  
 
-![Screenshot Name](../master/Screenshots/screenshot-name.png "Read Screenshot Name")
+![Plugin Settings](../master/Screenshots/screenshot-plugin-settings.png)
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
