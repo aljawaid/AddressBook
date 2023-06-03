@@ -7,7 +7,7 @@
     <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
         <?= $this->form->csrf() ?>
         <fieldset class="ab-new-item">
-            <legend class=""><?= t('Add New Property') ?></legend>
+            <legend class=""><span class="property-icon"></span> <?= t('Add New Property') ?></legend>
             <p class="new-item-intro">
                 <?= t('Each contact is associated with a contact profile. A standad contact profile consists of many properties. Add your custom properties to adjust the standard contact profile according to your needs.') ?>
             </p>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-actions">
-                <button type="submit" class="btn btn-blue"><?= t('Add Property') ?></button>
+                <button type="submit" class="btn btn-ab-property"><span class="property-icon"></span> <?= t('Add Property') ?></button>
             </div>
         </fieldset>
     </form>
@@ -39,7 +39,7 @@
             <table id="ContactProfileTable" class="contact-profile-table">
                 <thead>
                     <tr class="">
-                        <th class="column-25"><?= t('Contact Property') ?></th>
+                        <th class="column-25"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
                         <th class="column-8 text-center"><?= t('Property Type') ?></th>
                         <th class="column-18"><?= t('Actions') ?></th>
                     </tr>
@@ -75,12 +75,12 @@
                                     </div>
                                     <div class="action-buttons">
                                         <li class="property-action-item">
-                                            <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-blue js-modal-medium" title="<?=t('Edit Property') ?>">
+                                            <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-medium" title="<?=t('Edit Property') ?>">
                                                 <span class="rename-icon"></span> <?= t('Rename') ?>
                                             </a>
                                         </li>
                                         <li class="property-action-item">
-                                            <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-red js-modal-medium" title="<?=t('Delete Property') ?>">
+                                            <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium" title="<?=t('Delete Property') ?>">
                                                 <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
                                             </a>
                                         </li>
