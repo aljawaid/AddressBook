@@ -9,7 +9,7 @@
         <fieldset class="ab-new-item">
             <legend class=""><?= t('Add New Property') ?></legend>
             <p class="new-item-intro">
-                <?= t('A single contact consists of many properties. Add your custom properties to adjust the standard contact profile according to your needs.') ?>
+                <?= t('Each contact is associated with a contact profile. A standad contact profile consists of many properties. Add your custom properties to adjust the standard contact profile according to your needs.') ?>
             </p>
 
             <div class="input-section">
@@ -34,7 +34,7 @@
         <fieldset class="ab-contact-profile">
             <legend><span class="contact-profile-icon"></span> <?= t('Contact Profile') ?></legend>
             <p class="contact-profile-intro">
-                <?= t('There are currently %s properties which form a standard contact profile.', count($items)) ?>
+                <?= t('There are currently %s properties which together form a standard contact profile.', count($items)) ?>
             </p>
             <table id="ContactProfileTable" class="contact-profile-table">
                 <thead>
