@@ -50,21 +50,193 @@
 
 .relative { position: relative; }
 
-.btn-ab-move {
+.ab-page-header h2 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.ab-config-page fieldset {
+    border: 2px solid var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+}
+
+.ab-config-page fieldset legend {
+    background: var(--ab-blue);
+    color: var(--pp-white);
+    border-radius: var(--border-radius-address-book);
+    padding: 3px 8px 4px 8px;
+    font-size: 1.1em;
+}
+
+p.new-item-intro, p.contact-profile-intro {
+    margin-block: 10px;
+}
+
+fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.input-section span.form-required {
+    vertical-align: top;
+    transform: scale(1.7);
+    display: inline-block;
+    color: var(--pp-red-alt-3);
+}
+
+input[type="text"].property-input {
+    border: 1px solid var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input[type="text"].property-input::placeholder {
+    color: var(--pp-grey);
+}
+
+.input-section .form-help code {
+    font-family: monospace;
+    font-size: 1.2em;
+    background: grey;
+    padding: 1px 3px;
+    color: var(--pp-white);
+    border-radius: 2px;
+    margin: auto 1px;
+}
+
+fieldset.ab-new-item .form-actions {
+    padding-top: 0;
+}
+
+#ContactProfileTable {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-collapse: unset;
+}
+
+#ContactProfileTable th, #ContactProfileTable td {
+    border: 1px solid var(--ab-blue);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 0;
+    border-right: 0;
+    vertical-align: middle;
+}
+
+#ContactProfileTable th {
+    border-top: 2px solid var(--ab-blue);
+    background-color: var(--ab-button);
+    color: var(--pp-white);
+}
+
+#ContactProfileTable td {
+    border-bottom: 0;
+}
+
+#ContactProfileTable tr:last-child td {
+    border-bottom: 1px solid var(--ab-blue);
+}
+
+#ContactProfileTable th:last-child {
+    padding-left: 10px;
+}
+
+#ContactProfileTable td ul.property-action-bar {
+    list-style-type: none;
+}
+
+#ContactProfileTable td ul.property-action-bar li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#config-section .sidebar {
+    min-width: fit-content;
+    margin-right: 5px;
+}
+
+.property-action-bar .move-buttons {
+    float: left;
+}
+
+.property-action-bar .action-buttons {
+    float: right;
+}
+
+.property-action-item a {
+    font-size: 1em;
+}
+
+.btn-ab-move, .btn-ab-rename, .btn-ab-property {
     background: var(--ab-button);
     border-radius: var(--border-radius-address-book);
     transition: var(--transition-address-book);
     border: 1px solid var(--ab-button);
 }
 
-.btn-ab-move i {
+.btn-ab-delete {
+    /* Default red */
+    background: #D14836;
+    border-radius: var(--border-radius-address-book);
+    transition: var(--transition-address-book);
+    border: 1px solid #D14836;
     color: var(--pp-white);
 }
 
-.btn-ab-move:focus, .btn-ab-move:hover {
+.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property {
+    color: var(--pp-white);
+}
+
+.btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover {
     border: 1px solid var(--ab-button);
 }
 
-.btn-ab-move:focus i, .btn-ab-move:hover i {
+.btn-ab-delete:focus, .btn-ab-delete:hover {
+    border: 1px solid #D14836;
+    color: #D14836;
+}
+
+.btn-ab-delete:focus i, .btn-ab-delete:hover i {
+    color: #D14836;
+}
+
+.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover {
     color: var(--ab-blue);
+}
+
+h2 span.address-book-icon {
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+fieldset.ab-contact-profile legend span.contact-profile-icon {
+    vertical-align: bottom;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+fieldset.ab-new-item legend span.property-icon {
+    vertical-align: sub;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+li.property-action-item a span.rename-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: bottom;
+    transition: var(--transition-address-book);
+}
+
+#ContactProfileTable thead tr th span.property-icon {
+    vertical-align: sub;
 }
