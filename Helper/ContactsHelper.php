@@ -10,7 +10,7 @@ class ContactsHelper extends Base
     {
         $attributes = array_merge(array('tabindex="1"', 'required', 'maxlength="30"'), $attributes);
 
-        $html = $this->helper->form->label(t('Item'), 'item');
+        $html = $this->helper->form->label(t('Property Name'), 'item');
         $html .= $this->helper->form->text('item', $values, $errors, $attributes);
 
         return $html;
