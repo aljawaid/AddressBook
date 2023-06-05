@@ -10,9 +10,8 @@
         <?= $this->ContactsHelper->selectItem($values, $errors, array('autofocus')) ?>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
-            <?= t('or') ?>
-            <?= $this->url->link(t('cancel'), 'ContactsItemsController', 'config', array('plugin' => 'AddressBook'), false, 'close-popover') ?>
+            <button type="submit" class="btn btn-ab-rename"><?= t('Save') ?></button>
+            <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </form>
 </div>

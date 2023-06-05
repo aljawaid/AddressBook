@@ -78,14 +78,14 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     margin-right: 20px;
 }
 
-.input-section span.form-required {
+.input-section span.form-required, .property-wrapper span.form-required {
     vertical-align: top;
     transform: scale(1.7);
     display: inline-block;
     color: var(--pp-red-alt-3);
 }
 
-input[type="text"].property-input {
+input[type="text"].property-input, .property-fields input[type="text"] {
     border: 1px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
     margin-bottom: 4px;
@@ -93,7 +93,7 @@ input[type="text"].property-input {
     padding-right: 5px;
 }
 
-input[type="text"].property-input::placeholder {
+input[type="text"].property-input::placeholder, .property-fields input[type="text"]::placeholder {
     color: var(--pp-grey);
 }
 

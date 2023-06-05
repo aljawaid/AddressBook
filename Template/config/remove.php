@@ -10,9 +10,9 @@
             <?= t('Do you really want to remove this item: "%s"?', $item['item']) ?>
         </p>
         <div class="form-actions">
-            <?= $this->url->link(t('Yes'), 'ContactsItemsController', 'remove', array('plugin' => 'AddressBook', 'item_id' => $item['id']), true, 'btn btn-red') ?>
-            <?= t('or') ?>
-            <?= $this->url->link(t('cancel'), 'ContactsItemsController', 'config', array('plugin' => 'AddressBook'), false, 'close-popover') ?>
+
+            <?= $this->url->link(t('Delete'), 'ContactsItemsController', 'remove', array('plugin' => 'AddressBook', 'item_id' => $item['id']), true, 'btn btn-red') ?>
+            <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>
 </section>
