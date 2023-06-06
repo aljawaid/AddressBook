@@ -2,6 +2,12 @@
     <div class="page-header">
         <h2 class=""><?= t('Task') . ' #' . $task['id'] . ' : ' . $task['title'] ?></h2>
     </div>
+
+    <?php if ($this->user->hasProjectAccess('ProjectViewController', 'show', $project['id'])): ?>
+        <a href="<?= $this->url->href('ContactsController', 'project', array('project_id' => $project['id'], 'plugin' => 'AddressBook')) ?>" class="btn btn-save">
+            <span class="address-book-icon"></span> <?= t('Project Address Book') ?>
+        </a>
+    <?php endif ?>
     <div class="page-header">
         <h3 class=""><?= $formtitle ?></h2>
     </div>
