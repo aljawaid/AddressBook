@@ -7,7 +7,13 @@
         <?= $this->form->csrf() ?>
         <?= $this->form->hidden('id', $values) ?>
         <?= $this->form->hidden('position', $values) ?>
-        <?= $this->ContactsHelper->selectItem($values, $errors, array('autofocus')) ?>
+
+        <div class="property-wrapper">
+            <span class="property-icon"></span>
+            <span class="property-fields">
+                <?= $this->ContactsHelper->selectItem($values, $errors, array('autofocus', 'placeholder="' . $values['item'] . '"')) ?>
+            </span>
+        </div>
 
         <div class="form-actions">
             <button type="submit" class="btn btn-ab-rename"><?= t('Save') ?></button>
