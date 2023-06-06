@@ -5,7 +5,7 @@
     <ul class="">
         <?php if ($more): ?>
             <li class="">
-                <i class="fa  fa-book" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
                 <?= $this->modal->medium('', t('additional'), 'ContactsController', 'details', array('plugin' => 'AddressBook', 'project_id' => $project['id'], 'contacts_id' => $contacts_id)) ?>
             </li>
         <?php endif ?>
