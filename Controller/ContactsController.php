@@ -29,7 +29,7 @@ class ContactsController extends BaseController
             'errors' => $errors,
             'project' => $project,
             'contacts' => $this->contactsModel->getAll(),
-            'addNew' => true
+            'addNew' => true,
         )));
     }
 
@@ -66,7 +66,7 @@ class ContactsController extends BaseController
     {
         $this->response->html($this->helper->layout->app('addressBook:contact/details', array(
             'title' => t('Contacts'),
-            'contact' => $this->contactsModel->getByIDWithHeader($this->request->getIntegerParam('contacts_id'))
+            'contact' => $this->contactsModel->getByIDWithHeader($this->request->getIntegerParam('contacts_id')),
         )));
     }
 
@@ -83,7 +83,7 @@ class ContactsController extends BaseController
 
         $this->response->html($this->helper->layout->app('addressBook:task/contacts', array(
             'title' => t('Contacts'),
-            'contacts' => $this->contactsTaskModel->getByTaskId($task['id'])
+            'contacts' => $this->contactsTaskModel->getByTaskId($task['id']),
         )));
     }
 
@@ -105,7 +105,7 @@ class ContactsController extends BaseController
             'errors' => $errors,
             'headings' => $this->contactsModel->getHeadings(),
             'contacts_id' => $this->request->getIntegerParam('contacts_id'),
-            'project' => $this->getProject()
+            'project' => $this->getProject(),
         )));
     }
 
@@ -117,19 +117,19 @@ class ContactsController extends BaseController
     public function update()
     {
         $project = $this->getProject();
-#        $filter = $this->customFilterModel->getById($this->request->getIntegerParam('filter_id'));
+//        $filter = $this->customFilterModel->getById($this->request->getIntegerParam('filter_id'));
 
-#        $this->checkPermission($project, $filter);
+//        $this->checkPermission($project, $filter);
 
         $values = $this->request->getValues();
 
-#        if (! isset($values['is_shared'])) {
-#            $values += array('is_shared' => 0);
-#        }
-
-#        if (! isset($values['append'])) {
-#            $values += array('append' => 0);
-#        }
+//        if (! isset($values['is_shared'])) {
+//            $values += array('is_shared' => 0);
+//        }
+//
+//        if (! isset($values['append'])) {
+//            $values += array('append' => 0);
+//        }
 
         list($valid, $errors) = $this->contactsValidator->validateModification($values);
 
@@ -159,7 +159,7 @@ class ContactsController extends BaseController
             'project' => $project,
             'contact' => $contact[0],
             'contacts_id' => $this->request->getIntegerParam('contacts_id'),
-            'title' => t('Remove Contact')
+            'title' => t('Remove Contact'),
         )));
     }
 
@@ -174,7 +174,7 @@ class ContactsController extends BaseController
         $project = $this->getProject();
         $contacts_id = $this->request->getIntegerParam('contacts_id');
 
-#        $this->checkPermission($project, $filter);
+        //$this->checkPermission($project, $filter);
 
         if ($this->contactsModel->remove($contacts_id)) {
             $this->flash->success(t('Contact removed successfully.'));
@@ -199,7 +199,7 @@ class ContactsController extends BaseController
         $contactsNotInTask = $this->contactsTaskModel->getNotAssigned($task['id']);
 
         $this->response->html($this->helper->layout->task('addressBook:task/add', array(
-            'title' => t('Contacts'),
+            'title' => t('Task Contacts'),
             'formtitle' => t('Assigned Contacts'),
             'addformtitle' => t('Available Contacts'),
             'task' => $task,
