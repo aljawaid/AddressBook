@@ -40,7 +40,7 @@ class ContactsItemsController extends BaseController
     {
         $this->response->html($this->helper->layout->config('addressBook:config/index', array(
             'title' => t('Address Book Settings'),
-            'items' => $this->contactsItemsModel->getAllItems()
+            'items' => $this->contactsItemsModel->getAllItems(),
         )));
     }
 
@@ -102,7 +102,7 @@ class ContactsItemsController extends BaseController
         $item = $this->contactsItemsModel->getById($this->request->getIntegerParam('item_id'));
         $this->response->html($this->helper->layout->project('addressBook:config/remove', array(
             'item' => $item,
-            'title' => t('Remove Item')
+            'title' => t('Remove Item'),
         )));
     }
 
@@ -116,7 +116,7 @@ class ContactsItemsController extends BaseController
         $this->checkCSRFParam();
         $item_id = $this->request->getIntegerParam('item_id');
 
-#        $this->checkPermission($project, $filter);
+        //$this->checkPermission($project, $filter);
 
         if ($this->contactsItemsModel->remove($item_id)) {
             $this->flash->success(t('Item removed successfully.'));
