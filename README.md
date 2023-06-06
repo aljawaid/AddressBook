@@ -37,7 +37,7 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ## Features
 
-- Create contacts per project or per task
+- Use the standard contact profile to create contacts per project or per task
 - Easily assign contacts to tasks
 - Show contacts at a glance on the task page
 - Works with MySQL, SQLite and PostgreSQL database types
@@ -46,6 +46,8 @@ Use the new Address Book to create and manage contacts associating them with pro
 - Add contacts and organisations to tasks using default properties
 - Default properties include:
   - Name, Organisation, Address, Telephone, Mobile, Email, Website, Reference, Status
+  - Rename or delete default properties
+- Add custom properties to the contact profile
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
