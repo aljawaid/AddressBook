@@ -1,4 +1,3 @@
-<div class="">
 <style type="text/css">
     /* MODAL SIZE */
     #modal-box {
@@ -33,10 +32,13 @@
     }
 </style>
 
+<div class="rename-property-modal">
     <div class="page-header">
-        <h2 class=""><?= t('Edit item') ?></h2>
+        <h2 class="">
+            <span class="rename-icon"></span><?= t('Edit Property') ?>
+        </h2>
     </div>
-    <form class="popover-form" method="post" action="<?= $this->url->href('ContactsItemsController', 'update', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>" autocomplete="off">
+    <form class="modal-form" method="post" action="<?= $this->url->href('ContactsItemsController', 'update', array('item_id' => $item['id'], 'plugin' => 'AddressBook')) ?>" autocomplete="on">
 
         <?= $this->form->csrf() ?>
         <?= $this->form->hidden('id', $values) ?>

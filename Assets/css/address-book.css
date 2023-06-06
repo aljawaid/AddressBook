@@ -240,3 +240,30 @@ li.property-action-item a span.rename-icon {
 #ContactProfileTable thead tr th span.property-icon {
     vertical-align: sub;
 }
+
+.property-wrapper .property-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-inline: 5px;
+}
+
+.property-wrapper .property-fields {
+    display: inline-block;
+}
+
+.modal-form .form-actions {
+    text-align: right;
+}
+
+h2 span.rename-icon {
+    vertical-align: text-top;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.property-fields label {
+    margin-bottom: 2px;
+}
