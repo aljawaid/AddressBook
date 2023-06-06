@@ -252,7 +252,7 @@ li.property-action-item a span.rename-icon {
     display: inline-block;
 }
 
-.modal-form .form-actions {
+.modal-form .form-actions, .confirm, .form-actions {
     text-align: right;
 }
 
@@ -266,4 +266,9 @@ h2 span.rename-icon {
 
 .property-fields label {
     margin-bottom: 2px;
+}
+
+button.btn.cancel-btn {
+    margin-left: 2px;
+    transition: var(--transition-address-book);
 }
