@@ -256,7 +256,7 @@ li.property-action-item a span.rename-icon {
     text-align: right;
 }
 
-h2 span.rename-icon {
+.rename-property-modal .page-header h2 span.rename-icon {
     vertical-align: text-top;
     width: 24px;
     height: 24px;
@@ -264,8 +264,25 @@ h2 span.rename-icon {
     margin-right: 5px;
 }
 
+.delete-property-modal .page-header h2 span.property-icon {
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
 .property-fields label {
     margin-bottom: 2px;
+}
+
+.rename-property-modal .page-header h2, .delete-property-modal .page-header h2 {
+    border-bottom: 0;
+}
+
+.confirm p.confirm-delete {
+    font-weight: 600;
+    padding: 10px;
 }
 
 button.btn.cancel-btn {

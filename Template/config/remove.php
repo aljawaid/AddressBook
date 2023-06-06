@@ -1,4 +1,3 @@
-<section id="main" class="">
 <style type="text/css">
     /* MODAL SIZE */
     #modal-box {
@@ -33,15 +32,13 @@
     }
 </style>
 
+<div class="delete-property-modal">
     <div class="page-header">
-        <h2 class=""><?= t('Remove Item') ?></h2>
+        <h2 class=""><span class="property-icon"></span><?= t('Delete Property') ?></h2>
     </div>
-<pre>
-
-</pre>
     <div class="confirm">
-        <p class="alert alert-info">
-            <?= t('Do you really want to remove this item: "%s"?', $item['item']) ?>
+        <p class="confirm-delete">
+            <?= t('Do you really want to remove the "%s" property from the contact profile?', $item['item']) ?>
         </p>
         <div class="form-actions">
 
@@ -49,4 +46,4 @@
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>
-</section>
+</div>
