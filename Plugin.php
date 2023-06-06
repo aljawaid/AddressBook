@@ -40,6 +40,8 @@ class Plugin extends Base
         $this->route->addRoute('/settings/address-book/property/:item_id/move/:direction', 'ContactsItemsController', 'movePosition', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/:item_id/rename', 'ContactsItemsController', 'edit', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/:item_id/delete', 'ContactsItemsController', 'confirm', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/address-book', 'ContactsController', 'project', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/task/:task_id/contacts', 'ContactsController', 'task', 'AddressBook');
 
         // Helper
         //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
