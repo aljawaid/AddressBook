@@ -1,6 +1,6 @@
 <div class="">
     <div class="page-header">
-        <h2 class=""><?= t('Contacts') ?></h2>
+        <h2 class=""><?= t('Task Contacts') ?></h2>
     </div>
 
     <?php if (empty($contacts)): ?>
@@ -22,7 +22,7 @@
                     <td class=""><?= (empty($values[3])) ? "" : $values[3]['value'] ?></td>
                     <td class="">
                         <?php if (!empty($values[4])): ?>
-                            <?= $this->modal->medium('', t('additional'), 'ContactsController', 'details', array('plugin' => 'AddressBook','contacts_id' => $value['contacts_id'])) ?>
+                            <?= $this->modal->medium('', t('additional'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
                         <?php endif ?>
                     </td>
                 </tr>
