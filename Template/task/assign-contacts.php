@@ -45,7 +45,7 @@
     <?php endif ?>
 
     <div class="page-header">
-        <h3 class=""><?= t('Available Contacts') ?></h2>
+        <h3 class=""><?= $addformtitle ?></h2>
     </div>
     <?php if (empty($contactsNotInTask)): ?>
         <p class="alert"><?= t('No contacts found in the Address Book') ?></p>

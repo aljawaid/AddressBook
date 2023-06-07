@@ -198,7 +198,7 @@ class ContactsController extends BaseController
         $contacts = $this->contactsTaskModel->getAssigned($task['id']);
         $contactsNotInTask = $this->contactsTaskModel->getNotAssigned($task['id']);
 
-        $this->response->html($this->helper->layout->task('addressBook:task/add', array(
+        $this->response->html($this->helper->layout->task('addressBook:task/assign-contacts', array(
             'title' => t('Task Contacts'),
             'formtitle' => t('Assigned Contacts'),
             'addformtitle' => t('Available Contacts'),
