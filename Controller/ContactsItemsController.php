@@ -100,7 +100,8 @@ class ContactsItemsController extends BaseController
     public function confirm()
     {
         $item = $this->contactsItemsModel->getById($this->request->getIntegerParam('item_id'));
-        $this->response->html($this->helper->layout->project('addressBook:config/remove', array(
+
+        $this->response->html($this->helper->layout->config('addressBook:config/remove', array(
             'item' => $item,
             'title' => t('Remove Item'),
         )));
