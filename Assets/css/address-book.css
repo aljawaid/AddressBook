@@ -50,6 +50,11 @@
 
 .relative { position: relative; }
 
+.ab-page-header {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
 .ab-page-header h2 {
     margin-top: 0;
     font-weight: 600;

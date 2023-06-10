@@ -1,7 +1,7 @@
 <?php $items = $this->ContactsHelper->getItems() ?>
 <div class="">
-    <div class="page-header">
-        <h2 class=""><?= t('Project Contacts') ?></h2>
+    <div class="ab-page-header">
+        <h2 class=""><span class="contact-profile-icon"></span><?= t('Project Contacts') ?></h2>
     </div>
     <?php if (empty($contacts)): ?>
         <p class="alert"><?= t('No contacts') ?></p>

@@ -1,6 +1,8 @@
-<div class="">
-    <div class="page-header">
-        <h2 class=""><?= t('Task') . ' #' . $task['id'] . ' : ' . $task['title'] . ' ' . t('Contact Information') ?></h2>
+<div class="relative">
+    <div class="ab-page-header">
+        <h2 class="">
+            <?= t('Task') . ' #' . $task['id'] . ' : ' . $task['title'] . ' ' . t('Contact Information') ?>
+        </h2>
     </div>
 
     <?php if ($this->user->hasProjectAccess('ProjectViewController', 'show', $project['id'])): ?>
