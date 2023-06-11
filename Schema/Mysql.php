@@ -46,7 +46,7 @@ function version_1(PDO $pdo)
     $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Telephone", "telephone", 4)');
     $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Mobile", "telephone", 5)');
     $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Email", "email", 6)');
-    $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Website", "website", 7)');
+    $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Website", "url", 7)');
     $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Reference", "text", 8)');
     $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Note", "text", 9)');
 }
