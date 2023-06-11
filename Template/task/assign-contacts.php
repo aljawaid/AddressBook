@@ -29,7 +29,7 @@
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="">
                         <td class="">
-                            <?= $this->url->link('<i class="fa  fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, '') ?>
+                            <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, '') ?>
                         </td>
                         <td class=""><?= (empty($values[1])) ? "" : $values[1]['value'] ?></td>
                         <td class=""><?= (empty($values[2])) ? "" : $values[2]['value'] ?></td>
@@ -62,7 +62,7 @@
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="">
                         <td class="">
-                            <?= $this->url->link('<i class="fa  fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, '') ?>
+                            <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, '') ?>
                         </td>
                         <td class=""><?= (empty($values[1])) ? "" : $values[1]['value'] ?></td>
                         <td class=""><?= (empty($values[2])) ? "" : $values[2]['value'] ?></td>
