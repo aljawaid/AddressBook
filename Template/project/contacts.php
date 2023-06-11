@@ -4,7 +4,7 @@
         <h2 class=""><span class="contact-profile-icon"></span><?= t('Project Contacts') ?></h2>
     </div>
     <?php if (empty($contacts)): ?>
-        <p class="alert alert-info - no-contacts"><?= t('No contacts found') ?></p>
+        <p class="alert alert-info no-contacts"><?= t('No contacts found') ?></p>
     <?php endif ?>
     <p class="ab-info">
         <?= t('This section lists all contacts for the "%s" project. Once you have added contacts here, you can assign any contact to any task within this project.', $project['name']) ?>
