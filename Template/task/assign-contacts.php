@@ -1,7 +1,7 @@
 <div class="relative">
     <div class="ab-page-header">
         <h2 class="">
-            <?= t('Task') . ' #' . $task['id'] . ' : ' . $task['title'] . ' ' . t('Contact Information') ?>
+            <?= t('Task N°') . ' ' . $task['id'] . ': ' . $task['title'] . ': ' . t('Contact Information') ?>
         </h2>
     </div>
 
