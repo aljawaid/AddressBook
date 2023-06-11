@@ -8,7 +8,12 @@
         <?php foreach ($items as $key => $value): ?>
             <?= $this->form->label($value['item'], $value['item']) ?>
             <?= $this->form->text($value['id'] . '_' . $value['item'], $values, $errors, array('maxlength="100"')) ?>
-        <?php endforeach ?>
+                <?php if (isset($value['item_help'])): ?>
+                    <p class="form-help">
+                        <?= $value['item_help'] ?>
+                    </p>
+                <?php endif ?>
+            <?php endforeach ?>
 
         <div class="form-actions">
             <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>

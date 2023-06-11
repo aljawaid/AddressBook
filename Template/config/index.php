@@ -24,6 +24,11 @@
                     <code><?= t('text') ?></code><code><?= t('number') ?></code><code><?= t('address') ?></code><code><?= t('telephone') ?></code><code><?= t('email') ?></code><code><?= t('website') ?></code>
                 </p>
             </div>
+            <div class="input-section">
+                <?= $this->form->label(t('Property Note'), 'item_help', array('class="property-label"')) ?>
+                <?= $this->form->text('item_help', $values, array(), array('placeholder="' . t('Specifiy Department Name') . '"'), 'property-input') ?>
+                <p class="form-help"><?= t('Add a short descriptive note for users who create contacts') ?></p>
+            </div>
 
             <div class="form-actions">
                 <button type="submit" class="btn btn-ab-property"><span class="property-icon"></span> <?= t('Add Property') ?></button>
@@ -40,6 +45,7 @@
                 <thead>
                     <tr class="">
                         <th class="column-25"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
+                        <th class="column-25"><?= t('Property Note') ?></th>
                         <th class="column-8 text-center"><?= t('Property Type') ?></th>
                         <th class="column-18"><?= t('Actions') ?></th>
                     </tr>
@@ -49,6 +55,7 @@
                     <?php foreach ($items as $item): ?>
                         <tr class="">
                             <td class=""><?= $item['item'] ?></td>
+                            <td class="form-help"><?= $item['item_help'] ?></td>
                             <td class="text-center"><?= $item['item_type'] ?></td>
                             <td class="">
                                 <?php

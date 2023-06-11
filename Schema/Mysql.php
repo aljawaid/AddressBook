@@ -12,6 +12,7 @@ function version_1(PDO $pdo)
     $pdo->exec('CREATE TABLE IF NOT EXISTS address_book_contacts_items (
         `id` INT NOT NULL AUTO_INCREMENT,
         `item` VARCHAR(30) NOT NULL,
+        `item_help` TEXT,
         `item_type` TEXT NOT NULL,
         `position` INT NOT NULL,
         PRIMARY KEY(id)
