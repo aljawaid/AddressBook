@@ -19,10 +19,18 @@
             </div>
             <div class="input-section">
                 <?= $this->form->label(t('Property Type'), 'item_type', array('class="property-label"')) ?>
-                <?= $this->form->text('item_type', $values, array(), array('required', 'placeholder="' . t('text') . '"'), 'property-input') ?>
-                <p class="form-help" title="<?= t('Allowed Types') ?>">
-                    <code><?= t('text') ?></code><code><?= t('number') ?></code><code><?= t('address') ?></code><code><?= t('telephone') ?></code><code><?= t('email') ?></code><code><?= t('website') ?></code>
-                </p>
+                <select id="form-item_type" class="property-input-select" name="item_type" required>
+                    <option value="" selected disabled hidden><?= t('--- Select Type ---') ?></option>
+                    <option value="address"><?= t('Address') ?></option>
+                    <option value="email"><?= t('Email') ?></option>
+                    <option value="textarea"><?= t('Long Text') ?></option>
+                    <option value="number"><?= t('Number') ?></option>
+                    <option value="telephone"><?= t('Telephone') ?></option>
+                    <option value="text"><?= t('Text') ?></option>
+                    <option value="url"><?= t('URL') ?></option>
+                </select>
+                <span class="form-required">*</span>
+                <p class="form-help"><?= t('Use "Text" for general usage') ?></p>
             </div>
             <div class="input-section">
                 <?= $this->form->label(t('Property Note'), 'item_help', array('class="property-label"')) ?>

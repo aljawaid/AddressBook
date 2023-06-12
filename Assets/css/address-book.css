@@ -90,7 +90,7 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     color: var(--pp-red-alt-3);
 }
 
-input[type="text"].property-input, .property-fields input[type="text"] {
+input[type="text"].property-input, .property-fields input[type="text"], select.property-input-select {
     border: 1px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
     margin-bottom: 4px;
@@ -102,14 +102,20 @@ input[type="text"].property-input::placeholder, .property-fields input[type="tex
     color: var(--pp-grey);
 }
 
-.input-section .form-help code {
-    font-family: monospace;
-    font-size: 1.2em;
-    background: grey;
-    padding: 1px 3px;
-    color: var(--pp-white);
-    border-radius: 2px;
-    margin: auto 1px;
+
+select.property-input-select {
+    height: 28px;
+    max-width: 100%;
+    width: 170px;
+    margin-top: 0;
+    text-align: center;
+}
+
+select.property-input-select:focus {
+    color: #000;
+    border: 1px solid var(--ab-blue);
+    outline: 0;
+    box-shadow: 0 0 8px rgba(82, 168, 236, .6);
 }
 
 fieldset.ab-new-item .form-actions {
