@@ -25,6 +25,8 @@
                     <option value="email"><?= t('Email') ?></option>
                     <option value="textarea"><?= t('Long Text') ?></option>
                     <option value="number"><?= t('Number') ?></option>
+                    <option value="decimal2"><?= t('Number (Decimal 2)') ?></option>
+                    <option value="decimal4"><?= t('Number (Decimal 4)') ?></option>
                     <option value="telephone"><?= t('Telephone') ?></option>
                     <option value="text"><?= t('Text') ?></option>
                     <option value="url"><?= t('URL') ?></option>
