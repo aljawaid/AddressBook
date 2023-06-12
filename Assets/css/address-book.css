@@ -83,10 +83,13 @@ p.new-item-intro, p.contact-profile-intro {
     margin-block: 10px;
 }
 
+fieldset.ab-new-item .input-section {
+    margin-right: 20px;
+}
+
 fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 20px;
 }
 
 .input-section span.form-required, .property-wrapper span.form-required {
