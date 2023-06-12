@@ -1,8 +1,15 @@
 <?php $items = $this->ContactsHelper->getItems() ?>
-<div class="">
+<div class="relative">
     <div class="ab-page-header">
         <h2 class=""><span class="contact-profile-icon"></span><?= t('Project Contacts') ?></h2>
     </div>
+
+    <?php if ($this->user->hasAccess('UserListController', 'show')): ?>
+        <a href="<?= $this->url->href('ContactsItemsController', 'config', array('plugin' => 'AddressBook')) ?>" class="btn address-book-btn">
+            <span class="address-book-icon"></span> <?= t('Address Book Settings') ?>
+        </a>
+    <?php endif ?>
+
     <?php if (empty($contacts)): ?>
         <p class="alert alert-info no-contacts"><?= t('No contacts found') ?></p>
     <?php endif ?>
