@@ -344,3 +344,10 @@ a.address-book-btn span.address-book-icon {
 form.add-contact-form .form-help {
     display: inline-block;
 }
+
+fieldset.add-contact-profile.relative span.form-help {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    margin-bottom: 0;
+}
