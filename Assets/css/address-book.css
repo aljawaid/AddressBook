@@ -29,6 +29,7 @@
     --transition-address-book: ease-in-out all .3s;
 }
 
+/*
 .pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
 .pp-blue-alt { color: var(--pp-blue-alt); fill: var(--pp-blue-alt); }
 .pp-red { color: var(--pp-red); fill: var(--pp-red); }
@@ -41,6 +42,7 @@
 .pp-green { color: var(--pp-green); fill: var(--pp-green); }
 .pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
 .pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
+*/
 
 .display-none, .d-none { display: none; }
 
@@ -60,17 +62,21 @@
     font-weight: 600;
 }
 
-.ab-config-page fieldset {
+.ab-config-page fieldset, fieldset.add-contact-profile {
     border: 2px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
 }
 
-.ab-config-page fieldset legend {
+.ab-config-page fieldset legend, fieldset.add-contact-profile legend{
     background: var(--ab-blue);
     color: var(--pp-white);
     border-radius: var(--border-radius-address-book);
     padding: 3px 8px 4px 8px;
     font-size: 1.1em;
+}
+
+.add-contact-wrapper fieldset.add-contact-profile {
+    width: fit-content;
 }
 
 p.new-item-intro, p.contact-profile-intro {
@@ -90,6 +96,10 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     color: var(--pp-red-alt-3);
 }
 
+.input-section .form-help {
+    margin-bottom: 0;
+}
+
 input[type="text"].property-input, .property-fields input[type="text"], select.property-input-select {
     border: 1px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
@@ -102,6 +112,10 @@ input[type="text"].property-input::placeholder, .property-fields input[type="tex
     color: var(--pp-grey);
 }
 
+label.property-label {
+    margin-top: 0;
+    margin-bottom: 2px;
+}
 
 select.property-input-select {
     height: 28px;
@@ -321,4 +335,12 @@ a.address-book-btn:hover, a.address-book-btn:focus {
 
 a.address-book-btn span.address-book-icon {
     vertical-align: sub;
+}
+
+.ab-info {
+    margin-block: 20px;
+}
+
+form.add-contact-form .form-help {
+    display: inline-block;
 }
