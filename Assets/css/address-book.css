@@ -346,6 +346,10 @@ a.address-book-btn span.address-book-icon {
 
 form.add-contact-form .form-help {
     display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    width: 400px;
+    margin-left: 5px;
 }
 
 fieldset.add-contact-profile.relative span.form-help {
