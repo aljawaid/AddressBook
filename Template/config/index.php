@@ -9,7 +9,7 @@
         <fieldset class="ab-new-item">
             <legend class=""><span class="property-icon"></span> <?= t('Add New Property') ?></legend>
             <p class="new-item-intro">
-                <?= t('Each contact is associated with a contact profile. A standad contact profile consists of many properties. Add your custom properties to adjust the standard contact profile according to your needs.') ?>
+                <?= t('Each contact is associated with a contact profile. A standard contact profile consists of many properties. Add custom properties to adjust the standard contact profile according to your requirements.') ?>
             </p>
 
             <div class="input-section">
