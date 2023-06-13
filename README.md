@@ -49,6 +49,19 @@ Use the new Address Book to create and manage contacts associating them with pro
   - Rename or delete default properties
 - Add custom properties to the contact profile
 
+**Property Types**
+- HTML5 valid input types for user-friendly forms
+- Types include:
+  - Text - _for any freeform short text_
+  - Address - _for physical addresses_
+  - Email _for email addresses_
+  - Long Text - _for longer text content such as notes_
+  - Number - _for whole numbers_
+  - Number (Decimal 2) - _for numbers containing 2 decimals_
+  - Number (Decimal 4) - _for numbers containing 4 decimals_
+  - Telephone - _for telephone, fax and mobile numbers_
+  - URL - _for website, ftp, git, addresses_
+
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
