@@ -6,13 +6,19 @@
             <?= $this->form->csrf() ?>
 
             <?php foreach ($items as $key => $value): ?>
-                <?= $this->form->label($value['item'], $value['id'] . '_' . strtolower($value['item']), array('class="profile-property-label"')) ?>
                 <?= $this->form->text($value['id'] . '_' . strtolower($value['item']), $values, $errors, array('maxlength="100"', 'placeholder="' . $value['item_type'] . '"'), 'property-input') ?>
                 <?php if (isset($value['item_help'])): ?>
                     <p class="form-help">
                         <?= $value['item_help'] ?>
                     </p>
                 <?php endif ?>
+                <?php
+                $trimmedItemName = ucwords(strtolower($value['item']));
+                $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+                ?>
+
+                <?= $this->form->label($value['item'], $value['id'] . '-' . $trimmedItem, array('class="profile-property-label"')) ?>
+
             <?php endforeach ?>
 
             <div class="form-actions">
