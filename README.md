@@ -78,6 +78,14 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ## Usage
 
+Go to `Settings` &#10562; Address Book
+
+_or_
+
+Go to `Project Settings` &#10562; Address Book
+
+_or_
+
 Go to `Task` &#10562; Contacts
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8592; Previous</a>] [<a href="#authors--contributors">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
