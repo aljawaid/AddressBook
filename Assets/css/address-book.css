@@ -358,3 +358,8 @@ fieldset.add-contact-profile.relative span.form-help {
     top: -5px;
     margin-bottom: 0;
 }
+
+.no-contacts {
+    font-weight: 600;
+    margin-block: 30px;
+}

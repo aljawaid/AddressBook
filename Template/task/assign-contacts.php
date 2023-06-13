@@ -14,7 +14,7 @@
     <section class="">
         <h3 class=""><?= $formtitle ?></h3>
         <?php if (empty($contacts)): ?>
-            <p class="alert alert-info"><?= t('No contacts') ?></p>
+            <p class="alert alert-info no-contacts"><?= t('No contacts') ?></p>
         <?php else: ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="AssignedContactsTable" class="assigned-contacts-table table-small table-fixed">
@@ -48,7 +48,7 @@
     <section class="">
         <h3 class=""><?= $addformtitle ?></h3>
         <?php if (empty($contactsNotInTask)): ?>
-            <p class="alert alert-info"><?= t('No contacts found in the Address Book') ?></p>
+            <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
         <?php else: ?>
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
                 <tr class="">
