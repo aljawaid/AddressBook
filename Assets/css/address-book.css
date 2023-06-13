@@ -387,6 +387,11 @@ form.add-contact-form .form-help {
     margin-left: 5px;
 }
 
+form.add-contact-form .form-actions {
+    padding-top: 0;
+    margin-top: 5px;
+}
+
 fieldset.add-contact-profile.relative span.form-help {
     position: absolute;
     right: 10px;
