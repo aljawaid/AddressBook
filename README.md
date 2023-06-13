@@ -121,8 +121,11 @@ Go to `Task` &#10562; Contacts
 - **Other Plugins & Action Plugins**
   - _No known issues_
 - **Core Files & Templates**
-  - `01` Template override
-  - _No database changes_
+  - _No template overrides_
+  - Database Changes:
+    - `01` New database table created as `address_book_contacts_items`
+    - `01` New database table created as `address_book_contacts_contact`
+    - `01` New database table created as `address_book_contacts_task_has_contact`
 
 </details>
 <details>
