@@ -199,13 +199,6 @@ fieldset.ab-new-item .form-actions {
     font-size: 1em;
 }
 
-.btn-ab-move, .btn-ab-rename, .btn-ab-property {
-    background: var(--ab-button);
-    border-radius: var(--border-radius-address-book);
-    transition: var(--transition-address-book);
-    border: 1px solid var(--ab-button);
-}
-
 .btn-ab-delete {
     /* Default red */
     background: #D14836;
@@ -215,11 +208,18 @@ fieldset.ab-new-item .form-actions {
     color: var(--pp-white);
 }
 
-.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property {
+.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property, .btn-add-contact {
     color: var(--pp-white);
 }
 
-.btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover {
+.btn-ab-move, .btn-ab-rename, .btn-ab-property, .btn-add-contact {
+    background: var(--ab-button);
+    border-radius: var(--border-radius-address-book);
+    transition: var(--transition-address-book);
+    border: 1px solid var(--ab-button);
+}
+
+.btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus {
     border: 1px solid var(--ab-button);
 }
 
@@ -232,7 +232,7 @@ fieldset.ab-new-item .form-actions {
     color: #D14836;
 }
 
-.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover {
+.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus {
     color: var(--ab-blue);
 }
 
@@ -362,6 +362,14 @@ fieldset.add-contact-profile.relative span.form-help {
 .no-contacts {
     font-weight: 600;
     margin-block: 30px;
+}
+
+button.btn-add-contact  span.add-contact-icon{
+    width: 24px;
+    height: 24px;
+    vertical-align: text-bottom;
+    display: inline-block;
+    margin-right: 5px;
 }
 
 legend span.add-contact-icon {

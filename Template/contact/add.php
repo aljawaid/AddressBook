@@ -16,7 +16,9 @@
             <?php endforeach ?>
 
             <div class="form-actions">
-                <button type="submit" class="btn btn-blue"><?= t('Add Contact') ?></button>
+                <button type="submit" class="btn btn-add-contact">
+                    <span class="add-contact-icon"></span><?= t('Add Contact') ?>
+                </button>
             </div>
         </form>
     </fieldset>
