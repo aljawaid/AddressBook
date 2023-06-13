@@ -11,13 +11,13 @@
         </a>
     <?php endif ?>
 
-    <section class="assigned-contacts-section">
-        <h3 class=""><span class="assigned-contact-icon"></span><?= $formtitle ?></h3>
+    <section class="linked-contacts-section">
+        <h3 class=""><span class="linked-contact-icon"></span><?= $formtitle ?></h3>
         <?php if (empty($contacts)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts') ?></p>
         <?php else: ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
-            <table id="AssignedContactsTable" class="assigned-contacts-table table-small table-fixed">
+            <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
                 <tr class="">
                     <th class="column-1"></th>
                     <th class="column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>

@@ -43,7 +43,7 @@ class ContactsTaskModel extends Base
      * @access public
      * @return array
      */
-    public function getAssigned($task_id)
+    public function getLinked($task_id)
     {
         $firstPosition = $this->db->table(ContactsItemsModel::TABLE)->columns('id')->eq('position', 1)->findOne();
         return $this->db
@@ -68,7 +68,7 @@ class ContactsTaskModel extends Base
      * @param  integer $task_id
      * @return array
      */
-    public function getNotAssigned($task_id)
+    public function getNotLinked($task_id)
     {
         $subquery = $this->db
             ->table(self::TABLE)
