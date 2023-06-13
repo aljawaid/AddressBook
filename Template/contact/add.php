@@ -6,7 +6,6 @@
             <?= $this->form->csrf() ?>
 
             <?php foreach ($items as $key => $value): ?>
-                <?= $this->form->text($value['id'] . '_' . strtolower($value['item']), $values, $errors, array('maxlength="100"', 'placeholder="' . $value['item_type'] . '"'), 'property-input') ?>
                 <?php if (isset($value['item_help'])): ?>
                     <p class="form-help">
                         <?= $value['item_help'] ?>
@@ -19,6 +18,28 @@
 
                 <?= $this->form->label($value['item'], $value['id'] . '-' . $trimmedItem, array('class="profile-property-label"')) ?>
 
+                <div class="input-wrapper">
+                    <?php if ($value['item_type'] == 'number'): ?>
+                        <?= $this->form->number($value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="12345"', 'step="1"'), 'property-input property-input-number') ?>
+                    <?php elseif ($value['item_type'] == 'decimal2'): ?>
+                        <?= $this->form->input('number', $value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="0.01"', 'step="0.01"'), 'property-input property-input-decimal') ?>
+                    <?php elseif ($value['item_type'] == 'decimal4'): ?>
+                        <?= $this->form->input('number', $value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="0.0001"', 'step="0.0001"'), 'property-input property-input-decimal') ?>
+                    <?php elseif ($value['item_type'] == 'telephone'): ?>
+                        <?= $this->form->input('tel', $value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="+44 (0)1234 567890"', 'pattern="^[0-9-+\s()]*$"'), 'property-input property-input-telephone') ?>
+                    <?php elseif ($value['item_type'] == 'email'): ?>
+                        <?= $this->form->email($value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="someone@somewhere.com"'), 'property-input') ?>
+                    <?php elseif ($value['item_type'] == 'url'): ?>
+                        <?= $this->form->input('url', $value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="https://"'), 'property-input') ?>
+                    <?php elseif ($value['item_type'] == 'textarea'): ?>
+                        <?= $this->form->textarea($value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="' . t('Save notes for this contact') . '"', 'rows="3"', 'cols="37"'), 'property-input-note') ?>
+                    <?php elseif ($value['item_type'] == 'address'): ?>
+                        <?= $this->form->textarea($value['id'] . '-' . $trimmedItem, $values, $errors, array('placeholder="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"'), 'property-input-address') ?>
+                    <?php else: ?>
+                        <?= $this->form->text($value['id'] . '-' . $trimmedItem, $values, $errors, array('maxlength="30"'), 'property-input') ?>
+                    <?php endif ?>
+
+                </div>
             <?php endforeach ?>
 
             <div class="form-actions">

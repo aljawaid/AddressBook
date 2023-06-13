@@ -103,16 +103,51 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     margin-bottom: 0;
 }
 
-input[type="text"].property-input, .property-fields input[type="text"], select.property-input-select {
+input#form-item_help {
+    width: 355px;
+}
+
+input[type="text"].property-input, input[type="number"].property-input, input[type="tel"].property-input, input[type="email"].property-input, input[type="url"].property-input, .property-fields input[type="text"], select.property-input-select {
     border: 1px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
     margin-bottom: 4px;
     padding-left: 5px;
     padding-right: 5px;
+    height: 25px;
+    width: 300px;
+    font-size: 1em;
 }
 
-input[type="text"].property-input::placeholder, .property-fields input[type="text"]::placeholder {
+textarea.property-input-address {
+    border: 1px solid var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100px;
+    width: 300px;
+}
+
+textarea.property-input-note{
+    border: 1px solid var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 75px;
+    width: 300px;
+}
+
+input[type="text"].property-input::placeholder, input[type="number"].property-input::placeholder, input[type="tel"].property-input::placeholder, input[type="email"].property-input::placeholder, input[type="url"].property-input::placeholder, textarea.property-input-address::placeholder, textarea.property-input-note::placeholder, .property-fields input[type="text"]::placeholder {
     color: var(--pp-grey);
+}
+
+input[type="number"].property-input.property-input-decimal {
+    width: 100px;
+}
+
+input[type="tel"].property-input.property-input-telephone, input[type="number"].property-input.property-input-number {
+    width: 200px;
 }
 
 label.property-label {
@@ -128,7 +163,7 @@ select.property-input-select {
     text-align: center;
 }
 
-select.property-input-select:focus {
+select.property-input-select:focus, input[type="tel"].property-input:focus, input[type="url"].property-input:focus {
     color: #000;
     border: 1px solid var(--ab-blue);
     outline: 0;
