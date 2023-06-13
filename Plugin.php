@@ -11,10 +11,6 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        // Template Override
-        //  - Override name should be camelCase e.g. pluginNameExampleCamelCase
-        //$this->template->setTemplateOverride('action/index', 'pluginNameExampleCamelCase:action/index');
-
         // CSS - Asset Hook
         //  - Keep filename lowercase
         $this->hook->on('template:layout:css', array('template' => 'plugins/AddressBook/Assets/css/address-book.css'));
@@ -74,7 +70,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Use the new Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact to log a relationship between tasks and people or organisations. Each task can have contacts assigned through a list of contacts exclusive to the project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) so they can easily have a quick reference to contact information from the task summary.');
+        return t('Use the Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact to log a relationship between tasks and people or organisations. Each task can have contacts assigned through a list of contacts exclusive to the project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) so they can easily have a quick reference to contact information from the task summary.');
     }
 
     public function getPluginAuthor()
