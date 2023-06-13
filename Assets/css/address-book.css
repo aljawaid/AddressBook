@@ -426,3 +426,19 @@ legend span.add-contact-icon {
     margin-right: 4px;
     display: inline-block;
 }
+
+section.linked-contacts-section h3 span.linked-contact-icon {
+    width: 26px;
+    height: 24px;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+section.available-contacts-section h3 span.available-contact-icon {
+    width: 26px;
+    height: 24px;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-right: 4px;
+}
