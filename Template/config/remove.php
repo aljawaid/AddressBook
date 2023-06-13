@@ -38,7 +38,7 @@
     </div>
     <div class="confirm">
         <p class="confirm-delete">
-            <?= t('Do you really want to remove the "%s" property from the contact profile?', $item['item']) ?>
+            <?= e('Do you really want to remove the %s property from the contact profile?', '<strong>' . $item['item'] . '</strong>') ?>
         </p>
         <div class="form-actions">
             <?= $this->url->link(t('Delete'), 'ContactsItemsController', 'remove', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
