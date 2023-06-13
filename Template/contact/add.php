@@ -6,11 +6,6 @@
             <?= $this->form->csrf() ?>
 
             <?php foreach ($items as $key => $value): ?>
-                <?php if (isset($value['item_help'])): ?>
-                    <p class="form-help">
-                        <?= $value['item_help'] ?>
-                    </p>
-                <?php endif ?>
                 <?php
                 $trimmedItemName = ucwords(strtolower($value['item']));
                 $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
@@ -39,6 +34,39 @@
                         <?= $this->form->text($value['id'] . '-' . $trimmedItem, $values, $errors, array('maxlength="30"'), 'property-input') ?>
                     <?php endif ?>
 
+                    <?php if ($value['item_type'] == 'telephone'): ?>
+                        <p class="form-help">
+                            <?= t('All numbers and symbols shown are allowed') ?>
+                            <?php if (!empty($value['item_help'])): ?>
+                                <?= '- ' . $value['item_help'] ?>
+                            <?php endif ?>
+                        </p>
+                    <?php elseif ($value['item_type'] == 'number'): ?>
+                        <p class="form-help">
+                            <?= t('Only whole numbers are allowed') ?>
+                            <?php if (!empty($value['item_help'])): ?>
+                                <?= '- ' . $value['item_help'] ?>
+                            <?php endif ?>
+                        </p>
+                    <?php elseif ($value['item_type'] == 'decimal2'): ?>
+                        <p class="form-help">
+                            <?= t('Numbers with 2 decimals are allowed') ?>
+                            <?php if (!empty($value['item_help'])): ?>
+                                <?= '- ' . $value['item_help'] ?>
+                            <?php endif ?>
+                        </p>
+                    <?php elseif ($value['item_type'] == 'decimal4'): ?>
+                        <p class="form-help">
+                            <?= t('Numbers with 4 decimals are allowed') ?>
+                            <?php if (!empty($value['item_help'])): ?>
+                                <?= '- ' . $value['item_help'] ?>
+                            <?php endif ?>
+                        </p>
+                    <?php elseif (!empty($value['item_help'])): ?>
+                        <p class="form-help">
+                            <?= $value['item_help'] ?>
+                        </p>
+                    <?php endif ?>
                 </div>
             <?php endforeach ?>
 
