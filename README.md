@@ -57,6 +57,10 @@ Use the new Address Book to create and manage contacts associating them with pro
 
 ![Plugin Settings](../master/Screenshots/screenshot-plugin-settings.png)
 
+**Add Contact Form**  
+
+![Add Contact Form](../master/Screenshots/screenshot-add-contact-form.png)
+
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#installation--compatibility">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Usage
