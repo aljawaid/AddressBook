@@ -361,7 +361,7 @@ button.btn.cancel-btn {
     transition: var(--transition-address-book);
 }
 
-a.address-book-btn {
+a.address-book-btn, a.project-address-book-btn {
     position: absolute;
     top: 0;
     right: 0;
@@ -372,14 +372,14 @@ a.address-book-btn {
     transition: var(--transition-address-book);
 }
 
-a.address-book-btn:hover, a.address-book-btn:focus {
+a.address-book-btn:hover, a.address-book-btn:focus, a.project-address-book-btn:hover, a.project-address-book-btn:focus {
     border: 1px outset var(--ab-blue);
     border-radius: var(--border-radius-address-book);
     background: var(--pp-white);
     color: var(--ab-blue);
 }
 
-a.address-book-btn span.address-book-icon {
+a.address-book-btn span.address-book-icon, a.project-address-book-btn span.address-book-icon {
     vertical-align: sub;
 }
 
