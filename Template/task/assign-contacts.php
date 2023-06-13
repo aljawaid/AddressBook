@@ -11,8 +11,8 @@
         </a>
     <?php endif ?>
 
-    <section class="">
-        <h3 class=""><?= $formtitle ?></h3>
+    <section class="assigned-contacts-section">
+        <h3 class=""><span class="assigned-contact-icon"></span><?= $formtitle ?></h3>
         <?php if (empty($contacts)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts') ?></p>
         <?php else: ?>
@@ -45,8 +45,8 @@
         <?php endif ?>
     </section>
 
-    <section class="">
-        <h3 class=""><?= $addformtitle ?></h3>
+    <section class="available-contacts-section">
+        <h3 class=""><span class="available-contact-icon"></span><?= $addformtitle ?></h3>
         <?php if (empty($contactsNotInTask)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
         <?php else: ?>
