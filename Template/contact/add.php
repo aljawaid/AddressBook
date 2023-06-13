@@ -1,6 +1,6 @@
 <div class="add-contact-wrapper">
     <fieldset class="add-contact-profile relative">
-        <legend class=""><?= t('Add New Contact') ?></legend>
+        <legend class=""><span class="add-contact-icon"></span><?= t('Add New Contact') ?></legend>
         <span class="form-help"><?= t('All fields are optional') ?></span>
         <form method="post" action="<?= $this->url->href('ContactsController', 'save', array('project_id' => $project_id, 'plugin' => 'AddressBook')) ?>" class="add-contact-form" autocomplete="on">
             <?= $this->form->csrf() ?>

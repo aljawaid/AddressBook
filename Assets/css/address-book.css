@@ -363,3 +363,11 @@ fieldset.add-contact-profile.relative span.form-help {
     font-weight: 600;
     margin-block: 30px;
 }
+
+legend span.add-contact-icon {
+    vertical-align: text-bottom;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    display: inline-block;
+}
