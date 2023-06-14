@@ -14,10 +14,10 @@
         <p class="alert alert-info no-contacts"><?= t('No contacts found') ?></p>
     <?php endif ?>
     <p class="ab-info">
-        <?= e('This section lists all contacts for the %s project. Once you have added contacts here, you can assign any contact to any task within this project.', '<strong>' . $project['name'] . '</strong>') ?>
+        <?= e('This section lists all contacts for the %s project. Once you have added contacts here, you can link any contact to any task within this project.', '<strong>' . $project['name'] . '</strong>') ?>
     </p>
-    <section class="project-contacts-section">
-        <?php if (!empty($contacts)): ?>
+    <?php if (!empty($contacts)): ?>
+        <section class="project-contacts-section">
             <table class="project-contacts-table table-small table-fixed">
                 <tr class="">
                     <th class="project-contacts-table-item column-20"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
@@ -39,8 +39,8 @@
                     </tr>
                 <?php endforeach ?>
             </table>
-        <?php endif ?>
-    </section>
+        </section>
+    <?php endif ?>
     <?php if (isset($addNew) && $addNew): ?>
         <section class="add-new-contact-section">
             <?= $this->render('addressBook:contact/add', array('items' => $items, 'project_id' => $project['id'], 'values' => $values, 'errors' => $errors)) ?>
