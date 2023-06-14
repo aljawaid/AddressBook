@@ -21,7 +21,7 @@
                     <td class=""><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
                     <td class="">
                         <?php if (!empty($values[4])): ?>
-                            <?= $this->modal->medium('', t('additional'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
+                            <?= $this->modal->medium('', t('View Contact'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
                         <?php endif ?>
                     </td>
                 </tr>
