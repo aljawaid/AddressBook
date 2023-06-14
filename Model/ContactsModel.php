@@ -141,6 +141,9 @@ class ContactsModel extends Base
                 $create['item_id'] = $item[0];
                 $create['contact_item_value'] = $value;
                 $create['last_updated'] = time();
+                if ($this->userSession->isLogged()) {
+                    $create['updated_by_user_id'] = $this->userSession->getId();
+                }
                 $results[] = $this->db->table(self::TABLE)->persist($create);
             }
         }
@@ -167,6 +170,9 @@ class ContactsModel extends Base
                 $create['item_id'] = $item_id;
                 $create['contact_item_value'] = $value;
                 $create['last_updated'] = time();
+                if ($this->userSession->isLogged()) {
+                    $create['updated_by_user_id'] = $this->userSession->getId();
+                }
                 if ($this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->eq('item_id', $item_id)->exists()) {
                     $results[] = $this->db
                         ->table(self::TABLE)
