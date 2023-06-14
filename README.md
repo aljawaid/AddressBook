@@ -31,7 +31,7 @@
     </a>
 </p>
 
-Use the Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact to log a relationship between tasks and people or organisations. Each task can have contacts assigned through a list of contacts exclusive to the project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) so they can easily have a quick reference to contact information from the task summary.
+Use the dedicated Address Book to create and manage contacts associating them with projects and tasks. Add custom properties per contact to log a relationship between tasks and people or organisations. Each task can have contacts assigned through a list exclusive to the project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) so they can easily have a quick reference to contact information from the task summary.
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
@@ -50,7 +50,7 @@ Use the Address Book to create and manage contacts associating them with project
 - Add custom properties to the contact profile
 
 **Property Types**
-- HTML5 valid input types for user-friendly forms
+- HTML5 validated input types in a neat user-friendly form
 - Types include:
   - Text - _for any freeform short text_
   - Address - _for physical addresses_
