@@ -458,3 +458,12 @@ section.available-contacts-section h3 span.available-contact-icon {
     display: inline-block;
     margin-right: 4px;
 }
+
+section.available-contacts-section {
+    margin-top: 30px;
+}
+
+section.linked-contacts-section h3, section.available-contacts-section h3 {
+    color: var(--ab-blue);
+    font-weight: 600;
+}
