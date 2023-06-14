@@ -15,7 +15,11 @@
         <h3 class=""><span class="linked-contact-icon"></span><?= $formtitle ?></h3>
         <?php if (empty($contacts)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts') ?></p>
-        <?php else: ?>
+        <?php endif ?>
+        <p class="ab-info">
+            <?= e('This section shows contacts linked to this task %s. Contacts must be added to the Project Address Book for them to be available for linking to a task.', '<strong><i>(#' . $task['id'] . ': ' . $task['title'] . ')</i></strong>') ?>
+        </p>
+        <?php if (!empty($contacts)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
                 <tr class="">
@@ -49,7 +53,11 @@
         <h3 class=""><span class="available-contact-icon"></span><?= $addformtitle ?></h3>
         <?php if (empty($contactsNotInTask)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
-        <?php else: ?>
+        <?php endif ?>
+        <p class="ab-info">
+            <?= e('This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here.', '<strong>' . $project['name'] . '</strong>') ?>
+        </p>
+        <?php if (!empty($contactsNotInTask)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
                 <tr class="">
