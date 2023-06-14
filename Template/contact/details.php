@@ -14,7 +14,7 @@
             <?php foreach ($contact as $key => $value): ?>
                 <tr class="">
                     <td class=""><?= $value['item'] ?></td>
-                    <td class=""><?= $value['value'] ?></td>
+                    <td class=""><?= $value['contact_item_value'] ?></td>
                 </tr>
             <?php endforeach ?>
         </table>
