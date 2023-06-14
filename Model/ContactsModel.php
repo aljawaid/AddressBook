@@ -140,6 +140,7 @@ class ContactsModel extends Base
                 $item = explode('_', $key);
                 $create['item_id'] = $item[0];
                 $create['contact_item_value'] = $value;
+                $create['last_updated'] = time();
                 $results[] = $this->db->table(self::TABLE)->persist($create);
             }
         }
@@ -165,6 +166,7 @@ class ContactsModel extends Base
                 $create['contacts_id'] = $contacts_id;
                 $create['item_id'] = $item_id;
                 $create['contact_item_value'] = $value;
+                $create['last_updated'] = time();
                 if ($this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->eq('item_id', $item_id)->exists()) {
                     $results[] = $this->db
                         ->table(self::TABLE)
