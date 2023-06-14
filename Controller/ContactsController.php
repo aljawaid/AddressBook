@@ -197,6 +197,7 @@ class ContactsController extends BaseController
 
         $contacts = $this->contactsTaskModel->getLinked($task['id']);
         $contactsNotInTask = $this->contactsTaskModel->getNotLinked($task['id']);
+        $allContacts = $this->contactsModel->getAll();
 
         $this->response->html($this->helper->layout->task('addressBook:task/link-contacts', array(
             'title' => t('Task Contacts'),
@@ -206,6 +207,7 @@ class ContactsController extends BaseController
             'project' => $project,
             'contacts' => $contacts,
             'contactsNotInTask' => $contactsNotInTask,
+            'allProjectContacts' => $allContacts,
         )));
     }
 

@@ -7,7 +7,7 @@
 
     <?php if ($this->user->hasProjectAccess('ProjectViewController', 'show', $project['id'])): ?>
         <a href="<?= $this->url->href('ContactsController', 'project', array('project_id' => $project['id'], 'plugin' => 'AddressBook')) ?>" class="btn project-address-book-btn">
-            <span class="address-book-icon"></span> <?= t('Project Address Book') ?>
+            <span class="address-book-icon"></span> <?= t('Project Address Book') ?> <span class="btn-count"><?= count($allProjectContacts) ?></span>
         </a>
     <?php endif ?>
 

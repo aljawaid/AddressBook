@@ -383,6 +383,21 @@ a.address-book-btn span.address-book-icon, a.project-address-book-btn span.addre
     vertical-align: sub;
 }
 
+.btn-count {
+    font-size: .7em;
+    vertical-align: super;
+    background: var(--pp-white);
+    color: var(--pp-black);
+    padding: 1px 4px 0 4px;
+    border-radius: var(--border-radius-address-book);
+    border: 1px inset var(--ab-button);
+}
+
+a.project-address-book-btn:hover .btn-count {
+    background: var(--ab-button);
+    color: var(--pp-white);
+}
+
 .ab-info {
     margin-block: 20px;
 }
