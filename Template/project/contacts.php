@@ -29,10 +29,10 @@
                 <?php foreach ($contacts as $key => $value): ?>
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="">
-                        <td class="project-contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['value'] ?></td>
+                        <td class="project-contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
+                        <td class="project-contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
+                        <td class="project-contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                        <td class="project-contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?></td>
                         <td class="project-contacts-table-value">
                             <?= $this->render('addressBook:project/menu', array('project' => $project, 'more' => !empty($values[5]), 'contacts_id' => $value['contacts_id'])) ?>
                         </td>
