@@ -23,7 +23,6 @@ function version_1(PDO $pdo)
         `contacts_id` INT NOT NULL,
         `item_id` INT NOT NULL,
         `contact_item_value` TEXT NOT NULL,
-        `contact_status` TEXT NOT NULL,
         `updated_by_user_id` INT NOT NULL,
         `last_updated` INTEGER NOT NULL,
         FOREIGN KEY(item_id) REFERENCES address_book_contacts_items(id) ON DELETE CASCADE,
