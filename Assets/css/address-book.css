@@ -403,6 +403,23 @@ a.view-contact-btn, a.delink-btn, a.link-btn {
     color: var(--pp-white);
     transition: var(--transition-address-book);
 }
+
+a.delink-btn i {
+    padding-top: 2px;
+}
+
+a.link-btn i {
+    padding-bottom: 2px;
+}
+
+a.delink-btn i, a.link-btn i {
+    color: var(--pp-white);
+}
+
+a.delink-btn:hover i, a.delink-btn:focus i, a.link-btn:hover i, a.link-btn:focus i {
+    color: var(--ab-blue);
+}
+
 .btn-count {
     font-size: .7em;
     vertical-align: super;
