@@ -26,11 +26,11 @@
             <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
                 <thead class="">
                     <tr class="">
-                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-4"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-4"></th>
                     </tr>
                 </thead>
                 <tbody class="">
@@ -72,11 +72,11 @@
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
                 <thead class="">
                     <tr class="">
-                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-4"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-4"></th>
                     </tr>
                 </thead>
                 <tbody class="">
