@@ -24,29 +24,35 @@
         <?php if (!empty($contacts)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
-                <tr class="">
-                    <th class="column-1"></th>
-                    <th class="column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
-                    <th class="column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
-                    <th class="column-25"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                    <th class="column-14"></th>
-                </tr>
-                <?php foreach ($contacts as $key => $value): ?>
-                    <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                <thead class="">
                     <tr class="">
-                        <td class="">
-                            <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'delink-btn', t('Delink this contact from this task')) ?>
-                        </td>
-                        <td class=""><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                        <td class=""><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                        <td class=""><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                        <td class="">
-                            <?php if (count($values) > 3): ?>
-                                <?= $this->modal->medium('', t('View Contact'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
-                            <?php endif ?>
-                        </td>
+                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
+                        <th class="contacts-table-header column-5"></th>
                     </tr>
-                <?php endforeach ?>
+                </thead>
+                <tbody class="">
+                    <?php foreach ($contacts as $key => $value): ?>
+                        <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                        <tr class="">
+                            <td class="contacts-table-value text-center">
+                                <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
+                            </td>
+                            <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value text-center">
+                                <?php if (count($values) > 3): ?>
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
+                                    <span class="contact-profile-icon"></span>
+                                    </a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
             </table>
         <?php endif ?>
     </section>
@@ -64,29 +70,35 @@
         <?php if (!empty($contactsNotInTask)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
-                <tr class="">
-                    <th class="column-1"></th>
-                    <th class="column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
-                    <th class="column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
-                    <th class="column-25"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                    <th class="column-14"></th>
-                </tr>
-                <?php foreach ($contactsNotInTask as $key => $value): ?>
-                    <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                <thead class="">
                     <tr class="">
-                        <td class="">
-                            <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'link-btn', t('Link this contact to this task')) ?>
-                        </td>
-                        <td class=""><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                        <td class=""><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                        <td class=""><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                        <td class="">
-                            <?php if (count($values) > 3): ?>
-                                <?= $this->modal->medium('', t('View Contact'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
-                            <?php endif ?>
-                        </td>
+                        <th class="contacts-table-header column-5"></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
+                        <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
+                        <th class="contacts-table-header column-5"></th>
                     </tr>
-                <?php endforeach ?>
+                </thead>
+                <tbody class="">
+                    <?php foreach ($contactsNotInTask as $key => $value): ?>
+                        <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                        <tr class="">
+                            <td class="contacts-table-value text-center">
+                                <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn link-btn', t('Link this contact to this task')) ?>
+                            </td>
+                            <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value text-center">
+                                <?php if (count($values) > 3): ?>
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
+                                        <span class="contact-profile-icon"></span>
+                                    </a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
             </table>
         <?php endif ?>
     </section>

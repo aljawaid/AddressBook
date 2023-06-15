@@ -467,3 +467,12 @@ section.linked-contacts-section h3, section.available-contacts-section h3 {
     color: var(--ab-blue);
     font-weight: 600;
 }
+
+table.linked-contacts-table, table.available-contacts-table {
+    width: 98%;
+    margin: auto;
+}
+
+td.contacts-table-value {
+    vertical-align: middle;
+}
