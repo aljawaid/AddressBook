@@ -17,6 +17,7 @@
     --blue-icon-dark: #034CA6;
     --ab-blue: #20369F;
     --ab-button: rgba(32, 54, 159, .8);
+    --ab-table-green: #84D040;
     --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
     --blue-border-gradient-match: #476E9E;
     --button-background-delete: #D05C84;
@@ -526,8 +527,24 @@ td.contacts-table-value {
     margin-left: 4px;
 }
 
+#LinkedContactsTable th.contacts-table-header {
+    background: var(--ab-table-green);
+    color: var(--pp-green-dark);
+}
 
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero {
     border: 0;
     background: none;
+}
+
+#LinkedContactsTable td.contacts-table-value {
+    border: 1px solid var(--pp-green);
+}
+
+#LinkedContactsTable th.contacts-table-header:nth-of-type(2) {
+    border-left-color: var(--pp-green);
+}
+
+#LinkedContactsTable th.contacts-table-header:nth-of-type(4) {
+    border-right-color: var(--pp-green);
 }
