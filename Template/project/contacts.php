@@ -19,25 +19,37 @@
     <?php if (!empty($contacts)): ?>
         <section class="project-contacts-section">
             <table class="project-contacts-table table-small table-fixed">
-                <tr class="">
-                    <th class="project-contacts-table-item column-20"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
-                    <th class="project-contacts-table-item column-20"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
-                    <th class="project-contacts-table-item column-20"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                    <th class="project-contacts-table-item column-20"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
-                    <th class="project-contacts-table-item column-20"><?= t('Action') ?></th>
-                </tr>
-                <?php foreach ($contacts as $key => $value): ?>
-                    <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                <thead class="">
                     <tr class="">
-                        <td class="project-contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                        <td class="project-contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?></td>
-                        <td class="project-contacts-table-value">
-                            <?= $this->render('addressBook:project/menu', array('project' => $project, 'more' => !empty($values[5]), 'contacts_id' => $value['contacts_id'])) ?>
-                        </td>
+                        <th class="contacts-table-header column-20"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
+                        <th class="contacts-table-header column-20"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
+                        <th class="contacts-table-header column-20"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
+                        <th class="contacts-table-header column-20"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
+                        <th class="contacts-table-header column-20"><?= t('Action') ?></th>
                     </tr>
-                <?php endforeach ?>
+                </thead>
+                <tbody class="">
+                    <?php foreach ($contacts as $key => $value): ?>
+                        <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                        <tr class="">
+                            <td class="contacts-table-value">
+                                <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value">
+                                <?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value">
+                                <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value">
+                                <?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value">
+                                <?= $this->render('addressBook:project/menu', array('project' => $project, 'more' => !empty($values[5]), 'contacts_id' => $value['contacts_id'])) ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
             </table>
         </section>
     <?php endif ?>
