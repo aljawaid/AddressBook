@@ -476,3 +476,14 @@ table.linked-contacts-table, table.available-contacts-table {
 td.contacts-table-value {
     vertical-align: middle;
 }
+
+.contact-count-badge {
+    font-size: .6em;
+    vertical-align: super;
+    background: var(--ab-button);
+    color: var(--pp-white);
+    padding: 1px 4px 0px 3px;
+    border-radius: var(--border-radius-address-book);
+    border: 1px inset var(--ab-button);
+    margin-left: 4px;
+}
