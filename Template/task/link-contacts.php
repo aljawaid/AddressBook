@@ -12,7 +12,9 @@
     <?php endif ?>
 
     <section class="linked-contacts-section">
-        <h3 class=""><span class="linked-contact-icon"></span><?= $formtitle ?></h3>
+        <h3 class="">
+            <span class="linked-contact-icon"></span><?= $formtitle ?><span class="contact-count-badge"><?= count($contacts) ?></span>
+        </h3>
         <?php if (empty($contacts)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts') ?></p>
         <?php endif ?>
@@ -50,7 +52,9 @@
     </section>
 
     <section class="available-contacts-section">
-        <h3 class=""><span class="available-contact-icon"></span><?= $addformtitle ?></h3>
+        <h3 class="">
+            <span class="available-contact-icon"></span><?= $addformtitle ?><span class="contact-count-badge"><?= count($contactsNotInTask) ?></span>
+        </h3>
         <?php if (empty($contactsNotInTask)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
         <?php endif ?>
