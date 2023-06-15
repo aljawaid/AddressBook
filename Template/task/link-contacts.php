@@ -56,7 +56,7 @@
             </table>
         <?php endif ?>
     </section>
-
+    <hr class="section-divider">
     <section class="available-contacts-section">
         <h3 class="">
             <span class="available-contact-icon"></span><?= $addformtitle ?><span class="contact-count-badge"><?= count($contactsNotInTask) ?></span>

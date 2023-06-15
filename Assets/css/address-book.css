@@ -496,8 +496,9 @@ section.available-contacts-section h3 span.available-contact-icon {
     margin-right: 4px;
 }
 
-section.available-contacts-section {
-    margin-top: 30px;
+.section-divider {
+    margin-block: 30px;
+    border: 1px solid var(--pp-grey);
 }
 
 section.linked-contacts-section h3, section.available-contacts-section h3 {
