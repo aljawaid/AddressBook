@@ -532,6 +532,11 @@ td.contacts-table-value {
     color: var(--pp-green-dark);
 }
 
+#AvailableContactsTable th.contacts-table-header {
+    background: var(--ab-button);
+    color: var(--pp-white);
+}
+
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero {
     border: 0;
     background: none;
@@ -547,4 +552,16 @@ td.contacts-table-value {
 
 #LinkedContactsTable th.contacts-table-header:nth-of-type(4) {
     border-right-color: var(--pp-green);
+}
+
+#AvailableContactsTable td.contacts-table-value {
+    border: 1px solid var(--ab-blue);
+}
+
+#AvailableContactsTable th.contacts-table-header:nth-of-type(2) {
+    border-left-color: var(--ab-blue);
+}
+
+#AvailableContactsTable th.contacts-table-header:nth-of-type(4) {
+    border-right-color: var(--ab-blue);
 }
