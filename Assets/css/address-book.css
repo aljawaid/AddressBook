@@ -372,7 +372,7 @@ a.address-book-btn, a.project-address-book-btn {
     padding: 5px;
 }
 
-a.address-book-btn:hover, a.address-book-btn:focus, a.project-address-book-btn:hover, a.project-address-book-btn:focus {
+a.address-book-btn:hover, a.address-book-btn:focus, a.project-address-book-btn:hover, a.project-address-book-btn:focus, a.view-contact-btn:hover, a.view-contact-btn:focus, a.delink-btn:hover, a.delink-btn:focus, a.link-btn:hover, a.link-btn:focus {
     border: 1px outset var(--ab-blue);
     border-radius: var(--border-radius-address-book);
     background: var(--pp-white);
@@ -383,6 +383,26 @@ a.address-book-btn span.address-book-icon, a.project-address-book-btn span.addre
     vertical-align: sub;
 }
 
+a.view-contact-btn span.contact-profile-icon {
+    vertical-align: bottom;
+}
+
+a.view-contact-btn {
+    padding: 0 5px 0 3px;
+    height: 26px;
+}
+
+a.view-contact-btn span.contact-profile-icon {
+    width: 24px;
+}
+
+a.view-contact-btn, a.delink-btn, a.link-btn {
+    border: 1px outset var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    background: var(--ab-button);
+    color: var(--pp-white);
+    transition: var(--transition-address-book);
+}
 .btn-count {
     font-size: .7em;
     vertical-align: super;
