@@ -524,3 +524,9 @@ td.contacts-table-value {
     border: 1px inset var(--ab-button);
     margin-left: 4px;
 }
+
+
+#LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero {
+    border: 0;
+    background: none;
+}

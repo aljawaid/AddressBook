@@ -26,24 +26,24 @@
             <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
                 <thead class="">
                     <tr class="">
-                        <th class="contacts-table-header column-4"></th>
+                        <th class="contacts-table-header column-4 cell-zero"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                        <th class="contacts-table-header column-4"></th>
+                        <th class="contacts-table-header column-4 cell-zero"></th>
                     </tr>
                 </thead>
                 <tbody class="">
                     <?php foreach ($contacts as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                         <tr class="">
-                            <td class="contacts-table-value text-center">
+                            <td class="contacts-table-value text-center cell-zero">
                                 <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
                             </td>
                             <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
                             <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
                             <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value text-center">
+                            <td class="contacts-table-value text-center cell-zero">
                                 <?php if (count($values) > 3): ?>
                                     <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
                                     <span class="contact-profile-icon"></span>
@@ -72,24 +72,24 @@
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
                 <thead class="">
                     <tr class="">
-                        <th class="contacts-table-header column-4"></th>
+                        <th class="contacts-table-header column-4 cell-zero"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                        <th class="contacts-table-header column-4"></th>
+                        <th class="contacts-table-header column-4 cell-zero"></th>
                     </tr>
                 </thead>
                 <tbody class="">
                     <?php foreach ($contactsNotInTask as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                         <tr class="">
-                            <td class="contacts-table-value text-center">
+                            <td class="contacts-table-value text-center cell-zero">
                                 <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn link-btn', t('Link this contact to this task')) ?>
                             </td>
                             <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
                             <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
                             <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value text-center">
+                            <td class="contacts-table-value text-center cell-zero">
                                 <?php if (count($values) > 3): ?>
                                     <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
                                         <span class="contact-profile-icon"></span>
