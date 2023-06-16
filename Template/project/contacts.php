@@ -53,6 +53,7 @@
             </table>
         </section>
     <?php endif ?>
+    <hr class="ab-section-divider">
     <?php if (isset($addNew) && $addNew): ?>
         <section class="add-new-contact-section">
             <?= $this->render('addressBook:contact/add', array('items' => $items, 'project_id' => $project['id'], 'values' => $values, 'errors' => $errors)) ?>

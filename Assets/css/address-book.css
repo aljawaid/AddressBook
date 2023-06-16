@@ -497,7 +497,7 @@ section.available-contacts-section h3 span.available-contact-icon {
     margin-right: 4px;
 }
 
-.section-divider {
+.ab-section-divider {
     margin-block: 30px;
     border: 1px solid var(--pp-grey);
 }
