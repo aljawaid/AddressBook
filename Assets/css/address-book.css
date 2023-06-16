@@ -563,3 +563,12 @@ td.contacts-table-value {
 #AvailableContactsTable th.contacts-table-header:nth-of-type(4) {
     border-right-color: var(--ab-blue);
 }
+
+span.btn-disabled-wrapper {
+    cursor: not-allowed;
+}
+
+a.btn-disabled {
+    pointer-events: none;
+    opacity: .6;
+}

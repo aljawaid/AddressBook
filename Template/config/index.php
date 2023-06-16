@@ -97,9 +97,17 @@
                                             </a>
                                         </li>
                                         <li class="property-action-item">
-                                            <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium" title="<?=t('Delete Property') ?>">
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
-                                            </a>
+                                            <?php if ($item_id == 1): ?>
+                                                <span class="btn-disabled-wrapper" title="<?= t('The first proeprty can never be deleted') ?>">
+                                                    <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium btn-disabled" title="<?=t('Delete Property') ?>">
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
+                                                    </a>
+                                                </span>
+                                            <?php else: ?>
+                                                <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium" title="<?=t('Delete Property') ?>">
+                                                    <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
+                                                </a>
+                                            <?php endif ?>
                                         </li>
                                     </div>
                                 </ul>
