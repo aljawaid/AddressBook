@@ -569,6 +569,20 @@ td.contacts-table-value {
 #AvailableContactsTable th.contacts-table-header:nth-of-type(4) {
     border-right: 1px solid var(--ab-blue);
 }
+
+ul.contacts-action-btns {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+}
+
+ul.contacts-action-btns li {
+    /* justify-content: space-between; */
+    /* margin-inline: 12px; */
+    display: inline-flex;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 span.btn-disabled-wrapper {
@@ -578,4 +592,32 @@ span.btn-disabled-wrapper {
 a.btn-disabled {
     pointer-events: none;
     opacity: .6;
+}
+
+ul.contacts-action-btns li a.btn-ab-rename span.rename-icon {
+    vertical-align: bottom;
+}
+
+ul.contacts-action-btns li a.btn-ab-rename {
+    padding-left: 5px;
+    padding-right: 8px;
+}
+
+ul.contacts-action-btns li a.btn-ab-delete {
+    padding: 1px 5px 1px 5px;
+}
+
+ul.contacts-action-btns li a.btn-ab-delete span.delete-contact-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: text-bottom;
+    margin-right: 3px;
+}
+
+ul.contacts-action-btns li a.btn-ab-delete span.delete-text {
+    /* height: 18px; */
+    display: inline-table;
+    vertical-align: top;
+    margin-top: 3px;
+    pointer-events: none;
 }
