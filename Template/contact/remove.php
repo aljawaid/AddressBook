@@ -38,7 +38,7 @@
     </div>
     <div class="confirm">
         <p class="confirm-delete">
-            <?= e('Do you really want to remove %s as a contact in the Address Book?', '<strong>' . $contact['value'] . '</strong>') ?>
+            <?= e('Do you really want to remove %s as a contact in the Address Book?', '<strong>' . $contact_name . '</strong>') ?>
         </p>
 
         <div class="form-actions">
