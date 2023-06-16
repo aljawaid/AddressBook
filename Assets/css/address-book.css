@@ -385,10 +385,6 @@ a.address-book-btn span.address-book-icon, a.project-address-book-btn span.addre
     vertical-align: sub;
 }
 
-a.view-contact-btn span.contact-profile-icon {
-    vertical-align: bottom;
-}
-
 a.view-contact-btn {
     padding: 0 5px 0 3px;
     height: 26px;
@@ -396,6 +392,7 @@ a.view-contact-btn {
 
 a.view-contact-btn span.contact-profile-icon {
     width: 24px;
+    vertical-align: bottom;
 }
 
 a.view-contact-btn, a.delink-btn, a.link-btn {
@@ -522,7 +519,7 @@ td.contacts-table-value {
     vertical-align: super;
     background: var(--ab-button);
     color: var(--pp-white);
-    padding: 1px 4px 0px 3px;
+    padding: 1px 4px 0 3px;
     border-radius: var(--border-radius-address-book);
     border: 1px inset var(--ab-button);
     margin-left: 4px;
