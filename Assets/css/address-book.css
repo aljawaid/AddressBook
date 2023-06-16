@@ -390,6 +390,18 @@ a.view-contact-btn {
     height: 26px;
 }
 
+a.view-contact-btn.no-info {
+    background: var(--pp-light-grey);
+    border: 1px outset var(--pp-grey);
+    border-radius: var(--border-radius-address-book);
+    color: var(--pp-white);
+    transition: var(--transition-address-book);
+}
+
+a.view-contact-btn.no-info:hover {
+    background: var(--pp-white);
+}
+
 a.view-contact-btn span.contact-profile-icon {
     width: 24px;
     vertical-align: bottom;
