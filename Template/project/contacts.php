@@ -1,7 +1,7 @@
 <?php $items = $this->ContactsHelper->getItems() ?>
 <div class="relative">
     <div class="ab-page-header">
-        <h2 class=""><span class="contact-profile-icon"></span><?= t('Project Contacts') ?></h2>
+        <h2 class=""><span class="contact-settings-icon"></span><?= t('Project Contacts') ?></h2>
     </div>
 
     <?php if ($this->user->hasAccess('UserListController', 'show')): ?>
