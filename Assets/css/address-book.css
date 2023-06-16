@@ -84,8 +84,9 @@
     font-size: 1.1em;
 }
 
-.add-contact-wrapper fieldset.add-contact-profile {
+.add-contact-wrapper {
     width: fit-content;
+    margin: auto;
 }
 
 p.new-item-intro, p.contact-profile-intro {
