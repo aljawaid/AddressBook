@@ -528,11 +528,14 @@ td.contacts-table-value {
 #LinkedContactsTable th.contacts-table-header {
     background: var(--ab-table-green);
     color: var(--pp-green-dark);
+    border: 1px solid var(--pp-green);
 }
 
 #AvailableContactsTable th.contacts-table-header {
     background: var(--ab-button);
     color: var(--pp-white);
+    border-top: 1px solid var(--ab-blue);
+    border-bottom: 1px solid var(--ab-blue);
 }
 
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero {
@@ -544,24 +547,28 @@ td.contacts-table-value {
     border: 1px solid var(--pp-green);
 }
 
-#LinkedContactsTable th.contacts-table-header:nth-of-type(2) {
-    border-left-color: var(--pp-green);
+#AvailableContactsTable td.contacts-table-value, #ProjectContactsTable td.contacts-table-value  {
+    border: 1px solid var(--ab-blue);
 }
 
 #LinkedContactsTable th.contacts-table-header:nth-of-type(4) {
     border-right-color: var(--pp-green);
+
+#ProjectContactsTable th.contacts-table-header:nth-of-type(1) {
+    border-left: 1px solid var(--ab-blue);
 }
 
-#AvailableContactsTable td.contacts-table-value {
-    border: 1px solid var(--ab-blue);
+#ProjectContactsTable th.contacts-table-header:nth-of-type(5) {
+    border-right: 1px solid var(--ab-blue);
 }
 
 #AvailableContactsTable th.contacts-table-header:nth-of-type(2) {
-    border-left-color: var(--ab-blue);
+    border-left: 1px solid var(--ab-blue);
 }
 
 #AvailableContactsTable th.contacts-table-header:nth-of-type(4) {
-    border-right-color: var(--ab-blue);
+    border-right: 1px solid var(--ab-blue);
+}
 }
 
 span.btn-disabled-wrapper {
