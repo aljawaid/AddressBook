@@ -33,7 +33,7 @@
 </style>
 
 <div class="rename-property-modal">
-    <div class="page-header">
+    <div class="ab-page-header">
         <h2 class="">
             <span class="rename-icon"></span><?= t('Edit Property') ?>
         </h2>

@@ -329,7 +329,7 @@ li.property-action-item a span.rename-icon {
     text-align: right;
 }
 
-.rename-property-modal .page-header h2 span.rename-icon {
+.rename-property-modal .ab-page-header h2 span.rename-icon {
     vertical-align: text-top;
     width: 24px;
     height: 24px;
@@ -337,7 +337,7 @@ li.property-action-item a span.rename-icon {
     margin-right: 5px;
 }
 
-.delete-property-modal .page-header h2 span.property-icon {
+.delete-property-modal .ab-page-header h2 span.property-icon {
     width: 23px;
     height: 23px;
     display: inline-block;
@@ -349,7 +349,7 @@ li.property-action-item a span.rename-icon {
     margin-bottom: 2px;
 }
 
-.rename-property-modal .page-header h2, .delete-property-modal .page-header h2 {
+.rename-property-modal .ab-page-header h2, .delete-property-modal .ab-page-header h2 {
     border-bottom: 0;
 }
 

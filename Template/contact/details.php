@@ -32,9 +32,9 @@
     }
 </style>
 
-<div class="">
-    <div class="page-header">
-        <h2 class=""><?= t('Contact details') ?></h2>
+<div class="contact-details-modal">
+    <div class="ab-page-header">
+        <h2 class=""><span class="contact-details-icon"></span><?= t('Contact details') ?></h2>
     </div>
 
     <?php if (empty($contact)): ?>

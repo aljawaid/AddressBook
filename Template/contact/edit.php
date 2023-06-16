@@ -32,9 +32,9 @@
     }
 </style>
 
-<div class="">
-    <div class="page-header">
-        <h2 class=""><?= t('Edit Contact') ?></h2>
+<div class="edit-contact-modal">
+    <div class="ab-page-header">
+        <h2 class=""><span class="rename-icon"></span><?= t('Edit Contact') ?></h2>
     </div>
     <form method="post" action="<?= $this->url->href('ContactsController', 'update', array('plugin' => 'AddressBook', 'project_id' => $project['id'], 'contacts_id' => $contacts_id)) ?>" autocomplete="off">
 
