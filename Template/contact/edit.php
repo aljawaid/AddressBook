@@ -46,8 +46,7 @@
 
         <div class="form-actions">
             <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
-            <?= t('or') ?>
-            <?= $this->url->link(t('cancel'), 'ContactsController', 'project', array('plugin' => 'AddressBook', 'project_id' => $project['id']), false, 'close-popover') ?>
+            <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </form>
 </div>
