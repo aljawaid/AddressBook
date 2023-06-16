@@ -77,6 +77,7 @@
                                     <div class="move-buttons">
                                         <?php if ($item_id != $start_id): ?>
                                             <li class="property-action-item">
+                                                <!-- Arrow UP Button-->
                                                 <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'up', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move" title="<?=t('Move Property') ?>">
                                                     <i class="fa fa-arrow-up" aria-hidden="true"></i>
                                                 </a>
@@ -84,6 +85,7 @@
                                         <?php endif ?>
                                         <?php if ($item_id != $end_id): ?>
                                             <li class="property-action-item">
+                                                <!-- Arrow DOWN Button -->
                                                 <a href="<?= $this->url->href('ContactsItemsController', 'movePosition', array('item_id' => $item['id'], 'direction' => 'down', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move" title="<?=t('Move Property') ?>">
                                                     <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                 </a>
@@ -92,18 +94,21 @@
                                     </div>
                                     <div class="action-buttons">
                                         <li class="property-action-item">
+                                            <!-- Modal Button -->
                                             <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-medium" title="<?=t('Edit Property') ?>">
                                                 <span class="rename-icon"></span> <?= t('Rename') ?>
                                             </a>
                                         </li>
                                         <li class="property-action-item">
                                             <?php if ($item_id == 1): ?>
-                                                <span class="btn-disabled-wrapper" title="<?= t('The first proeprty can never be deleted') ?>">
+                                                <!-- Modal Button -->
+                                                <span class="btn-disabled-wrapper" title="<?= t('The first property can never be deleted') ?>">
                                                     <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium btn-disabled" title="<?=t('Delete Property') ?>">
                                                         <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
                                                     </a>
                                                 </span>
                                             <?php else: ?>
+                                                <!-- Modal Button -->
                                                 <a href="<?= $this->url->href('ContactsItemsController', 'confirm', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium" title="<?=t('Delete Property') ?>">
                                                     <i class="fa fa-trash-o" aria-hidden="true"></i> <?= t('Delete') ?>
                                                 </a>
