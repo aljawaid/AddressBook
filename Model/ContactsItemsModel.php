@@ -71,6 +71,7 @@ class ContactsItemsModel extends Base
         } else {
             return false;
         }
+
         $results = array();
         $old = $this->getByID($item_id);
         $old_position = $old['position'];
@@ -105,10 +106,7 @@ class ContactsItemsModel extends Base
      */
     public function update(array $values)
     {
-        return $this->db
-            ->table(self::TABLE)
-            ->eq('id', $values['id'])
-            ->update($values);
+        return $this->db->table(self::TABLE)->eq('id', $values['id'])->update($values);
     }
 
     /**
@@ -122,8 +120,7 @@ class ContactsItemsModel extends Base
     {
         $max = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.position) maxid')->findOne();
         $values += array('position' => $max['maxid'] + 1);
-        return $this->db
-            ->table(self::TABLE)
-            ->persist($values);
+
+        return $this->db->table(self::TABLE)->persist($values);
     }
 }

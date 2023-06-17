@@ -34,10 +34,12 @@ class ContactsModel extends Base
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
             ->asc(ContactsItemsModel::TABLE . '.position')
             ->findAll();
+
         $return = array();
         foreach ($contact as $key => $value) {
             $return[$value['id']] = $value;
         }
+
         return $return;
     }
 
@@ -50,6 +52,7 @@ class ContactsModel extends Base
     public function getAll()
     {
         $firstPosition = $this->db->table(ContactsItemsModel::TABLE)->columns('id')->eq('position', 1)->findOne();
+
         return $this->db
             ->table(self::TABLE)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
@@ -118,6 +121,7 @@ class ContactsModel extends Base
         foreach ($headings as $key => $value) {
             $return[$value['id']] = $value['item'];
         }
+
         return $return;
     }
 

@@ -34,7 +34,7 @@
 
 <div class="contact-details-modal">
     <div class="ab-page-header">
-        <h2 class=""><span class="contact-details-icon"></span><?= t('Contact details') ?></h2>
+        <h2 class=""><span class="contact-details-icon"></span><?= t('Contact Details') ?></h2>
     </div>
 
     <?php if (empty($contact)): ?>
