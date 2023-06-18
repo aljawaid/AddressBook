@@ -32,16 +32,27 @@
     }
 </style>
 
+<?php foreach ($contact as $key => $value): ?>
+    <?php
+    $updated = $value['last_updated'];
+    $last_updated = $this->dt->datetime($updated);
+    $user = $this->model->userModel->getById($value['updated_by_user_id']);
+    $edited_by = $user['name'];
+    ?>
+<?php endforeach ?>
+
 <div class="contact-details-modal">
     <div class="ab-page-header">
-        <h2 class=""><span class="contact-details-icon"></span><?= t('Contact Details') ?></h2>
+        <h2 class="">
+            <span class="contact-details-icon"></span><?= t('Contact Details') ?>
+        </h2>
     </div>
 
     <?php if (empty($contact)): ?>
         <p class="alert"><?= t('No contacts') ?></p>
     <?php else: ?>
         <table id="ContactDetailsTable" class="contact-details-table table-small table-fixed">
-            <tbody class="">
+            <tbody class="table-body">
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="">
                         <td class=""><?= $value['item'] ?></td>
@@ -50,6 +61,11 @@
 
                 <?php endforeach ?>
             </tbody>
+            <tfoot class="table-footer">
+                <tr class="table-row">
+                    <td colspan="2"><?= t('Last updated on %s by %s', $last_updated, $edited_by) ?></td>
+                </tr>
+            </tfoot>
         </table>
     <?php endif ?>
 </div>
