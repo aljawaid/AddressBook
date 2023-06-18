@@ -656,4 +656,18 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     background: #CACACA;
     border: 1px solid var(--ab-blue);
 }
+
+.contact-details-modal .ab-page-header h2 span.contact-details-icon {
+    vertical-align: bottom;
+}
+.delete-contact-modal .ab-page-header h2 span.delete-contact-icon {
+    vertical-align: bottom;
+    margin-right: 3px;
+}
+
+.edit-contact-modal .ab-page-header h2 span.rename-icon {
+    width: 26px;
+    vertical-align: bottom;
+    margin-right: 4px;
+}
 }
