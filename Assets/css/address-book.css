@@ -670,4 +670,17 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     vertical-align: bottom;
     margin-right: 4px;
 }
+
+details.task-contacts-section summary.accordion-title {
+    cursor: pointer;
+}
+
+details.task-contacts-section summary.accordion-title span {
+    background: var(--pp-white);
+    padding-right: 5px;
+}
+
+details.task-contacts-section[open] summary.accordion-title::marker, details.task-contacts-section[open] summary.accordion-title {
+    color: var(--ab-button);
+    font-weight: 600;
 }
