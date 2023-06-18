@@ -75,9 +75,7 @@ class ContactsController extends BaseController
      *
      * @access public
      */
-
-    // phpcs:ignore PSR1.Methods.CamelCapsMethodName.NotCamelCaps
-    public function task_footer()
+    public function boardTaskFooter()
     {
         $task = $this->getTask();
 
