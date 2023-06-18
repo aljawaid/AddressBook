@@ -40,17 +40,20 @@
     <?php if (empty($contact)): ?>
         <p class="alert"><?= t('No contacts') ?></p>
     <?php else: ?>
-        <table class="table-small table-fixed">
-            <tr class="">
-                <th class="column-50"><?= t('Key') ?></th>
-                <th class="column-50"><?= t('Value') ?></th>
-            </tr>
-            <?php foreach ($contact as $key => $value): ?>
+        <table id="ContactDetailsTable" class="contact-details-table table-small table-fixed">
+            <thead class="">
                 <tr class="">
-                    <td class=""><?= $value['item'] ?></td>
-                    <td class=""><?= $value['contact_item_value'] ?></td>
+                    <th class="column-50" colspan="2"></th>
                 </tr>
-            <?php endforeach ?>
+            </thead>
+            <tbody class="">
+                <?php foreach ($contact as $key => $value): ?>
+                    <tr class="">
+                        <td class=""><?= $value['item'] ?></td>
+                        <td class=""><?= $value['contact_item_value'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
         </table>
     <?php endif ?>
 </div>
