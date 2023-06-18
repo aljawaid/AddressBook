@@ -41,11 +41,6 @@
         <p class="alert"><?= t('No contacts') ?></p>
     <?php else: ?>
         <table id="ContactDetailsTable" class="contact-details-table table-small table-fixed">
-            <thead class="">
-                <tr class="">
-                    <th class="column-50" colspan="2"></th>
-                </tr>
-            </thead>
             <tbody class="">
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="">
