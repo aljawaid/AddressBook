@@ -54,9 +54,9 @@
         <table id="ContactDetailsTable" class="contact-details-table table-small table-fixed">
             <tbody class="table-body">
                 <?php foreach ($contact as $key => $value): ?>
-                    <tr class="">
-                        <td class=""><?= $value['item'] ?></td>
-                        <td class=""><?= $value['contact_item_value'] ?></td>
+                    <tr class="table-row">
+                        <td class="contact-table-header"><?= $value['item'] ?></td>
+                        <td class="contact-table-value"><?= $value['contact_item_value'] ?></td>
                     </tr>
 
                 <?php endforeach ?>
