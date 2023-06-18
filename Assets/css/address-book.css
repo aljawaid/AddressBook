@@ -543,7 +543,7 @@ td.contacts-table-value {
     border: 1px solid var(--pp-green);
 }
 
-#AvailableContactsTable th.contacts-table-header {
+#AvailableContactsTable th.contacts-table-header, #ProjectContactsTable th.contacts-table-header {
     background: var(--ab-button);
     color: var(--pp-white);
     border-top: 1px solid var(--ab-blue);
@@ -561,13 +561,6 @@ td.contacts-table-value {
 
 #AvailableContactsTable td.contacts-table-value, #ProjectContactsTable td.contacts-table-value  {
     border: 1px solid var(--ab-blue);
-}
-
-#ProjectContactsTable th.contacts-table-header {
-    background: var(--ab-button);
-    color: var(--pp-white);
-    border-top: 1px solid var(--ab-blue);
-    border-bottom: 1px solid var(--ab-blue);
 }
 
 #ProjectContactsTable th.contacts-table-header:nth-of-type(1) {
