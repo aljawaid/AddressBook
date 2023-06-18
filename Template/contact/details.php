@@ -55,8 +55,8 @@
             <tbody class="table-body">
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="table-row">
-                        <td class="contact-table-header"><?= $value['item'] ?></td>
-                        <td class="contact-table-value"><?= $value['contact_item_value'] ?></td>
+                        <td class="contact-table-header column-25"><?= $value['item'] ?></td>
+                        <td class="contact-table-value column-75"><?= $value['contact_item_value'] ?></td>
                     </tr>
 
                 <?php endforeach ?>
