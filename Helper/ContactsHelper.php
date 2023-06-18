@@ -37,7 +37,4 @@ class ContactsHelper extends Base
     {
         return $this->contactsTaskModel->getByTaskId($task_id);
     }
-
-    {
-    }
 }

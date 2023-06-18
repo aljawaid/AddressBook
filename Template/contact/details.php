@@ -52,6 +52,7 @@
                         <td class=""><?= $value['item'] ?></td>
                         <td class=""><?= $value['contact_item_value'] ?></td>
                     </tr>
+
                 <?php endforeach ?>
             </tbody>
         </table>
