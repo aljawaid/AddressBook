@@ -48,7 +48,7 @@
                                 <?php if (count($values) > 3): ?>
                                     <!-- Modal Button -->
                                     <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
-                                    <span class="contact-profile-icon"></span>
+                                        <span class="contact-profile-icon"></span>
                                     </a>
                                 <?php endif ?>
                             </td>

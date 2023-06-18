@@ -632,7 +632,6 @@ ul.contacts-action-btns li a.btn-ab-delete span.delete-text {
 }
 
 table#ContactDetailsTable tfoot.table-footer .table-row td {
-    font-style: italic;
     color: var(--pp-grey);
     font-size: .9em;
     background: #CACACA;
