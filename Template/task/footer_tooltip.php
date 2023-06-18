@@ -29,7 +29,3 @@
             <?php endforeach ?>
         </table>
     <?php endif ?>
-
-    <?php if (isset($addNew) && $addNew): ?>
-        <?= $this->render('addressBook:contact/add', array('items' => $items, 'project_id' => $project['id'], 'values' => $values, 'errors' => $errors)) ?>
-    <?php endif ?>
