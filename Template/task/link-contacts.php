@@ -24,8 +24,8 @@
         <?php if (!empty($contacts)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="LinkedContactsTable" class="linked-contacts-table table-small table-fixed">
-                <thead class="">
-                    <tr class="">
+                <thead class="table-head">
+                    <tr class="table-row">
                         <th class="contacts-table-header column-4 cell-zero"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
@@ -33,10 +33,10 @@
                         <th class="contacts-table-header column-4 cell-zero"></th>
                     </tr>
                 </thead>
-                <tbody class="">
+                <tbody class="table-body">
                     <?php foreach ($contacts as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
-                        <tr class="">
+                        <tr class="table-row">
                             <td class="contacts-table-value text-center cell-zero">
                                 <!-- Arrow DOWN Button -->
                                 <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
@@ -72,8 +72,8 @@
         <?php if (!empty($contactsNotInTask)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
             <table id="AvailableContactsTable" class="available-contacts-table table-small table-fixed">
-                <thead class="">
-                    <tr class="">
+                <thead class="table-head">
+                    <tr class="table-row">
                         <th class="contacts-table-header column-4 cell-zero"></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-30"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
@@ -81,10 +81,10 @@
                         <th class="contacts-table-header column-4 cell-zero"></th>
                     </tr>
                 </thead>
-                <tbody class="">
+                <tbody class="table-body">
                     <?php foreach ($contactsNotInTask as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
-                        <tr class="">
+                        <tr class="table-row">
                             <td class="contacts-table-value text-center cell-zero">
                                 <!-- Arrow UP Button -->
                                 <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn link-btn', t('Link this contact to this task')) ?>

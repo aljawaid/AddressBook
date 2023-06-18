@@ -52,18 +52,18 @@
                 <?= t('There are currently %s properties which together form a standard contact profile.', count($items)) ?>
             </p>
             <table id="ContactProfileTable" class="contact-profile-table">
-                <thead>
-                    <tr class="">
+                <thead class="table-head">
+                    <tr class="table-row">
                         <th class="column-10"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
                         <th class="column-25"><?= t('Property Note') ?></th>
                         <th class="column-8 text-center"><?= t('Property Type') ?></th>
                         <th class="column-20"><?= t('Actions') ?></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-body">
                     <?php $end = end($items) ?>
                     <?php foreach ($items as $item): ?>
-                        <tr class="">
+                        <tr class="table-row">
                             <td class=""><?= $item['item'] ?></td>
                             <td class="form-help"><?= $item['item_help'] ?></td>
                             <td class="text-center"><?= $item['item_type'] ?></td>
