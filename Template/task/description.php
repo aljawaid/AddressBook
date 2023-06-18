@@ -4,7 +4,7 @@
     <summary class="accordion-title"><span class=""><?= t('Task Contacts') ?></span></summary>
     <div class="accordion-content">
         <?php $items = $this->ContactsHelper->getItems() ?>
-        <table id="LinkedContactsTable" class="table-small table-fixed">
+        <table id="TaskContactsTable" class="table-small table-fixed">
             <tr class="">
                 <th class="contacts-table-header column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                 <th class="contacts-table-header column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>

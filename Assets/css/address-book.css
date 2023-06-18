@@ -543,7 +543,7 @@ td.contacts-table-value {
     border: 1px solid var(--pp-green);
 }
 
-#AvailableContactsTable th.contacts-table-header, #ProjectContactsTable th.contacts-table-header {
+#AvailableContactsTable th.contacts-table-header, #ProjectContactsTable th.contacts-table-header, #TaskContactsTable th.contacts-table-header {
     background: var(--ab-button);
     color: var(--pp-white);
     border-top: 1px solid var(--ab-blue);
@@ -559,7 +559,7 @@ td.contacts-table-value {
     border: 1px solid var(--pp-green);
 }
 
-#AvailableContactsTable td.contacts-table-value, #ProjectContactsTable td.contacts-table-value  {
+#AvailableContactsTable td.contacts-table-value, #ProjectContactsTable td.contacts-table-value, #TaskContactsTable td.contacts-table-value  {
     border: 1px solid var(--ab-blue);
 }
 
@@ -579,6 +579,13 @@ td.contacts-table-value {
     border-right: 1px solid var(--ab-blue);
 }
 
+#TaskContactsTable th.contacts-table-header:first-child {
+    border-left: 1px solid var(--ab-blue);
+}
+
+#TaskContactsTable th.contacts-table-header:last-child {
+    border-right: 1px solid var(--ab-blue);
+}
 ul.contacts-action-btns {
     list-style-type: none;
     text-align: center;
