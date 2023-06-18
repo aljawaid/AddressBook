@@ -586,6 +586,18 @@ td.contacts-table-value {
 #TaskContactsTable th.contacts-table-header:last-child {
     border-right: 1px solid var(--ab-blue);
 }
+
+#ContactDetailsTable tbody tr td:first-child {
+    background: var(--ab-button);
+    color: var(--pp-white);
+    border: 1px solid var(--ab-blue);
+}
+
+#ContactDetailsTable tbody tr td:last-child {
+    /* color: var(--pp-white); */
+    background: rgba(32, 54, 159, .2);
+    border: 1px solid var(--ab-blue);
+}
 ul.contacts-action-btns {
     list-style-type: none;
     text-align: center;
@@ -642,4 +654,6 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     color: var(--pp-grey);
     font-size: .9em;
     background: #CACACA;
+    border: 1px solid var(--ab-blue);
+}
 }
