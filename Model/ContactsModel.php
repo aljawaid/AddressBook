@@ -13,7 +13,7 @@ use Kanboard\Core\Base;
 class ContactsModel extends Base
 {
     /**
-     * SQL table name for ContactsItems
+     * SQL table name for Contacts Items
      *
      * @var string
      */
@@ -74,7 +74,9 @@ class ContactsModel extends Base
             ->table(self::TABLE)
             ->columns(
                 ContactsItemsModel::TABLE . '.item',
-                self::TABLE . '.contact_item_value'
+                self::TABLE . '.contact_item_value',
+                self::TABLE . '.last_updated',
+                self::TABLE . '.updated_by_user_id'
             )
             ->eq('contacts_id', $contacts_id)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
