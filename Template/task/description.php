@@ -1,9 +1,7 @@
 <?php $contacts = $this->ContactsHelper->getContactsIDs($task['id']) ?>
 
-<section class="accordion-section <?= empty($contacts) ? 'accordion-collapsed' : '' ?>">
-    <div class="accordion-title">
-        <h3 class=""><a href="#" class="fa accordion-toggle"></a> <?= t('Task Contacts') ?></h3>
-    </div>
+<details class="accordion-section task-contacts-section" <?= empty($contacts) ? '' : 'open' ?>>
+    <summary class="accordion-title"><span class=""><?= t('Task Contacts') ?></span></summary>
     <div class="accordion-content">
         <?php $items = $this->ContactsHelper->getItems() ?>
         <table id="LinkedContactsTable" class="table-small table-fixed">
@@ -28,4 +26,4 @@
             <?php endforeach ?>
         </table>
     </div>
-</section>
+</details>
