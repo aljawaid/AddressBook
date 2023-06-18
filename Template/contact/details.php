@@ -63,7 +63,7 @@
             </tbody>
             <tfoot class="table-footer">
                 <tr class="table-row">
-                    <td colspan="2"><?= t('Last updated on %s by %s', $last_updated, $edited_by) ?></td>
+                    <td colspan="2"><?= e('Last updated on %s by %s', '&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;' . $last_updated, '<i class="fa fa-user" aria-hidden="true"></i>&nbsp;' . $edited_by) ?></td>
                 </tr>
             </tfoot>
         </table>
