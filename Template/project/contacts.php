@@ -19,8 +19,8 @@
     <?php if (!empty($contacts)): ?>
         <section class="project-contacts-section">
             <table id="ProjectContactsTable" class="project-contacts-table table-small table-fixed">
-                <thead class="">
-                    <tr class="">
+                <thead class="table-head">
+                    <tr class="table-row">
                         <th class="contacts-table-header column-20"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                         <th class="contacts-table-header column-20"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                         <th class="contacts-table-header column-20"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
@@ -28,10 +28,10 @@
                         <th class="contacts-table-header column-21"><?= t('Actions') ?></th>
                     </tr>
                 </thead>
-                <tbody class="">
+                <tbody class="table-body">
                     <?php foreach ($contacts as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
-                        <tr class="">
+                        <tr class="table-row">
                             <td class="contacts-table-value">
                                 <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
                             </td>
