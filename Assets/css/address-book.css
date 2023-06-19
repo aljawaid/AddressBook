@@ -446,6 +446,12 @@ a.project-address-book-btn:hover .btn-count {
     color: var(--pp-white);
 }
 
+details.task-contacts-section summary.accordion-title span.btn-count {
+    background: var(--ab-button);
+    color: var(--pp-white);
+    padding: 0 3px 0 2px;
+}
+
 .ab-info {
     margin-block: 20px;
 }
