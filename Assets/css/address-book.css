@@ -556,7 +556,7 @@ td.contacts-table-value {
     border-bottom: 1px solid var(--ab-blue);
 }
 
-#LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero {
+#LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero, #TaskContactsTable th.contacts-table-header.cell-zero, #TaskContactsTable td.contacts-table-value.cell-zero {
     border: 0;
     background: none;
 }
@@ -585,7 +585,7 @@ td.contacts-table-value {
     border-right: 1px solid var(--ab-blue);
 }
 
-#TaskContactsTable th.contacts-table-header:first-child {
+#TaskContactsTable th.contacts-table-header:nth-of-type(2) {
     border-left: 1px solid var(--ab-blue);
 }
 
@@ -605,7 +605,7 @@ td.contacts-table-value {
     border: 1px solid var(--ab-blue);
 }
 
-#ContactDetailsTable tbody tr:first-child td:last-child, #TaskContactsTable tbody tr td:first-child, #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
+#ContactDetailsTable tbody tr:first-child td:last-child, #TaskContactsTable tbody tr td:nth-of-type(2), #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
     font-weight: 600;
 }
 

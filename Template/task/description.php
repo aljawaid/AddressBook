@@ -12,6 +12,7 @@
                     <th class="contacts-table-header column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                     <th class="contacts-table-header column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                     <th class="contacts-table-header column-25"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
+                    <th class="contacts-table-header column-4 cell-zero"></th>
                     <th class="contacts-table-header column-24"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
                 </tr>
             </thead>
@@ -19,6 +20,12 @@
                 <?php foreach ($contacts as $key => $value): ?>
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="table-row">
+                        <td class="contacts-table-value text-center cell-zero">
+                            <!-- Modal Button -->
+                            <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
+                                        <span class="contact-profile-icon"></span>
+                            </a>
+                        </td>
                         <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
                         <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
                         <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
