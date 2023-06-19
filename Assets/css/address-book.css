@@ -695,3 +695,24 @@ details.task-contacts-section[open] summary.accordion-title::marker, details.tas
     color: var(--ab-button);
     font-weight: 600;
 }
+
+span.contact-updated-date {
+    margin-left: 4px;
+}
+
+span.contact-updated-date i {
+    margin-right: 2px;
+}
+
+span.contact-updated-user {
+    margin-left: 2px;
+}
+
+span.contact-updated-user i {
+    margin-right: 5px;
+}
+
+span.contact-updated-date i, span.contact-updated-user i {
+    font-size: 1.1em;
+    color: var(--ab-blue);
+}

@@ -63,7 +63,7 @@
             </tbody>
             <tfoot class="table-footer">
                 <tr class="table-row">
-                    <td colspan="2"><?= e('Last updated on %s by %s', '&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;' . $last_updated, '<i class="fa fa-user" aria-hidden="true"></i>&nbsp;' . $edited_by) ?></td>
+                    <td colspan="2"><?= e('Last updated on %s by %s', '<span class="contact-updated-date"><i class="fa fa-calendar" aria-hidden="true"></i>' . $last_updated . '</span>', '<span class="contact-updated-user"><i class="fa fa-user" aria-hidden="true"></i>' . $edited_by . '</span>') ?></td>
                 </tr>
             </tfoot>
         </table>
