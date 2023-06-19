@@ -686,7 +686,7 @@ details.task-contacts-section summary.accordion-title {
     cursor: pointer;
 }
 
-details.task-contacts-section summary.accordion-title span.accordion-title-text {
+details.task-contacts-section summary.accordion-title span.accordion-title-text, details.task-contacts-section summary.accordion-title span.summary-wrapper {
     background: var(--pp-white);
     padding-right: 5px;
 }
