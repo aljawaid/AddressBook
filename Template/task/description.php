@@ -9,10 +9,10 @@
         <table id="TaskContactsTable" class="table-small table-fixed">
             <thead class="table-head">
                 <tr class="table-row">
-                    <th class="contacts-table-header column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
-                    <th class="contacts-table-header column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
-                    <th class="contacts-table-header column-25"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
                     <th class="contacts-table-header column-4 cell-zero"></th>
+                    <th class="contacts-table-header column-24"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
+                    <th class="contacts-table-header column-24"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
+                    <th class="contacts-table-header column-24"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
                     <th class="contacts-table-header column-24"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
                 </tr>
             </thead>
