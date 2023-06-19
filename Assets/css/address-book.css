@@ -604,6 +604,11 @@ td.contacts-table-value {
     background: rgba(32, 54, 159, .2);
     border: 1px solid var(--ab-blue);
 }
+
+#ContactDetailsTable tbody tr:first-child td:last-child, #TaskContactsTable tbody tr td:first-child, #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
+    font-weight: 600;
+}
+
 ul.contacts-action-btns {
     list-style-type: none;
     text-align: center;
