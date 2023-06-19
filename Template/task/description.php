@@ -1,7 +1,9 @@
 <?php $contacts = $this->ContactsHelper->getContactsIDs($task['id']) ?>
 
 <details class="accordion-section task-contacts-section" <?= empty($contacts) ? '' : 'open' ?>>
-    <summary class="accordion-title"><span class=""><?= t('Task Contacts') ?></span></summary>
+    <summary class="accordion-title">
+        <span class="accordion-title-text"><?= t('Task Contacts') ?></span><span class="btn-count"><?= count($contacts) ?></span>
+    </summary>
     <div class="accordion-content">
         <?php $items = $this->ContactsHelper->getItems() ?>
         <table id="TaskContactsTable" class="table-small table-fixed">
