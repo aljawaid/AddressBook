@@ -12,7 +12,7 @@
                     <th class="contacts-table-header column-25"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
                     <th class="contacts-table-header column-25"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
                     <th class="contacts-table-header column-25"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                    <th class="contacts-table-header column-15"></th>
+                    <th class="contacts-table-header column-24"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
                 </tr>
             </thead>
             <tbody class="table-body">
@@ -22,11 +22,7 @@
                         <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
                         <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
                         <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                        <td class="contacts-table-value">
-                            <?php if (!empty($values[4])): ?>
-                                <?= $this->modal->medium('', t('View Contact'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
-                            <?php endif ?>
-                        </td>
+                        <td class="contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
