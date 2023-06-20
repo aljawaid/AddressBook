@@ -716,3 +716,16 @@ span.contact-updated-date i, span.contact-updated-user i {
     font-size: 1.1em;
     color: var(--ab-blue);
 }
+
+span.footer-icon.tooltip {
+    opacity: 1;
+    color: var(--ab-blue);
+}
+
+span.footer-icon.tooltip span.address-book-icon {
+    opacity: 1;
+    width: 18px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
