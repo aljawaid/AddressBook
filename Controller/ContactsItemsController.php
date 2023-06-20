@@ -129,7 +129,7 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove a new item
+     * Save a new item
      *
      * @access public
      */

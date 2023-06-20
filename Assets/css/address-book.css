@@ -76,7 +76,7 @@
     border-radius: var(--border-radius-address-book);
 }
 
-.ab-config-page fieldset legend, fieldset.add-contact-profile legend{
+.ab-config-page fieldset legend, fieldset.add-contact-profile legend {
     background: var(--ab-blue);
     color: var(--pp-white);
     border-radius: var(--border-radius-address-book);
