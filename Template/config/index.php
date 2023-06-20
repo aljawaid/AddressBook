@@ -4,14 +4,13 @@
             <span class="address-book-icon"></span> <?= t('Contact Settings') ?>
         </h2>
     </div>
-    <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
-        <?= $this->form->csrf() ?>
-        <fieldset class="ab-new-item">
-            <legend class=""><span class="property-icon"></span> <?= t('Add New Property') ?></legend>
-            <p class="new-item-intro">
-                <?= t('Each contact is associated with a contact profile. A standard contact profile consists of many properties. Add custom properties to adjust the standard contact profile according to your requirements.') ?>
-            </p>
-
+    <fieldset class="ab-new-item">
+        <legend class=""><span class="property-icon"></span> <?= t('Add New Property') ?></legend>
+        <p class="new-item-intro">
+            <?= t('Each contact is associated with a contact profile. A standard contact profile consists of many properties. Add custom properties to adjust the standard contact profile according to your requirements or choose from one of the sets below.') ?>
+        </p>
+        <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
+            <?= $this->form->csrf() ?>
             <div class="input-section">
                 <?= $this->form->label(t('Property Name'), 'item', array('class="property-label"')) ?>
                 <?= $this->form->text('item', $values, array(), array('autofocus', 'required', 'placeholder="' . t('Department') . '"'), 'property-input') ?>
@@ -39,17 +38,16 @@
                 <?= $this->form->text('item_help', $values, array(), array('title="' . t('Maximum 100 characters only') . '"', 'maxlength="100"', 'placeholder="' . t('Specifiy Department Name') . '"'), 'property-input') ?>
                 <p class="form-help"><?= t('Add a short descriptive note for users who create contacts') ?></p>
             </div>
-
             <div class="form-actions">
                 <button type="submit" class="btn btn-ab-property"><span class="property-icon"></span> <?= t('Add Property') ?></button>
             </div>
-        </fieldset>
-    </form>
+        </form>
+    </fieldset>
     <?php if (!empty($items)): ?>
         <fieldset class="ab-contact-profile">
             <legend><span class="contact-profile-icon"></span> <?= t('Contact Profile') ?></legend>
             <p class="contact-profile-intro">
-                <?= t('There are currently %s properties which together form a standard contact profile.', count($items)) ?>
+                <?= t('There are currently %s properties which together build a standard contact profile.', count($items)) ?>
             </p>
             <table id="ContactProfileTable" class="contact-profile-table">
                 <thead class="table-head">
