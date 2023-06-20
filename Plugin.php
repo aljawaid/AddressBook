@@ -27,7 +27,6 @@ class Plugin extends Base
         $this->template->hook->attach('template:task:sidebar:information', 'addressBook:task/sidebar');
         $this->template->hook->attach('template:board:task:footer', 'addressBook:task/footer_icon');
         $this->template->hook->attach('template:task:show:before-description', 'addressBook:task/description');
-        //$this->template->hook->attach('template:user:sidebar:information', 'metadata:user/sidebar'); doesnt exist
 
         // Extra Page - Routes
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
