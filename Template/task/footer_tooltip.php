@@ -17,9 +17,9 @@
             <?php foreach ($contacts as $key => $value): ?>
                 <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                 <tr class="">
-                    <td class=""><?= (empty($values[1])) ? "" : $values[1]['value'] ?></td>
-                    <td class=""><?= (empty($values[2])) ? "" : $values[2]['value'] ?></td>
-                    <td class=""><?= (empty($values[3])) ? "" : $values[3]['value'] ?></td>
+                    <td class=""><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
+                    <td class=""><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
+                    <td class=""><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
                     <td class="">
                         <?php if (!empty($values[4])): ?>
                             <?= $this->modal->medium('', t('View Contact'), 'ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook')) ?>
