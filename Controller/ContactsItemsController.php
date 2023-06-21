@@ -277,4 +277,36 @@ class ContactsItemsController extends BaseController
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
     }
+
+    /**
+     * Insert Property Set - Team
+     *
+     * @access public
+     */
+    public function insertSetTeam()
+    {
+        if ($this->contactsItemsModel->insertSetTeam()) {
+            $this->flash->success(t('Team Property Set Added'));
+        } else {
+            $this->flash->failure(t('Unable to Add Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
+
+    /**
+     * Remove Property Set - Team
+     *
+     * @access public
+     */
+    public function removeSetTeam()
+    {
+        if ($this->contactsItemsModel->removeSetTeam()) {
+            $this->flash->success(t('Team Property Set Removed'));
+        } else {
+            $this->flash->failure(t('Unable to Remove Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
 }
