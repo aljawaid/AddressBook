@@ -745,13 +745,14 @@ section.property-set-section {
 }
 
 .property-set-name {
-    width: 200px;
+    width: 110px;
     margin-left: 10px;
 }
 
 .property-set-name, .add-property-set, .remove-property-set {
     display: inline-block;
     vertical-align: middle;
+    color: var(--ab-blue);
 }
 
 ul.property-set-items {
