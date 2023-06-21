@@ -1,7 +1,7 @@
 <hr class="property-set-divider">
 <div class="property-set-wrapper">
-    <p class=""><?= t('Individual properties can always be added, renamed or removed. Any existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.') ?></p>
     <h4 class=""><span class="property-sets-icon"></span><?= t('Property Sets') ?></h4>
+    <p class=""><?= e('Individual properties can always be added, renamed or removed. %sAny existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.%s', '<strong>', '</strong>') ?></p>
 
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetPersonal', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
