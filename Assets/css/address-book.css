@@ -744,7 +744,37 @@ section.property-set-section {
     margin-block: 3px;
 }
 
+.property-set-name {
+    width: 200px;
+    margin-left: 10px;
+}
+
+.property-set-name, .add-property-set, .remove-property-set {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul.property-set-items {
+    display: inline-block;
+}
+
+ul.property-set-items li {
+    display: inline-block;
+    font-size: .8em;
+    background: var(--pp-light-grey);
+    padding: 2px 5px;
+    color: var(--pp-white);
+    border-radius: var(--border-radius-address-book);
+    font-weight: 600;
+    opacity: .9;
+    vertical-align: middle;
+}
+
 hr.property-set-divider {
     border-color: var(--ab-button);
     border-top: 0;
+}
+
+.property-set-section a.btn.btn-ab-move {
+    padding: 3px 6px 0 10px;
 }
