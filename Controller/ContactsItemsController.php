@@ -151,7 +151,7 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Insert Property Set
+     * Insert Property Set - Personal
      *
      * @access public
      */
@@ -167,7 +167,7 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove Property Set
+     * Remove Property Set - Personal
      *
      * @access public
      */
