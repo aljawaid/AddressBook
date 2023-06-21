@@ -303,4 +303,47 @@ class ContactsItemsModel extends Base
 
         return true;
     }
+
+    /**
+     * Add Property Set - Team
+     * - Names of people with contact numbers and email addresses
+     *
+     * @author aljawaid
+     */
+    public function insertSetTeam()
+    {
+        $max = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.position) maxid')->findOne();
+
+        $this->db->startTransaction();
+
+        $this->db->table(self::TABLE)->insert(['item' => 'Title', 'item_type' => 'text', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'position' => $max['maxid'] + 1]);
+
+        $this->db->closeTransaction();
+
+        return true;
+    }
+
+    /**
+     * Remove Property Set - Team
+     *
+     * @author aljawaid
+     */
+    public function removeSetTeam()
+    {
+        $this->db->startTransaction();
+
+        $this->db->table(self::TABLE)->eq('item', 'Title')->remove();
+        $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
+        $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
+        $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
+        $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
+
+        $this->db->closeTransaction();
+
+        return true;
+    }
 }
