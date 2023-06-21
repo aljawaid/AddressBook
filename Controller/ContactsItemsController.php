@@ -149,4 +149,36 @@ class ContactsItemsController extends BaseController
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
     }
+
+    /**
+     * Insert Property Set
+     *
+     * @access public
+     */
+    public function insertSetPersonal()
+    {
+        if ($this->contactsItemsModel->insertSetPersonal()) {
+            $this->flash->success(t('Personal Property Set Added'));
+        } else {
+            $this->flash->failure(t('Unable to Add Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
+
+    /**
+     * Remove Property Set
+     *
+     * @access public
+     */
+    public function removeSetPersonal()
+    {
+        if ($this->contactsItemsModel->removeSetPersonal()) {
+            $this->flash->success(t('Personal Property Set Removed'));
+        } else {
+            $this->flash->failure(t('Unable to Remove Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
 }
