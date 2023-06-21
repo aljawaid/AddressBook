@@ -62,6 +62,15 @@ Use the dedicated Address Book to create and manage contacts associating them wi
   - Telephone - _for telephone, fax and mobile numbers_
   - URL - _for website, ftp, git, addresses_
 
+**Property Sets**
+- Add groups of properties to quickly build a contact profile ready for your contacts and projects
+- Property Sets include:
+  - Personal - _a general person_
+  - Business - _a general business, organisation, or charity_
+  - Company - _a large business with departments and extensions_
+  - People - _names of people with contact numbers_
+  - Team - _names of people with contact numbers and email addresses_
+
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Screenshots
