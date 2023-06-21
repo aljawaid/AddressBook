@@ -42,6 +42,7 @@
                 <button type="submit" class="btn btn-ab-property"><span class="property-icon"></span> <?= t('Add Property') ?></button>
             </div>
         </form>
+        <?= $this->render('addressBook:config/property-sets') ?>
     </fieldset>
     <?php if (!empty($items)): ?>
         <fieldset class="ab-contact-profile">

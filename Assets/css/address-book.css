@@ -729,3 +729,22 @@ span.footer-icon.tooltip span.address-book-icon {
     display: inline-block;
     vertical-align: text-bottom;
 }
+
+.property-set-wrapper p {
+    margin-bottom: 15px;
+}
+
+.property-set-wrapper h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--ab-blue);
+}
+
+section.property-set-section {
+    margin-block: 3px;
+}
+
+hr.property-set-divider {
+    border-color: var(--ab-button);
+    border-top: 0;
+}
