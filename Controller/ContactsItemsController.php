@@ -210,4 +210,39 @@ class ContactsItemsController extends BaseController
         } else {
             $this->flash->failure(t('Unable to Remove Property Set'));
         }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
+
+    /**
+     * Insert Property Set - Company
+     *
+     * @access public
+     */
+    public function insertSetCompany()
+    {
+        if ($this->contactsItemsModel->insertSetCompany()) {
+            $this->flash->success(t('Company Property Set Added'));
+        } else {
+            $this->flash->failure(t('Unable to Add Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
+
+    /**
+     * Remove Property Set - Company
+     *
+     * @access public
+     */
+    public function removeSetCompany()
+    {
+        if ($this->contactsItemsModel->removeSetCompany()) {
+            $this->flash->success(t('Company Property Set Removed'));
+        } else {
+            $this->flash->failure(t('Unable to Remove Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
 }
