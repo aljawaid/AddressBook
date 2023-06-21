@@ -3,4 +3,17 @@
     <h4 class=""><?= t('Property Sets') ?></h4>
     <p class=""><?= t('Individual properties can always be added, renamed or removed. Any existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.') ?></p>
 
+    <section class="property-set-section">
+        <a href="<?= $this->url->href('ContactsItemsController', 'insertSetPersonal', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'removeSetPersonal', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move remove-property-set" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <div class="property-set-name"><?= t('Personal') ?></div>
+        <ul class="property-set-items">
+            <li class=""><?= t('Address') ?></li>
+            <li class=""><?= t('Telephone') ?></li>
+            <li class=""><?= t('Mobile') ?></li>
+            <li class=""><?= t('Email') ?></li>
+            <li class=""><?= t('Relationship') ?></li>
+            <li class=""><?= t('Note') ?></li>
+        </ul>
+    </section>
 </div>
