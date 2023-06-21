@@ -41,12 +41,4 @@ function version_1(PDO $pdo)
 
     /* ADD DEFAULTS FOR CONTACT ITEMS */
     $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Name", "text", 1)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Organisation", "text", 2)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Address", "address", 3)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Telephone", "telephone", 4)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Mobile", "telephone", 5)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Email", "email", 6)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Website", "url", 7)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Reference", "text", 8)');
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, position) VALUES ("Note", "textarea", 9)');
 }
