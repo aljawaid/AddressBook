@@ -16,4 +16,17 @@
             <li class=""><?= t('Note') ?></li>
         </ul>
     </section>
+    <section class="property-set-section">
+        <a href="<?= $this->url->href('ContactsItemsController', 'insertSetBusiness', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'removeSetBusiness', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move remove-property-set" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <div class="property-set-name"><?= t('Business') ?></div>
+        <ul class="property-set-items">
+            <li class=""><?= t('Address') ?></li>
+            <li class=""><?= t('Telephone') ?></li>
+            <li class=""><?= t('Mobile') ?></li>
+            <li class=""><?= t('Email') ?></li>
+            <li class=""><?= t('Website') ?></li>
+            <li class=""><?= t('Note') ?></li>
+        </ul>
+    </section>
 </div>
