@@ -778,3 +778,7 @@ hr.property-set-divider {
 .property-set-section a.btn.btn-ab-move {
     padding: 3px 6px 0 10px;
 }
+
+.property-set-name span.property-sets-icon, .property-set-wrapper h4 span.property-sets-icon {
+    vertical-align: bottom;
+}
