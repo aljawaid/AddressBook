@@ -61,7 +61,7 @@
                                     </li>
                                     <li class="">
                                         <!-- Modal Button -->
-                                        <a href="<?= $this->url->href('ContactsController', 'edit', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-medium" title="<?=t('Edit Contact') ?>">
+                                        <a href="<?= $this->url->href('ContactsController', 'edit', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-large" title="<?=t('Edit Contact') ?>">
                                             <span class="contact-settings-icon"></span>
                                             <span class="edit-text"><?= t('Edit') ?></span>
                                         </a>
