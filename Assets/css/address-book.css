@@ -314,13 +314,6 @@ li.property-action-item a span.rename-icon {
     vertical-align: sub;
 }
 
-.property-wrapper .property-icon {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    margin-inline: 5px;
-}
-
 .property-wrapper .property-fields {
     display: inline-block;
 }

@@ -45,7 +45,6 @@
         <?= $this->form->hidden('position', $values) ?>
 
         <div class="property-wrapper">
-            <span class="property-icon"></span>
             <span class="property-fields">
                 <?= $this->ContactsHelper->selectItem($values, $errors, array('autofocus', 'placeholder="' . $values['item'] . '"')) ?>
             </span>
