@@ -415,6 +415,14 @@ a.view-contact-btn span.contact-profile-icon {
     vertical-align: bottom;
 }
 
+ul.contacts-action-btns li a.js-modal-medium.view-contact-btn {
+    padding: 0 5px 4px 3px;
+}
+
+ul.contacts-action-btns li a.js-modal-medium.view-contact-btn span.contact-profile-icon {
+    width: 28px;
+}
+
 a.view-contact-btn, a.delink-btn, a.link-btn {
     border: 1px outset var(--ab-blue);
     border-radius: var(--border-radius-address-book);
