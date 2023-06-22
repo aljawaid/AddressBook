@@ -119,9 +119,11 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     max-width: unset;
 }
 
+/* stylelint-disable selector-id-pattern */
 input#form-item_help {
     width: 355px;
 }
+/* stylelint-enable selector-id-pattern */
 
 span.property-fields input#form-item_help {
     width: 740px;
@@ -188,7 +190,7 @@ select.property-input-select {
 }
 
 select.property-input-select:focus, input[type="tel"].property-input:focus, input[type="url"].property-input:focus {
-    color: #000;
+    color: var(--pp-black);
     border: 1px solid var(--ab-blue);
     outline: 0;
     box-shadow: 0 0 8px rgba(82, 168, 236, .6);
@@ -241,10 +243,12 @@ fieldset.ab-new-item .form-actions {
     margin-right: 5px;
 }
 
+/* stylelint-disable selector-id-pattern */
 #config-section .sidebar {
     min-width: fit-content;
     margin-right: 5px;
 }
+/* stylelint-enable selector-id-pattern */
 
 .property-action-bar .move-buttons {
     float: left;
@@ -697,6 +701,7 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
 .contact-details-modal .ab-page-header h2 span.contact-details-icon {
     vertical-align: bottom;
 }
+
 .delete-contact-modal .ab-page-header h2 span.delete-contact-icon {
     vertical-align: bottom;
     margin-right: 3px;
