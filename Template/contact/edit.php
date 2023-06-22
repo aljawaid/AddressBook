@@ -41,7 +41,7 @@
         <?= $this->form->csrf() ?>
         <?php foreach ($headings as $key => $value): ?>
             <?= $this->form->label($value, $value) ?>
-            <?= $this->form->text($key . '_' . $value, $values, $errors, array('maxlength="100"')) ?>
+                <?= $this->form->text($key . '_' . $value, $values, $errors, array('maxlength="100"', 'placeholder="' . $value . '"'), 'property-input') ?>
         <?php endforeach ?>
 
         <div class="form-actions">

@@ -97,6 +97,7 @@ class ContactsController extends BaseController
     public function edit(array $values = array(), array $errors = array())
     {
         $contact = $this->contactsModel->getValuesByID($this->request->getIntegerParam('contacts_id'));
+
         $this->response->html($this->helper->layout->project('addressBook:contact/edit', array(
             'title' => t('Edit Contact'),
             'values' => empty($values) ? $contact : $values,
