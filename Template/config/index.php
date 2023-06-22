@@ -36,7 +36,7 @@
             <div class="input-section">
                 <?= $this->form->label(t('Property Note'), 'item_help', array('class="property-label"')) ?>
                 <?= $this->form->text('item_help', $values, array(), array('title="' . t('Maximum 100 characters only') . '"', 'maxlength="100"', 'placeholder="' . t('Specifiy Department Name') . '"'), 'property-input') ?>
-                <p class="form-help"><?= t('Add a short descriptive note for users who create contacts') ?></p>
+                <p class="form-help"><?= t('Add a short descriptive note for this property to help users when creating contacts') ?></p>
             </div>
             <div class="form-actions">
                 <button type="submit" class="btn btn-ab-property"><span class="property-icon"></span> <?= t('Add Property') ?></button>
