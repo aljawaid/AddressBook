@@ -649,13 +649,23 @@ a.btn-disabled {
     opacity: .6;
 }
 
-ul.contacts-action-btns li a.btn-ab-rename span.rename-icon {
-    vertical-align: bottom;
+ul.contacts-action-btns li a.btn-ab-rename span.contact-settings-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: text-bottom;
+    margin-right: 3px;
 }
 
 ul.contacts-action-btns li a.btn-ab-rename {
     padding-left: 5px;
     padding-right: 8px;
+}
+
+ul.contacts-action-btns li a.btn-ab-rename span.edit-text {
+    display: inline-table;
+    vertical-align: top;
+    margin-top: 3px;
+    pointer-events: none;
 }
 
 ul.contacts-action-btns li a.btn-ab-delete {
