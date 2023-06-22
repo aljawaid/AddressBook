@@ -109,12 +109,22 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     color: var(--pp-red-alt-3);
 }
 
-.input-section .form-help {
+.input-section .form-help, .modal-form-help {
     margin-bottom: 0;
+    max-width: 360px;
+    height: 30px;
+}
+
+.property-fields .modal-form-help {
+    max-width: unset;
 }
 
 input#form-item_help {
     width: 355px;
+}
+
+span.property-fields input#form-item_help {
+    width: 740px;
 }
 
 input[type="text"].property-input, input[type="number"].property-input, input[type="tel"].property-input, input[type="email"].property-input, input[type="url"].property-input, .property-fields input[type="text"], select.property-input-select {
