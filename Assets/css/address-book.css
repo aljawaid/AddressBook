@@ -677,13 +677,13 @@ ul.contacts-action-btns li a.btn-ab-delete span.delete-contact-icon {
     height: 24px;
     vertical-align: text-bottom;
     margin-right: 3px;
+    margin-top: 2px;
 }
 
 ul.contacts-action-btns li a.btn-ab-delete span.delete-text {
-    /* height: 18px; */
     display: inline-table;
     vertical-align: top;
-    margin-top: 3px;
+    margin-top: 6px;
     pointer-events: none;
 }
 
