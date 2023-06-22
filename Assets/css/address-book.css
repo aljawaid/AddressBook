@@ -708,6 +708,14 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     margin-right: 4px;
 }
 
+.edit-contact-modal form.modal-form .form-group {
+    display: inline-block;
+}
+
+.edit-contact-modal form.modal-form .form-group input {
+    color: var(--pp-grey);
+}
+
 details.task-contacts-section summary.accordion-title {
     cursor: pointer;
 }

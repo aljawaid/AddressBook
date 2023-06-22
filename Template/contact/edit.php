@@ -1,8 +1,8 @@
 <style type="text/css">
     /* MODAL SIZE */
-    #modal-box {
+    /* #modal-box {
         width: auto !important;
-    }
+    }*/
 
     #modal-content {
         padding: 10px 15px;
@@ -36,12 +36,14 @@
     <div class="ab-page-header">
         <h2 class=""><span class="contact-settings-icon"></span><?= t('Edit Contact') ?></h2>
     </div>
-    <form method="post" action="<?= $this->url->href('ContactsController', 'update', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook')) ?>" autocomplete="off">
+    <form class="modal-form" method="post" action="<?= $this->url->href('ContactsController', 'update', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook')) ?>" autocomplete="on">
 
         <?= $this->form->csrf() ?>
         <?php foreach ($headings as $key => $value): ?>
-            <?= $this->form->label($value, $value) ?>
+            <div class="form-group">
+                <?= $this->form->label($value, $value) ?>
                 <?= $this->form->text($key . '_' . $value, $values, $errors, array('maxlength="100"', 'placeholder="' . $value . '"'), 'property-input') ?>
+            </div>
         <?php endforeach ?>
 
         <div class="form-actions">
