@@ -95,7 +95,7 @@
                                         <li class="property-action-item">
                                             <!-- Modal Button -->
                                             <a href="<?= $this->url->href('ContactsItemsController', 'edit', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-medium" title="<?=t('Edit Property') ?>">
-                                                <span class="rename-icon"></span> <?= t('Rename') ?>
+                                                <span class="rename-icon"></span> <?= t('Edit') ?>
                                             </a>
                                         </li>
                                         <li class="property-action-item">
