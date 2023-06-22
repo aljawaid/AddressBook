@@ -61,7 +61,7 @@
     <hr class="ab-section-divider">
     <section class="available-contacts-section">
         <h3 class="">
-            <span class="available-contact-icon"></span><?= $addformtitle ?><span class="contact-count-badge"><?= count($contactsNotInTask) ?></span>
+            <span class="available-contacts-icon"></span><?= $addformtitle ?><span class="contact-count-badge"><?= count($contactsNotInTask) ?></span>
         </h3>
         <?php if (empty($contactsNotInTask)): ?>
             <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
