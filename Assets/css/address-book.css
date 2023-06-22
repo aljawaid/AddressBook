@@ -684,7 +684,7 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     margin-right: 3px;
 }
 
-.edit-contact-modal .ab-page-header h2 span.rename-icon {
+.edit-contact-modal .ab-page-header h2 span.contact-settings-icon {
     width: 26px;
     vertical-align: bottom;
     margin-right: 4px;
