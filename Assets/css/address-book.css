@@ -138,6 +138,10 @@ input[type="text"].property-input, input[type="number"].property-input, input[ty
     font-size: 1em;
 }
 
+.input-wrapper textarea.property-input-address, .input-wrapper textarea.property-input-note {
+    vertical-align: top;
+}
+
 textarea.property-input-address {
     border: 1px solid var(--ab-blue);
     border-radius: var(--border-radius-address-book);
