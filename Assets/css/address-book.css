@@ -316,6 +316,7 @@ li.property-action-item a span.rename-icon {
 
 .property-wrapper .property-fields {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .modal-form .form-actions, .confirm, .form-actions {
@@ -724,7 +725,7 @@ span.footer-icon.tooltip span.address-book-icon {
 }
 
 .property-set-wrapper p {
-    margin-bottom: 15px;
+    margin-block: 15px;
 }
 
 .property-set-wrapper h4 {
@@ -767,6 +768,7 @@ ul.property-set-items li {
 hr.property-set-divider {
     border-color: var(--ab-button);
     border-top: 0;
+    margin-bottom: 1em;
 }
 
 .property-set-section a.btn.btn-ab-move {
