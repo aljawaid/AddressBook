@@ -52,4 +52,11 @@ return array(
     'People Property Set Deleted' => '',
     'Team Property Set Added' => '',
     'Team Property Set Deleted' => '',
+    //
+    // Helper/ContactsHelper.php
+    //
+    'Property Name' => '',
+    'Property Note' => '',
+    'Maximum 100 characters only' => '',
+    'Add a short descriptive note for this property to help users when creating contacts' => '',
 );
