@@ -27,9 +27,9 @@
                     <?php elseif ($value['item_type'] == 'url'): ?>
                         <?= $this->form->input('url', $value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="https://"'), 'property-input') ?>
                     <?php elseif ($value['item_type'] == 'textarea'): ?>
-                        <?= $this->form->textarea($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('Save notes for this contact') . '"', 'rows="3"', 'cols="37"'), 'property-input-note') ?>
+                        <?= $this->form->textarea($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('Save notes for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-note') ?>
                     <?php elseif ($value['item_type'] == 'address'): ?>
-                        <?= $this->form->textarea($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"'), 'property-input-address') ?>
+                        <?= $this->form->textarea($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-address') ?>
                     <?php else: ?>
                         <?php if ($value['id'] == 1): ?>
                             <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="30"', 'autofocus', 'required'), 'property-input') ?>
