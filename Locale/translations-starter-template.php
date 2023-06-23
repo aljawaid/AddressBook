@@ -119,4 +119,16 @@ return array(
     // Template/config/sidebar.php
     //
     'Address Book' => '',
+    //
+    // Template/contact/add.php
+    //
+    'Add New Contact' => '',
+    'All fields are optional. Blank forms will not be created.' => '',
+    'Save notes for this contact' => '',
+    'Enter address details for this contact' => '',
+    'All numbers and symbols shown are allowed' => '',
+    'Only whole numbers are allowed' => '',
+    'Numbers with 2 decimals are allowed' => '',
+    'Numbers with 4 decimals are allowed' => '',
+    'Add Contact' => '',
 );
