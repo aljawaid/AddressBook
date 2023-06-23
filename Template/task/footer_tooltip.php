@@ -33,8 +33,8 @@
                             <?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>
                         </td>
                     </tr>
-                </tbody>
-            <?php endforeach ?>
+                <?php endforeach ?>
+            </tbody>
         </table>
     <?php endif ?>
 </div>
