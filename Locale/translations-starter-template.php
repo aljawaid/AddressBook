@@ -137,4 +137,8 @@ return array(
     'Contact Details' => '',
     'No contacts' => '',
     'Last updated on %s by %s' => '',
+    //
+    // Template/contact/remove.php
+    //
+    'Do you really want to delete %s as a contact in the Address Book?' => '',
 );
