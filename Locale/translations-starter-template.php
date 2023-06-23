@@ -59,4 +59,10 @@ return array(
     'Property Note' => '',
     'Maximum 100 characters only' => '',
     'Add a short descriptive note for this property to help users when creating contacts' => '',
+    //
+    // Template/config/edit.php
+    //
+    'Edit Property' => '',
+    'Save Edits' => '',
+    'Cancel' => '',
 );
