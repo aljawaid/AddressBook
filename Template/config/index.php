@@ -48,7 +48,11 @@
         <fieldset class="ab-contact-profile">
             <legend><span class="contact-profile-icon"></span> <?= t('Contact Profile') ?></legend>
             <p class="contact-profile-intro">
-                <?= t('There are currently %s properties which together build a standard contact profile.', count($items)) ?>
+                <?php if (count($items) == 1): ?>
+                    <?= t('There is currently only 1 property which builds a standard contact profile.') ?>
+                <?php else: ?>
+                    <?= t('There are currently %s properties which together build a standard contact profile.', count($items)) ?>
+                <?php endif ?>
             </p>
             <table id="ContactProfileTable" class="contact-profile-table">
                 <thead class="table-head">
