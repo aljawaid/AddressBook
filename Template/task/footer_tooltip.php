@@ -1,6 +1,9 @@
 <div class="footer-tooltip">
-    <div class="ab-page-header">
+    <div class="ab-page-header relative">
         <h3 class=""><span class="linked-contact-icon"></span><?= t('Task Contacts') ?></h3>
+        <a href="<?= $this->url->href('ContactsController', 'task', array('project_id' => $project_id, 'task_id' => $task_id, 'plugin' => 'AddressBook'), false, '', false) ?>" class="task-contacts-summary-btn">
+            <span class="address-book-icon"></span> <?= t('Link Contacts') ?>
+        </a>
     </div>
     <?php if (!empty($contacts)): ?>
         <?php $items = $this->ContactsHelper->getItems() ?>

@@ -82,6 +82,8 @@ class ContactsController extends BaseController
         $this->response->html($this->helper->layout->app('addressBook:task/footer_tooltip', array(
             'title' => t('Contacts'),
             'contacts' => $this->contactsTaskModel->getByTaskId($task['id']),
+            'task_id' => $task['id'],
+            'project_id' => $task['project_id'],
         )));
     }
 

@@ -397,6 +397,26 @@ a.address-book-btn span.address-book-icon, a.project-address-book-btn span.addre
     vertical-align: sub;
 }
 
+a.task-contacts-summary-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px outset var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    background: var(--ab-button);
+    color: var(--pp-white);
+    transition: var(--transition-address-book);
+    padding: 2px;
+    font-size: .8em;
+}
+
+a.task-contacts-summary-btn:hover, a.task-contacts-summary-btn:focus {
+    border: 1px outset var(--ab-blue);
+    border-radius: var(--border-radius-address-book);
+    background: var(--pp-white);
+    color: var(--ab-blue);
+}
+
 a.view-contact-btn {
     padding: 0 5px 0 3px;
     height: 26px;
@@ -840,4 +860,13 @@ hr.property-set-divider {
 
 .footer-tooltip #TooltipContactsTable {
     margin-bottom: 0;
+}
+
+.ab-page-header a.task-contacts-summary-btn {
+    text-decoration: none;
+}
+
+a.task-contacts-summary-btn span.address-book-icon {
+    width: 18px;
+    height: 18px;
 }
