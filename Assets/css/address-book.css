@@ -645,20 +645,45 @@ td.contacts-table-value {
     border-right: 1px solid var(--ab-blue);
 }
 
-#ContactDetailsTable tbody tr td:first-child {
+#ContactDetailsTable tbody tr th {
     background: var(--ab-button);
     color: var(--pp-white);
     border: 1px solid var(--ab-blue);
+    vertical-align: middle;
+    padding: .5em 5px;
 }
 
-#ContactDetailsTable tbody tr td:last-child {
+#ContactDetailsTable tbody tr td {
     /* color: var(--pp-white); */
     background: rgba(32, 54, 159, .2);
     border: 1px solid var(--ab-blue);
+    vertical-align: middle;
+    padding: .5em 5px;
 }
 
 #ContactDetailsTable tbody tr:first-child td:last-child, #TaskContactsTable tbody tr td:nth-of-type(2), #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
     font-weight: 600;
+}
+
+#ContactDetailsTable td.contact-table-value textarea {
+    height: 100%;
+    width: 100%;
+    border: 0;
+    background: transparent;
+}
+
+#ContactDetailsTable td.contact-table-value a {
+    transition: var(--transition-address-book);
+    color: var(--ab-button);
+    text-decoration: none;
+}
+
+#ContactDetailsTable td.contact-table-value a:hover {
+    color: var(--pp-red-alt-2);
+}
+
+#ContactDetailsTable tbody tr td.contact-table-value.p-none {
+    padding: 0;
 }
 
 ul.contacts-action-btns {
