@@ -1,6 +1,6 @@
 <div class="footer-tooltip">
     <div class="ab-page-header">
-        <h2 class=""><span class="linked-contact-icon"></span><?= t('Task Contacts') ?></h2>
+        <h3 class=""><span class="linked-contact-icon"></span><?= t('Task Contacts') ?></h3>
     </div>
     <?php if (!empty($contacts)): ?>
         <?php $items = $this->ContactsHelper->getItems() ?>

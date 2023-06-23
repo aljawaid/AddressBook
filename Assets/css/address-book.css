@@ -823,3 +823,21 @@ hr.property-set-divider {
 .property-set-name span.property-sets-icon, .property-set-wrapper h4 span.property-sets-icon {
     vertical-align: bottom;
 }
+
+.footer-tooltip .ab-page-header {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-tooltip .ab-page-header h3 {
+    margin: 0;
+}
+
+.footer-tooltip .ab-page-header h3 span.linked-contact-icon {
+    vertical-align: sub;
+    margin-right: 4px;
+}
+
+.footer-tooltip #TooltipContactsTable {
+    margin-bottom: 0;
+}
