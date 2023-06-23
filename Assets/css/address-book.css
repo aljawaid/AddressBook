@@ -106,7 +106,7 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     vertical-align: middle;
 }
 
-.input-section span.form-required, .property-wrapper span.form-required {
+.input-section span.form-required, .property-wrapper span.form-required, .input-wrapper span.form-required {
     vertical-align: top;
     transform: scale(1.7);
     display: inline-block;
