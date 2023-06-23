@@ -20,13 +20,14 @@ function version_1(PDO $pdo)
 
     /* SAVE VALUES OF DYNAMIC ITEMS FOR THE CONTACT */
     $pdo->exec('CREATE TABLE IF NOT EXISTS address_book_contacts_contact (
+        `item_id` INT NOT NULL AUTO_INCREMENT,
         `contacts_id` INT NOT NULL,
-        `item_id` INT NOT NULL,
         `contact_item_value` TEXT NOT NULL,
         `updated_by_user_id` INT NOT NULL,
         `last_updated` INTEGER NOT NULL,
         FOREIGN KEY(item_id) REFERENCES address_book_contacts_items(id) ON DELETE CASCADE,
-        KEY(contacts_id)
+        KEY(contacts_id),
+        PRIMARY KEY(item_id)
     ) ENGINE=InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci');
 
     /* CREATE LINKS TO TASKS WITH CONTACTS */
