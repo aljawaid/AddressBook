@@ -5,20 +5,23 @@ namespace Kanboard\Plugin\AddressBook\Controller;
 use Kanboard\Controller\BaseController;
 
 /**
- * Contacts
+ * Contacts Controller
  *
- * @package controller
+ * @package Controller
  * @author  Martin Middeke
+ * @author  aljawaid
  */
 class ContactsController extends BaseController
 {
     /**
      * Display list of contacts and create new contacts
      *
-     * @access public
-     * @param  array $values
-     * @param  array $errors
-     * @throws \Kanboard\Core\Controller\PageNotFoundException
+     * @access  public
+     * @param   array $values
+     * @param   array $errors
+     * @throws  \Kanboard\Core\Controller\PageNotFoundException
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function project(array $values = array(), array $errors = array())
     {
@@ -36,7 +39,8 @@ class ContactsController extends BaseController
     /**
      * Save a new contact
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function save()
     {
@@ -47,10 +51,10 @@ class ContactsController extends BaseController
 
         if ($valid) {
             if ($this->contactsModel->create($values) !== false) {
-                $this->flash->success(t('Your contact has been created successfully.'));
-                return $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('plugin' => 'AddressBook', 'project_id' => $project['id'])));
+                $this->flash->success(t('Your contact has been created successfully'));
+                return $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('project_id' => $project['id'], 'plugin' => 'AddressBook')));
             } else {
-                $this->flash->failure(t('Unable to create your contact.'));
+                $this->flash->failure(t('Unable to create your contact'));
             }
         }
 
@@ -60,7 +64,8 @@ class ContactsController extends BaseController
     /**
      * Show all items from contact
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function details()
     {
@@ -73,7 +78,9 @@ class ContactsController extends BaseController
     /**
      * Show contact list in task footer (board view)
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function boardTaskFooter()
     {
@@ -91,10 +98,12 @@ class ContactsController extends BaseController
      * Edit a contact (display the form)
      *
      * @access public
-     * @param  array $values
-     * @param  array $errors
-     * @throws AccessForbiddenException
-     * @throws \Kanboard\Core\Controller\PageNotFoundException
+     * @param   array $values
+     * @param   array $errors
+     * @throws  AccessForbiddenException
+     * @throws  \Kanboard\Core\Controller\PageNotFoundException
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function edit(array $values = array(), array $errors = array())
     {
@@ -113,33 +122,24 @@ class ContactsController extends BaseController
     /**
      * Update items from contact
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function update()
     {
         $project = $this->getProject();
-//        $filter = $this->customFilterModel->getById($this->request->getIntegerParam('filter_id'));
-
-//        $this->checkPermission($project, $filter);
 
         $values = $this->request->getValues();
-
-//        if (! isset($values['is_shared'])) {
-//            $values += array('is_shared' => 0);
-//        }
-//
-//        if (! isset($values['append'])) {
-//            $values += array('append' => 0);
-//        }
 
         list($valid, $errors) = $this->contactsValidator->validateModification($values);
 
         if ($valid) {
             if ($this->contactsModel->update($values)) {
-                $this->flash->success(t('Your contact has been updated successfully.'));
-                return $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('plugin' => 'AddressBook', 'project_id' => $project['id'])));
+                $this->flash->success(t('Your contact has been updated successfully'));
+                return $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('project_id' => $project['id'], 'plugin' => 'AddressBook')));
             } else {
-                $this->flash->failure(t('Unable to update contact.'));
+                $this->flash->failure(t('Unable to update contact'));
             }
         }
 
@@ -149,7 +149,9 @@ class ContactsController extends BaseController
     /**
      * Confirmation dialog before removing a contact
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function confirm()
     {
@@ -166,7 +168,7 @@ class ContactsController extends BaseController
     }
 
     /**
-     * Remove a contact
+     * Delete a contact
      *
      * @access public
      */
@@ -176,21 +178,21 @@ class ContactsController extends BaseController
         $project = $this->getProject();
         $contacts_id = $this->request->getIntegerParam('contacts_id');
 
-        //$this->checkPermission($project, $filter);
-
         if ($this->contactsModel->remove($contacts_id)) {
-            $this->flash->success(t('Contact removed successfully.'));
+            $this->flash->success(t('Contact removed successfully'));
         } else {
-            $this->flash->failure(t('Unable to remove this contact.'));
+            $this->flash->failure(t('Unable to remove this contact'));
         }
 
-        $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('plugin' => 'AddressBook', 'project_id' => $project['id'])));
+        $this->response->redirect($this->helper->url->to('ContactsController', 'project', array('project_id' => $project['id'], 'plugin' => 'AddressBook')));
     }
 
     /**
-     * Edit contacts in a task
+     * Show contacts in a task
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function task()
     {
@@ -216,7 +218,8 @@ class ContactsController extends BaseController
     /**
      * Add a contact to task
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function addToTask()
     {
@@ -226,13 +229,14 @@ class ContactsController extends BaseController
 
         $this->contactsTaskModel->addToTask($contacts_id, $task_id);
 
-        $this->response->redirect($this->helper->url->to('ContactsController', 'task', array('plugin' => 'AddressBook', 'project_id' => $project['id'], 'task_id' => $task_id)));
+        $this->response->redirect($this->helper->url->to('ContactsController', 'task', array('project_id' => $project['id'], 'task_id' => $task_id, 'plugin' => 'AddressBook')));
     }
 
     /**
      * Remove a contact from task
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function removeFromTask()
     {
@@ -242,6 +246,6 @@ class ContactsController extends BaseController
 
         $this->contactsTaskModel->removeFromTask($contacts_id, $task_id);
 
-        $this->response->redirect($this->helper->url->to('ContactsController', 'task', array('plugin' => 'AddressBook', 'project_id' => $project['id'], 'task_id' => $task_id)));
+        $this->response->redirect($this->helper->url->to('ContactsController', 'task', array('project_id' => $project['id'], 'task_id' => $task_id, 'plugin' => 'AddressBook')));
     }
 }
