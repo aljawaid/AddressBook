@@ -5,25 +5,27 @@ namespace Kanboard\Plugin\AddressBook\Model;
 use Kanboard\Core\Base;
 
 /**
- * Contacts items model
+ * Contacts Items Model
  *
- * @package  model
+ * @package  Model
  * @author   Martin Middeke
+ * @author   aljawaid
  */
 class ContactsItemsModel extends Base
 {
     /**
-     * SQL table name for ContactsItems
+     * SQL table name for Contacts Items
      *
-     * @var string
+     * @var  string
      */
     const TABLE = 'address_book_contacts_items';
 
     /**
      * Return all contact items
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getAllItems()
     {
@@ -31,11 +33,12 @@ class ContactsItemsModel extends Base
     }
 
     /**
-     * Get item by id
+     * Get item by ID
      *
-     * @access public
-     * @param  integer  $item_id
-     * @return array
+     * @access  public
+     * @param   integer  $item_id
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getByID($item_id)
     {
@@ -43,11 +46,12 @@ class ContactsItemsModel extends Base
     }
 
     /**
-     * Get id by position
+     * Get ID by position
      *
-     * @access public
-     * @param  integer  $position
-     * @return array
+     * @access  public
+     * @param   integer  $position
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getByPosition($position)
     {
@@ -57,10 +61,11 @@ class ContactsItemsModel extends Base
     /**
      * Change item position
      *
-     * @access public
-     * @param  integer  $item_id
-     * @param  string   $direction
-     * @return boolean
+     * @access  public
+     * @param   integer  $item_id
+     * @param   string   $direction
+     * @return  boolean
+     * @author  Martin Middeke
      */
     public function changePosition($item_id, $direction)
     {
@@ -86,11 +91,12 @@ class ContactsItemsModel extends Base
     }
 
     /**
-     * Remove an item
+     * Delete an item
      *
-     * @access public
-     * @param  integer  $contacts_id
-     * @return bool
+     * @access  public
+     * @param   integer  $contacts_id
+     * @return  bool
+     * @author  Martin Middeke
      */
     public function remove($item_id)
     {
@@ -100,9 +106,10 @@ class ContactsItemsModel extends Base
     /**
      * Update an item
      *
-     * @access public
-     * @param  array    $values    Form values
-     * @return bool
+     * @access  public
+     * @param   array    $values    Form values
+     * @return  bool
+     * @author  Martin Middeke
      */
     public function update(array $values)
     {
@@ -112,9 +119,10 @@ class ContactsItemsModel extends Base
     /**
      * Save a new item
      *
-     * @access public
-     * @param  array    $values    Form values
-     * @return boolean
+     * @access  public
+     * @param   array    $values    Form values
+     * @return  boolean
+     * @author  Martin Middeke
      */
     public function save(array $values)
     {
@@ -128,7 +136,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Personal
      * - A general person
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function insertSetPersonal()
     {
@@ -151,7 +159,7 @@ class ContactsItemsModel extends Base
     /**
      * Remove Property Set - Personal
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function removeSetPersonal()
     {
@@ -173,7 +181,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Business
      * - A general business or organisation
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function insertSetBusiness()
     {
@@ -196,7 +204,7 @@ class ContactsItemsModel extends Base
     /**
      * Remove Property Set - Business
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function removeSetBusiness()
     {
@@ -218,7 +226,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Company
      * - A large business with departments and extensions
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function insertSetCompany()
     {
@@ -244,7 +252,7 @@ class ContactsItemsModel extends Base
     /**
      * Remove Property Set - Company
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function removeSetCompany()
     {
@@ -269,7 +277,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - People
      * - Names of people with contact numbers
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function insertSetPeople()
     {
@@ -289,7 +297,7 @@ class ContactsItemsModel extends Base
     /**
      * Remove Property Set - People
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function removeSetPeople()
     {
@@ -308,7 +316,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Team
      * - Names of people with contact numbers and email addresses
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function insertSetTeam()
     {
@@ -330,7 +338,7 @@ class ContactsItemsModel extends Base
     /**
      * Remove Property Set - Team
      *
-     * @author aljawaid
+     * @author  aljawaid
      */
     public function removeSetTeam()
     {
