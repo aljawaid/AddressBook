@@ -1,6 +1,6 @@
 <?php $contacts = $this->ContactsHelper->getContactsIDs($task['id']) ?>
 
-<details class="accordion-section task-contacts-section" <?= empty($contacts) ? '' : 'open' ?>>
+<details id="TaskContacts" class="accordion-section task-contacts-section" <?= empty($contacts) ? '' : 'open' ?>>
     <!-- Keep summary code intact -->
     <summary class="accordion-title"><span class="summary-wrapper"><span class="accordion-title-text"><?= t('Task Contacts') ?></span><span class="btn-count"><?= count($contacts) ?></span></span>
     </summary>
