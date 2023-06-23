@@ -115,4 +115,8 @@ return array(
     'People' => '',
     'Title' => '',
     'Team' => '',
+    //
+    // Template/config/sidebar.php
+    //
+    'Address Book' => '',
 );
