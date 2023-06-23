@@ -5,26 +5,28 @@ namespace Kanboard\Plugin\AddressBook\Model;
 use Kanboard\Core\Base;
 
 /**
- * Contacts model
+ * Contacts Model
  *
- * @package  model
+ * @package  Model
  * @author   Martin Middeke
+ * @author   aljawaid
  */
 class ContactsModel extends Base
 {
     /**
-     * SQL table name for Contacts Items
+     * SQL table name for Contacts
      *
-     * @var string
+     * @var  string
      */
     const TABLE = 'address_book_contacts_contact';
 
     /**
-     * Return contact by id
+     * Return contact by ID
      *
-     * @access public
-     * @param  integer $contacts_id
-     * @return array
+     * @access  public
+     * @param   integer $contacts_id
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getByID($contacts_id)
     {
@@ -46,8 +48,10 @@ class ContactsModel extends Base
     /**
      * Return all contacts
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getAll()
     {
@@ -65,8 +69,10 @@ class ContactsModel extends Base
     /**
      * Return contact with header items
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getByIDWithHeader($contacts_id)
     {
@@ -87,8 +93,10 @@ class ContactsModel extends Base
     /**
      * Return contact values for edit form
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getValuesByID($contacts_id)
     {
@@ -106,8 +114,9 @@ class ContactsModel extends Base
     /**
      * Return contact headings
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getHeadings()
     {
@@ -130,9 +139,11 @@ class ContactsModel extends Base
     /**
      * Create a new contact
      *
-     * @access public
-     * @param  array    $values    Form values
-     * @return boolean
+     * @access  public
+     * @param   array    $values    Form values
+     * @return  boolean
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function create(array $values)
     {
@@ -160,9 +171,11 @@ class ContactsModel extends Base
     /**
      * Update a contact
      *
-     * @access public
-     * @param  array    $values    Form values
-     * @return bool
+     * @access  public
+     * @param   array    $values    Form values
+     * @return  bool
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function update(array $values)
     {
@@ -207,11 +220,12 @@ class ContactsModel extends Base
     }
 
     /**
-     * Remove a contact
+     * Delete a contact
      *
-     * @access public
-     * @param  integer  $contacts_id
-     * @return bool
+     * @access  public
+     * @param   integer  $contacts_id
+     * @return  bool
+     * @author  Martin Middeke
      */
     public function remove($contacts_id)
     {
