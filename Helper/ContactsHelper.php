@@ -6,6 +6,12 @@ use Kanboard\Core\Base;
 
 class ContactsHelper extends Base
 {
+    /**
+     * Select items
+     *
+     * @return  html
+     * @author  Martin Middeke
+     */
     public function selectItem(array $values, array $errors = array(), array $attributes = array())
     {
         $attributes = array_merge(array('tabindex="1"', 'required', 'maxlength="30"'), $attributes);
@@ -27,15 +33,22 @@ class ContactsHelper extends Base
     /**
      * Get contact items by id
      *
-     * @access public
-     * @param  integer $contacts_id
-     * @return array
+     * @access  public
+     * @param   integer $contacts_id
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getContactByID($contacts_id)
     {
         return $this->contactsModel->getByID($contacts_id);
     }
 
+    /**
+     * Get contacts by task id
+     *
+     * @return array
+     * @author  Martin Middeke
+     */
     public function getContactsIDs($task_id)
     {
         return $this->contactsTaskModel->getByTaskId($task_id);
