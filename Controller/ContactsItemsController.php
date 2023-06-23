@@ -6,19 +6,21 @@ use Kanboard\Controller\BaseController;
 use Kanboard\Core\Controller\PageNotFoundException;
 
 /**
- * Contacts
+ * Contacts Items Controller
  *
- * @package controller
- * @author  Martin Middeke
+ * @package  Controller
+ * @author   Martin Middeke
+ * @author   aljawaid
  */
 class ContactsItemsController extends BaseController
 {
     /**
      * Get the current item
      *
-     * @access protected
-     * @return array
-     * @throws PageNotFoundException
+     * @access  protected
+     * @return  array
+     * @throws  PageNotFoundException
+     * @author  Martin Middeke
      */
     protected function getItem()
     {
@@ -34,7 +36,8 @@ class ContactsItemsController extends BaseController
     /**
      * Contacts items config page
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function config()
     {
@@ -44,6 +47,13 @@ class ContactsItemsController extends BaseController
         )));
     }
 
+    /**
+     * Edit properties
+     *
+     * @return  void
+     * @author  Martin Middeke
+     * @author  aljawaid
+     */
     public function edit(array $values = array(), array $errors = array())
     {
         $item = $this->getItem();
@@ -58,7 +68,8 @@ class ContactsItemsController extends BaseController
     /**
      * Update and validate an item
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function update()
     {
@@ -68,9 +79,9 @@ class ContactsItemsController extends BaseController
 
         if ($valid) {
             if ($this->contactsItemsModel->update($values)) {
-                $this->flash->success(t('Item updated successfully.'));
+                $this->flash->success(t('Item updated successfully'));
             } else {
-                $this->flash->failure(t('Unable to update your item.'));
+                $this->flash->failure(t('Unable to update your item'));
             }
         }
 
@@ -80,7 +91,8 @@ class ContactsItemsController extends BaseController
     /**
      * Move item position
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function movePosition()
     {
@@ -96,6 +108,7 @@ class ContactsItemsController extends BaseController
      * Confirmation dialog before removing an item
      *
      * @access public
+     * @author  Martin Middeke
      */
     public function confirm()
     {
@@ -108,21 +121,20 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove an item
+     * Delete an item
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function remove()
     {
         $this->checkCSRFParam();
         $item_id = $this->request->getIntegerParam('item_id');
 
-        //$this->checkPermission($project, $filter);
-
         if ($this->contactsItemsModel->remove($item_id)) {
-            $this->flash->success(t('Item removed successfully.'));
+            $this->flash->success(t('Item removed successfully'));
         } else {
-            $this->flash->failure(t('Unable to remove this item.'));
+            $this->flash->failure(t('Unable to remove this item'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -131,7 +143,8 @@ class ContactsItemsController extends BaseController
     /**
      * Save a new item
      *
-     * @access public
+     * @access  public
+     * @author  Martin Middeke
      */
     public function save()
     {
@@ -141,9 +154,9 @@ class ContactsItemsController extends BaseController
 
         if ($valid) {
             if ($this->contactsItemsModel->save($values)) {
-                $this->flash->success(t('Item updated successfully.'));
+                $this->flash->success(t('Item updated successfully'));
             } else {
-                $this->flash->failure(t('Unable to update your item.'));
+                $this->flash->failure(t('Unable to update your item'));
             }
         }
 
@@ -153,7 +166,8 @@ class ContactsItemsController extends BaseController
     /**
      * Insert Property Set - Personal
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function insertSetPersonal()
     {
@@ -169,7 +183,8 @@ class ContactsItemsController extends BaseController
     /**
      * Remove Property Set - Personal
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function removeSetPersonal()
     {
@@ -185,7 +200,8 @@ class ContactsItemsController extends BaseController
     /**
      * Insert Property Set - Business
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function insertSetBusiness()
     {
@@ -201,7 +217,8 @@ class ContactsItemsController extends BaseController
     /**
      * Remove Property Set - Business
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function removeSetBusiness()
     {
@@ -217,7 +234,8 @@ class ContactsItemsController extends BaseController
     /**
      * Insert Property Set - Company
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function insertSetCompany()
     {
@@ -233,7 +251,8 @@ class ContactsItemsController extends BaseController
     /**
      * Remove Property Set - Company
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function removeSetCompany()
     {
@@ -249,7 +268,8 @@ class ContactsItemsController extends BaseController
     /**
      * Insert Property Set - People
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function insertSetPeople()
     {
@@ -265,7 +285,8 @@ class ContactsItemsController extends BaseController
     /**
      * Remove Property Set - People
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function removeSetPeople()
     {
@@ -281,7 +302,8 @@ class ContactsItemsController extends BaseController
     /**
      * Insert Property Set - Team
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function insertSetTeam()
     {
@@ -297,7 +319,8 @@ class ContactsItemsController extends BaseController
     /**
      * Remove Property Set - Team
      *
-     * @access public
+     * @access  public
+     * @author  aljawaid
      */
     public function removeSetTeam()
     {
