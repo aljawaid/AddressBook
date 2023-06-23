@@ -79,9 +79,9 @@ class ContactsItemsController extends BaseController
 
         if ($valid) {
             if ($this->contactsItemsModel->update($values)) {
-                $this->flash->success(t('Item updated successfully'));
+                $this->flash->success(t('Contact Property Updated'));
             } else {
-                $this->flash->failure(t('Unable to update your item'));
+                $this->flash->failure(t('Unable to Update Contact Property'));
             }
         }
 
@@ -116,7 +116,7 @@ class ContactsItemsController extends BaseController
 
         $this->response->html($this->helper->layout->config('addressBook:config/remove', array(
             'item' => $item,
-            'title' => t('Remove Item'),
+            'title' => t('Delete Contact Property'),
         )));
     }
 
@@ -132,9 +132,9 @@ class ContactsItemsController extends BaseController
         $item_id = $this->request->getIntegerParam('item_id');
 
         if ($this->contactsItemsModel->remove($item_id)) {
-            $this->flash->success(t('Item removed successfully'));
+            $this->flash->success(t('Contact Property Deleted Successfully'));
         } else {
-            $this->flash->failure(t('Unable to remove this item'));
+            $this->flash->failure(t('Unable to Delete Contact Property'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -154,9 +154,9 @@ class ContactsItemsController extends BaseController
 
         if ($valid) {
             if ($this->contactsItemsModel->save($values)) {
-                $this->flash->success(t('Item updated successfully'));
+                $this->flash->success(t('Contact Property Saved'));
             } else {
-                $this->flash->failure(t('Unable to update your item'));
+                $this->flash->failure(t('Unable to Save Contact Property'));
             }
         }
 
@@ -189,9 +189,9 @@ class ContactsItemsController extends BaseController
     public function removeSetPersonal()
     {
         if ($this->contactsItemsModel->removeSetPersonal()) {
-            $this->flash->success(t('Personal Property Set Removed'));
+            $this->flash->success(t('Personal Property Set Deleted'));
         } else {
-            $this->flash->failure(t('Unable to Remove Property Set'));
+            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -223,9 +223,9 @@ class ContactsItemsController extends BaseController
     public function removeSetBusiness()
     {
         if ($this->contactsItemsModel->removeSetBusiness()) {
-            $this->flash->success(t('Business Property Set Removed'));
+            $this->flash->success(t('Business Property Set Deleted'));
         } else {
-            $this->flash->failure(t('Unable to Remove Property Set'));
+            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -257,9 +257,9 @@ class ContactsItemsController extends BaseController
     public function removeSetCompany()
     {
         if ($this->contactsItemsModel->removeSetCompany()) {
-            $this->flash->success(t('Company Property Set Removed'));
+            $this->flash->success(t('Company Property Set Deleted'));
         } else {
-            $this->flash->failure(t('Unable to Remove Property Set'));
+            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -291,9 +291,9 @@ class ContactsItemsController extends BaseController
     public function removeSetPeople()
     {
         if ($this->contactsItemsModel->removeSetPeople()) {
-            $this->flash->success(t('People Property Set Removed'));
+            $this->flash->success(t('People Property Set Deleted'));
         } else {
-            $this->flash->failure(t('Unable to Remove Property Set'));
+            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -325,9 +325,9 @@ class ContactsItemsController extends BaseController
     public function removeSetTeam()
     {
         if ($this->contactsItemsModel->removeSetTeam()) {
-            $this->flash->success(t('Team Property Set Removed'));
+            $this->flash->success(t('Team Property Set Deleted'));
         } else {
-            $this->flash->failure(t('Unable to Remove Property Set'));
+            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
