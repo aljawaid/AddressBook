@@ -5,34 +5,38 @@
     <summary class="accordion-title"><span class="summary-wrapper"><span class="accordion-title-text"><?= t('Task Contacts') ?></span><span class="btn-count"><?= count($contacts) ?></span></span>
     </summary>
     <div class="accordion-content">
-        <?php $items = $this->ContactsHelper->getItems() ?>
-        <table id="TaskContactsTable" class="table-small table-fixed">
-            <thead class="table-head">
-                <tr class="table-row">
-                    <th class="contacts-table-header column-4 cell-zero"></th>
-                    <th class="contacts-table-header column-24"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
-                    <th class="contacts-table-header column-24"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
-                    <th class="contacts-table-header column-24"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
-                    <th class="contacts-table-header column-24"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
-                </tr>
-            </thead>
-            <tbody class="table-body">
-                <?php foreach ($contacts as $key => $value): ?>
-                    <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+        <?php if (empty($contacts)): ?>
+            <p class="alert alert-info no-contacts"><?= t('No contacts have been linked to this task') ?></p>
+        <?php else: ?>
+            <?php $items = $this->ContactsHelper->getItems() ?>
+            <table id="TaskContactsTable" class="table-small table-fixed">
+                <thead class="table-head">
                     <tr class="table-row">
-                        <td class="contacts-table-value text-center cell-zero">
-                            <!-- Modal Button -->
-                            <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
-                                        <span class="contact-profile-icon"></span>
-                            </a>
-                        </td>
-                        <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                        <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                        <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
-                        <td class="contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?></td>
+                        <th class="contacts-table-header column-4 cell-zero"></th>
+                        <th class="contacts-table-header column-24"><?= (empty($items[0])) ? "" : $items[0]['item'] ?></th>
+                        <th class="contacts-table-header column-24"><?= (empty($items[1])) ? "" : $items[1]['item'] ?></th>
+                        <th class="contacts-table-header column-24"><?= (empty($items[2])) ? "" : $items[2]['item'] ?></th>
+                        <th class="contacts-table-header column-24"><?= (empty($items[3])) ? "" : $items[3]['item'] ?></th>
                     </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table-body">
+                    <?php foreach ($contacts as $key => $value): ?>
+                        <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
+                        <tr class="table-row">
+                            <td class="contacts-table-value text-center cell-zero">
+                                <!-- Modal Button -->
+                                <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
+                                    <span class="contact-profile-icon"></span>
+                                </a>
+                            </td>
+                            <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value"><?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        <?php endif ?>
     </div>
 </details>
