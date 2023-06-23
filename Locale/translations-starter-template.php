@@ -96,4 +96,23 @@ return array(
     'The first property can never be deleted' => '',
     'Delete Property' => '',
     'Delete' => '',
+    //
+    // Template/config/property-sets.php
+    //
+    'Property Sets' => '',
+    'Individual properties can always be added, renamed or removed. %sAny existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.%s' => '',
+    'Add Set' => '',
+    'Remove Set' => '',
+    'Personal' => '',
+    'Mobile' => '',
+    'Relationship' => '',
+    'Note' => '',
+    'Business' => '',
+    'Website' => '',
+    'Company' => '',
+    'Extension' => '',
+    'Contact Name' => '',
+    'People' => '',
+    'Title' => '',
+    'Team' => '',
 );
