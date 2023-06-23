@@ -141,4 +141,12 @@ return array(
     // Template/contact/remove.php
     //
     'Do you really want to delete %s as a contact in the Address Book?' => '',
+    //
+    // Template/project/contacts.php
+    //
+    'Project Contacts' => '',
+    'This section lists all contacts for the %s project. Once you have added contacts here, you can link any contact to any task within this project.' => '',
+    'No contacts found' => '',
+    'View more information for this contact' => '',
+    'View Contact' => '',
 );
