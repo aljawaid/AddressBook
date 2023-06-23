@@ -8,17 +8,18 @@ use Kanboard\Model\UserModel;
 use Kanboard\Model\TaskModel;
 
 /**
- * Contacts model
+ * Contacts Task Model
  *
- * @package  model
+ * @package  Model
  * @author   Martin Middeke
+ * @author   aljawaid
  */
 class ContactsTaskModel extends Base
 {
     /**
-     * SQL table name for ContactsItems
+     * SQL table name for Task Contacts
      *
-     * @var string
+     * @var  string
      */
     const TABLE = 'address_book_contacts_task_has_contact';
 
@@ -27,6 +28,7 @@ class ContactsTaskModel extends Base
      *
      * @access public
      * @return array
+     * @author  Martin Middeke
      */
     public function getByTaskId($task_id)
     {
@@ -34,10 +36,12 @@ class ContactsTaskModel extends Base
     }
 
     /**
-     * Return assigned contacts
+     * Return linked contacts
      *
-     * @access public
-     * @return array
+     * @access  public
+     * @return  array
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getLinked($task_id)
     {
@@ -58,11 +62,13 @@ class ContactsTaskModel extends Base
     }
 
     /**
-     * Get all contacts not assigned to task
+     * Get all contacts not linked to task
      *
-     * @access public
-     * @param  integer $task_id
-     * @return array
+     * @access  public
+     * @param   integer $task_id
+     * @return  array
+     * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getNotLinked($task_id)
     {
@@ -90,12 +96,13 @@ class ContactsTaskModel extends Base
     }
 
     /**
-     * Get a item by the id
+     * Get a item by the ID
      *
-     * @access public
-     * @param  integer   $item_id    Subtask id
-     * @param  bool      $more          Fetch more data
-     * @return array
+     * @access  public
+     * @param   integer   $item_id    Subtask id
+     * @param   bool      $more          Fetch more data
+     * @return  array
+     * @author  Martin Middeke
      */
     public function getById($item_id, $more = false)
     {
@@ -116,10 +123,11 @@ class ContactsTaskModel extends Base
     /**
      * Add a contact to task
      *
-     * @access public
-     * @param  integer   $contacts_id    contact id
-     * @param  integer   $task_id        task id
-     * @return array
+     * @access  public
+     * @param   integer   $contacts_id    contact id
+     * @param   integer   $task_id        task id
+     * @return  array
+     * @author  Martin Middeke
      */
     public function addToTask($contacts_id, $task_id)
     {
@@ -127,12 +135,13 @@ class ContactsTaskModel extends Base
     }
 
     /**
-     * Remove a contact from task
+     * Delete a contact from task
      *
-     * @access public
-     * @param  integer   $contacts_id    contact id
-     * @param  integer   $task_id        task id
-     * @return array
+     * @access  public
+     * @param   integer   $contacts_id    contact id
+     * @param   integer   $task_id        task id
+     * @return  array
+     * @author  Martin Middeke
      */
     public function removeFromTask($contacts_id, $task_id)
     {
