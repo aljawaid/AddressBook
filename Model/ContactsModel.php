@@ -80,6 +80,7 @@ class ContactsModel extends Base
             ->table(self::TABLE)
             ->columns(
                 ContactsItemsModel::TABLE . '.item',
+                ContactsItemsModel::TABLE . '.item_type',
                 self::TABLE . '.contact_item_value',
                 self::TABLE . '.last_updated',
                 self::TABLE . '.updated_by_user_id'
