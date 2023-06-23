@@ -37,17 +37,15 @@ Use the dedicated Address Book to create and manage contacts associating them wi
 
 ## Features
 
-- Use the standard contact profile to create contacts per project or per task
-- Easily assign contacts to tasks
-- Show contacts at a glance on each task
+- Use the contact profile to create contacts per project or per task
+- Easily link contacts to tasks
+- Show linked contacts at a glance on each task summary
+- Show linked contacts at a glance in the board view
 - Works with MySQL, SQLite and PostgreSQL database types
 
 **Contact Properties**
-- Add contacts and organisations to tasks using default properties
-- Default properties include:
-  - Name, Organisation, Address, Telephone, Mobile, Email, Website, Reference, Note
-  - Rename or delete default properties
-- Add custom properties to the contact profile
+- Add contacts and organisations to tasks using property sets or create your own
+- Add custom properties to the contact profile using one of the poperty types
 
 **Property Types**
 - HTML5 validated input types in a neat user-friendly form
@@ -61,6 +59,7 @@ Use the dedicated Address Book to create and manage contacts associating them wi
   - Number (Decimal 4) - _for numbers containing 4 decimals_
   - Telephone - _for telephone, fax and mobile numbers_
   - URL - _for website, ftp, git, addresses_
+- Add notes against each input field for users
 
 **Property Sets**
 - Add groups of properties to quickly build a contact profile ready for your contacts and projects
@@ -70,6 +69,7 @@ Use the dedicated Address Book to create and manage contacts associating them wi
   - Company - _a large business with departments and extensions_
   - People - _names of people with contact numbers_
   - Team - _names of people with contact numbers and email addresses_
+- Tip: Add all property sets and delete the ones you don't need
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#features">&#8592; Previous</a>] [<a href="#usage">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
@@ -165,7 +165,7 @@ Go to `Task` &#10562; Contacts
 ## Authors & Contributors
 
 - [@aljawaid](https://github.com/aljawaid) - Author
-- [Martin Middeke](https://github.com/Busfreak/plugin-contacts) - Author (imported features from the Contacts plugin)
+- [Martin Middeke](https://github.com/Busfreak/plugin-contacts) - Contributor (selected features from the Contacts plugin)
 - _Contributors welcome_
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#installation--compatibility">&#8592; Previous</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
