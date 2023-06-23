@@ -55,8 +55,40 @@
             <tbody class="table-body">
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="table-row">
-                        <td class="contact-table-header column-25"><?= $value['item'] ?></td>
-                        <td class="contact-table-value column-75"><?= $value['contact_item_value'] ?></td>
+                        <th class="contact-table-header column-25"><?= $value['item'] ?></td>
+                        <?php if ($value['item_type'] == 'address'): ?>
+                            <td class="contact-table-value column-75 p-none">
+                                <textarea class="address-display" readonly>
+                                    <?= $value['contact_item_value'] ?>
+                                </textarea>
+                            </td>
+                        <?php elseif ($value['item_type'] == 'textarea'): ?>
+                            <td class="contact-table-value column-75 p-none">
+                                <textarea class="note-display" readonly>
+                                    <?= $value['contact_item_value'] ?>
+                                </textarea>
+                            </td>
+                        <?php elseif ($value['item_type'] == 'email'): ?>
+                            <td class="contact-table-value column-75">
+                                <a href="mailto:<?= $value['contact_item_value'] ?>" class="email-display" title="<?= t('Send Email') ?>">
+                                    <?= $value['contact_item_value'] ?>
+                                </a>
+                            </td>
+                        <?php elseif ($value['item_type'] == 'url'): ?>
+                            <td class="contact-table-value column-75">
+                                <a href="<?= $value['contact_item_value'] ?>" class="url-display" title="<?= t('Opens in a new window') ?> &#8663;" target="_blank" rel="noopener noreferrer">
+                                    <?= $value['contact_item_value'] ?>
+                                </a>
+                            </td>
+                        <?php elseif ($value['item_type'] == 'telephone'): ?>
+                            <td class="contact-table-value column-75">
+                                <a href="tel:<?= $value['contact_item_value'] ?>" class="telephone-display">
+                                    <?= $value['contact_item_value'] ?>
+                                </a>
+                            </td>
+                        <?php else: ?>
+                            <td class="contact-table-value column-75"><?= $value['contact_item_value'] ?></td>
+                        <?php endif ?>
                     </tr>
 
                 <?php endforeach ?>
