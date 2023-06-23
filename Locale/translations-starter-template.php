@@ -149,4 +149,8 @@ return array(
     'No contacts found' => '',
     'View more information for this contact' => '',
     'View Contact' => '',
+    //
+    // Template/task/footer-tooltip.php
+    //
+    'Link Contacts' => '',
 );
