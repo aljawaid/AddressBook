@@ -24,7 +24,7 @@ class ContactsValidator extends BaseValidator
     public function validateItemModification(array $values)
     {
         $rules = array(
-            new Validators\Required('item', t('The name of the item is required')),
+            new Validators\Required('item', t('The name of the property is required')),
         );
 
         $v = new Validator($values, array_merge($rules, $this->commonValidationRules()));

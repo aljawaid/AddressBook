@@ -41,7 +41,7 @@
             <?= e('Do you really want to remove the %s property from the contact profile?', '<strong>' . $item['item'] . '</strong>') ?>
         </p>
         <div class="form-actions">
-            <?= $this->url->link(t('Delete'), 'ContactsItemsController', 'remove', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
+            <?= $this->url->link(t('Delete Property'), 'ContactsItemsController', 'remove', array('item_id' => $item['id'], 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>

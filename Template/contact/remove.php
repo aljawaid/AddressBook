@@ -42,7 +42,7 @@
         </p>
 
         <div class="form-actions">
-            <?= $this->url->link(t('Delete'), 'ContactsController', 'remove', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
+            <?= $this->url->link(t('Delete Contact'), 'ContactsController', 'remove', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>
