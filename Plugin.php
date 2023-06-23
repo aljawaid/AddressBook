@@ -25,7 +25,7 @@ class Plugin extends Base
         $this->template->hook->attach('template:config:sidebar', 'addressBook:config/sidebar');
         $this->template->hook->attach('template:project:sidebar', 'addressBook:project/sidebar');
         $this->template->hook->attach('template:task:sidebar:information', 'addressBook:task/sidebar');
-        $this->template->hook->attach('template:board:task:icons', 'addressBook:task/footer_icon');
+        $this->template->hook->attach('template:board:task:icons', 'addressBook:task/footer-icon');
         $this->template->hook->attach('template:task:show:before-description', 'addressBook:task/description');
 
         // Extra Page - Routes
