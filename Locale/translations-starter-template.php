@@ -163,4 +163,9 @@ return array(
     'No contacts found in the Address Book' => '',
     'This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this table when they are linked to tasks.' => '',
     'Link this contact to this task' => '',
+    //
+    // Validator/ContactsValidator.php
+    //
+    'The name of the property is required' => '',
+    'The maximum length is %d characters' => '',
 );
