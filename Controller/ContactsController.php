@@ -162,7 +162,7 @@ class ContactsController extends BaseController
             'project' => $project,
             'contact' => $contact[0],
             'contacts_id' => $this->request->getIntegerParam('contacts_id'),
-            'title' => t('Remove Contact'),
+            'title' => t('Delete Contact'),
             'contact_name' => $contact[0]['contact_item_value'],
         )));
     }
