@@ -131,4 +131,10 @@ return array(
     'Numbers with 2 decimals are allowed' => '',
     'Numbers with 4 decimals are allowed' => '',
     'Add Contact' => '',
+    //
+    // Template/contact/details.php
+    //
+    'Contact Details' => '',
+    'No contacts' => '',
+    'Last updated on %s by %s' => '',
 );
