@@ -30,21 +30,6 @@
     --transition-address-book: ease-in-out all .3s;
 }
 
-/*
-.pp-blue { color: var(--pp-blue); fill: var(--pp-blue); }
-.pp-blue-alt { color: var(--pp-blue-alt); fill: var(--pp-blue-alt); }
-.pp-red { color: var(--pp-red); fill: var(--pp-red); }
-.pp-red-alt { color: var(--pp-red-alt); fill: var(--pp-red-alt); }
-.pp-red-alt-2 { color: var(--pp-red-alt-2); fill: var(--pp-red-alt-2); }
-.pp-black { color: var(--pp-black); fill: var(--pp-black); }
-.pp-light-grey { color: var(--pp-light-grey); fill: var(--pp-light-grey); }
-.pp-grey { color: var(--pp-grey); fill: var(--pp-grey); }
-.pp-white { color: var(--pp-white); fill: var(--pp-white); }
-.pp-green { color: var(--pp-green); fill: var(--pp-green); }
-.pp-dark-green { color: var(--pp-green-dark); fill: var(--pp-green-dark); }
-.pp-orange { color: var(--pp-orange); fill: var(--pp-orange); }
-*/
-
 .display-none, .d-none { display: none; }
 
 .font-weight-bold { font-weight: bold; }
