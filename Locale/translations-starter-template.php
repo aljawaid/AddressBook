@@ -153,4 +153,14 @@ return array(
     // Template/task/footer-tooltip.php
     //
     'Link Contacts' => '',
+    //
+    // Template/task/link-contacts.php
+    //
+    'Linked Contact Information' => '',
+    'Project Address Book' => '',
+    'This section shows contacts linked to this task %s. Contacts must be added to the Project Address Book for them to be available for linking to a task.' => '',
+    'Delink this contact from this task' => '',
+    'No contacts found in the Address Book' => '',
+    'This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this table when they are linked to tasks.' => '',
+    'Link this contact to this task' => '',
 );
