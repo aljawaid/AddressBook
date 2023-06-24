@@ -33,7 +33,7 @@
                     <?php else: ?>
                         <?php if ($value['id'] == 1): ?>
                             <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="30"', 'autofocus', 'required'), 'property-input') ?>
-                            <?php else: ?>
+                        <?php else: ?>
                                 <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="30"'), 'property-input') ?>
                         <?php endif ?>
                     <?php endif ?>
