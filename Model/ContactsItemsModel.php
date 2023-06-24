@@ -133,6 +133,18 @@ class ContactsItemsModel extends Base
     }
 
     /**
+     * Delete Property Set
+     *
+     * @param   set         - name of property set
+     * @author  aljawaid
+     */
+    public function removeSet($set)
+    {
+
+        return false;
+    }
+
+    /**
      * Add Property Set - Personal
      * - A general person
      *

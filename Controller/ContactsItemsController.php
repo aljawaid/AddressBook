@@ -164,6 +164,43 @@ class ContactsItemsController extends BaseController
     }
 
     /**
+     * Confirmation dialog before removing a property set
+     *
+     * @access public
+     * @param   set         - name of property set
+     * @author  aljawaid
+     */
+    public function confirmRemoveSet()
+    {
+        $this->response->html($this->helper->layout->config('addressBook:config/remove-set', array(
+            'set' => $this->request->getStringParam('set'),
+            'title' => t('Delete Property Set'),
+        )));
+    }
+
+    /**
+     * Delete Property Set
+     *
+     * @access  public
+     * @param   set         - name of property set
+     * @author  aljawaid
+     */
+    public function removeSet()
+    {
+        $this->checkCSRFParam();
+
+        $set = $this->request->getStringParam('set');
+
+        if ($this->contactsItemsModel->removeSet($set)) {
+            $this->flash->success(t('Property Set Deleted'));
+        } else {
+            $this->flash->failure(t('Unable to Delete Property Set'));
+        }
+
+        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
+    }
+
+    /**
      * Insert Property Set - Personal
      *
      * @access  public
