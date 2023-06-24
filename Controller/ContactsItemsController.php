@@ -218,23 +218,6 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove Property Set - Personal
-     *
-     * @access  public
-     * @author  aljawaid
-     */
-    public function removeSetPersonal()
-    {
-        if ($this->contactsItemsModel->removeSetPersonal()) {
-            $this->flash->success(t('Personal Property Set Deleted'));
-        } else {
-            $this->flash->failure(t('Unable to Delete Property Set'));
-        }
-
-        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
-    }
-
-    /**
      * Insert Property Set - Business
      *
      * @access  public
