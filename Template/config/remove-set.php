@@ -2,6 +2,7 @@
     /* MODAL SIZE */
     #modal-box {
         width: auto !important;
+        overflow: hidden;
     }
 
     #modal-content {
@@ -13,7 +14,7 @@
         transform: scale(1.5);
         display: inline-block;
         position: absolute;
-        right: 6px;
+        right: 5px;
         top: 6px;
         background: var(--pp-red-alt-2);
         padding: 3px 3px 5px 6px;

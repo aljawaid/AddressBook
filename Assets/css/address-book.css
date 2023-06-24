@@ -358,8 +358,8 @@ li.property-action-item a span.rename-icon {
     border-bottom: 0;
 }
 
-.confirm p.confirm-delete {
-    padding: 10px;
+.delete-property-modal .confirm p {
+    text-align: left;
 }
 
 button.btn.cancel-btn {
