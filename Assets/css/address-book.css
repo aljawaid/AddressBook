@@ -18,6 +18,7 @@
     --ab-blue: #20369F;
     --ab-button: rgba(32, 54, 159, .8);
     --ab-table-green: #84D040;
+    --background-red: #FF000054;
     --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
     --blue-border-gradient-match: #476E9E;
     --button-background-delete: #D05C84;
@@ -512,6 +513,14 @@ fieldset.add-contact-profile.relative span.form-help {
 .no-contacts {
     font-weight: 600;
     margin-block: 15px;
+}
+
+.alert.property-warning {
+    margin-top: 15px;
+    background-color: var(--background-red);
+    color: var(--pp-red);
+    border-color: var(--background-red);
+    margin-bottom: 0;
 }
 
 button.btn-add-contact span.add-contact-icon {

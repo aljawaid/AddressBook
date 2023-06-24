@@ -118,6 +118,11 @@ return array(
     'Title' => '',
     'Team' => '',
     //
+    // Template/config/remove-set.php
+    //
+    'Do you really want to remove the %s property set from the contact profile?' => '',
+    'All properties with matching names to this set will be deleted regardless of whether they contain any data' => '',
+    //
     // Template/config/sidebar.php
     //
     'Address Book' => '',

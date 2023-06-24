@@ -41,6 +41,9 @@
         <p class="confirm-delete">
             <?= e('Do you really want to remove the %s property set from the contact profile?', '<strong>' . ucfirst($set) . '</strong>') ?>
         </p>
+        <p class="alert property-warning">
+            <?= t('All properties with matching names to this set will be deleted regardless of whether they contain any data') ?>
+        </p>
         <div class="form-actions">
             <?= $this->url->link(t('Delete Property Set'), 'ContactsItemsController', 'removeSet', array('set' => $set, 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
