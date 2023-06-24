@@ -264,6 +264,10 @@ fieldset.ab-new-item .form-actions {
     color: var(--pp-white);
 }
 
+.btn-ab-move i, .btn-ab-delete i {
+    pointer-events: none;
+}
+
 .btn-ab-move, .btn-ab-rename, .btn-ab-property, .btn-add-contact {
     background: var(--ab-button);
     border-radius: var(--border-radius-address-book);
