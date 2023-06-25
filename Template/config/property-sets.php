@@ -57,7 +57,7 @@
     </section>
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetTeam', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <a href="<?= $this->url->href('ContactsItemsController', 'removeSetTeam', array('plugin' => 'AddressBook')) ?>" class="btn btn-ab-move remove-property-set" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'team', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Team') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Title') ?></li>

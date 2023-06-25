@@ -153,6 +153,8 @@ class ContactsItemsModel extends Base
 
                 $this->db->closeTransaction();
 
+                return true;
+                break;
             case 'business':
                 $this->db->startTransaction();
 
@@ -195,6 +197,17 @@ class ContactsItemsModel extends Base
 
                 return true;
                 break;
+            case 'team':
+                $this->db->startTransaction();
+
+                $this->db->table(self::TABLE)->eq('item', 'Title')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
+
+                $this->db->closeTransaction();
+
                 return true;
                 break;
             default:
@@ -317,26 +330,6 @@ class ContactsItemsModel extends Base
         $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'position' => $max['maxid'] + 1]);
         $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'position' => $max['maxid'] + 1]);
         $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'position' => $max['maxid'] + 1]);
-
-        $this->db->closeTransaction();
-
-        return true;
-    }
-
-    /**
-     * Remove Property Set - Team
-     *
-     * @author  aljawaid
-     */
-    public function removeSetTeam()
-    {
-        $this->db->startTransaction();
-
-        $this->db->table(self::TABLE)->eq('item', 'Title')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
 
         $this->db->closeTransaction();
 
