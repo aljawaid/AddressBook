@@ -845,12 +845,16 @@ section.property-set-section {
 .property-set-name {
     width: 110px;
     margin-left: 10px;
+    color: var(--ab-blue);
 }
 
 .property-set-name, .add-property-set, .remove-property-set {
     display: inline-block;
     vertical-align: middle;
-    color: var(--ab-blue);
+}
+
+a.btn.add-property-set, a.btn.remove-property-set {
+    padding: 3px 6px 0 10px;
 }
 
 ul.property-set-items {

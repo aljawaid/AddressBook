@@ -4,8 +4,8 @@
     <p class=""><?= e('Individual properties can always be added, renamed or removed. %sAny existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.%s', '<strong>', '</strong>') ?></p>
 
     <section class="property-set-section">
-        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'personal', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetPersonal', array('plugin' => 'AddressBook')) ?>" class="btn add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'personal', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Personal') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Address') ?></li>
@@ -18,7 +18,7 @@
     </section>
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetBusiness', array('plugin' => 'AddressBook')) ?>" class="btn add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'business', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'business', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Business') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Address') ?></li>
@@ -31,7 +31,7 @@
     </section>
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetCompany', array('plugin' => 'AddressBook')) ?>" class="btn add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'company', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'company', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Company') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Department') ?></li>
@@ -47,7 +47,7 @@
     </section>
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetPeople', array('plugin' => 'AddressBook')) ?>" class="btn add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'people', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'people', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('People') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Title') ?></li>
@@ -57,7 +57,7 @@
     </section>
     <section class="property-set-section">
         <a href="<?= $this->url->href('ContactsItemsController', 'insertSetTeam', array('plugin' => 'AddressBook')) ?>" class="btn add-property-set" title="<?= t('Add Set') ?>"><i class="fa fa-plus" aria-hidden="true"></i></a>
-        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'team', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-move remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
+        <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'team', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Remove Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Team') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Title') ?></li>
