@@ -167,6 +167,23 @@ class ContactsItemsModel extends Base
 
                 return true;
                 break;
+            case 'company':
+                $this->db->startTransaction();
+
+                $this->db->table(self::TABLE)->eq('item', 'Department')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Extension')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Contact Name')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Website')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
+
+                $this->db->closeTransaction();
+
+                return true;
+                break;
                 return true;
                 break;
             default:
@@ -245,30 +262,6 @@ class ContactsItemsModel extends Base
         $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'position' => $max['maxid'] + 1]);
         $this->db->table(self::TABLE)->insert(['item' => 'Website', 'item_type' => 'url', 'position' => $max['maxid'] + 1]);
         $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'position' => $max['maxid'] + 1]);
-
-        $this->db->closeTransaction();
-
-        return true;
-    }
-
-    /**
-     * Remove Property Set - Company
-     *
-     * @author  aljawaid
-     */
-    public function removeSetCompany()
-    {
-        $this->db->startTransaction();
-
-        $this->db->table(self::TABLE)->eq('item', 'Department')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Extension')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Contact Name')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Website')->remove();
-        $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
 
         $this->db->closeTransaction();
 
