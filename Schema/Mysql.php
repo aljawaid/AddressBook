@@ -42,5 +42,5 @@ function version_1(PDO $pdo)
     ) ENGINE=InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_unicode_ci');
 
     /* ADD DEFAULTS FOR CONTACT ITEMS */
-    $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `position`) VALUES ("Name", "text", 1)');
+    $pdo->exec('INSERT INTO `address_book_contacts_items`(`item`, `item_type`, `property_set`, `position`) VALUES ("Name", "text", "default", 1)');
 }
