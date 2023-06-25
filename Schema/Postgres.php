@@ -14,6 +14,7 @@ function version_1(PDO $pdo)
         item VARCHAR(30) NOT NULL,
         item_help TEXT,
         item_type TEXT NOT NULL,
+        property_set TEXT,
         position INT NOT NULL,
         PRIMARY KEY(id)
     )');
