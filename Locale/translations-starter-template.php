@@ -99,7 +99,7 @@ return array(
     'Property Sets' => '',
     'Individual properties can always be added, renamed or removed. %sAny existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.%s' => '',
     'Add Set' => '',
-    'Remove Set' => '',
+    'Delete Set' => '',
     'Personal' => '',
     'Mobile' => '',
     'Relationship' => '',
