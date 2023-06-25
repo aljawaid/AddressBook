@@ -261,22 +261,22 @@ fieldset.ab-new-item .form-actions {
     color: var(--pp-white);
 }
 
-.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property, .btn-add-contact {
+.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property, .btn-add-contact, a.btn.add-property-set i {
     color: var(--pp-white);
 }
 
-.btn-ab-move i, .btn-ab-delete i {
+.btn-ab-move i, .btn-ab-delete i, .add-property-set i {
     pointer-events: none;
 }
 
-.btn-ab-move, .btn-ab-rename, .btn-ab-property, .btn-add-contact {
+.btn-ab-move, .btn-ab-rename, .btn-ab-property, .btn-add-contact, .btn.add-property-set {
     background: var(--ab-button);
     border-radius: var(--border-radius-address-book);
     transition: var(--transition-address-book);
     border: 1px solid var(--ab-button);
 }
 
-.btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus {
+.btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, .btn.add-property-set:hover, .btn.add-property-set:focus {
     border: 1px solid var(--ab-button);
 }
 
@@ -289,8 +289,12 @@ fieldset.ab-new-item .form-actions {
     color: #D14836;
 }
 
-.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus {
+.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, a.btn.add-property-set:hover i, a.btn.remove-property-set:focus i {
     color: var(--ab-blue);
+}
+
+.btn.add-property-set:hover {
+    background: var(--pp-white);
 }
 
 h2 span.address-book-icon {
