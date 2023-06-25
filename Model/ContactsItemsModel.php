@@ -140,19 +140,23 @@ class ContactsItemsModel extends Base
      */
     public function removeSet($set)
     {
-        if ($set === 'personal') {
-            $this->db->startTransaction();
+        switch ($set) {
+            case 'personal':
+                $this->db->startTransaction();
 
-            $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
-            $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-            $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-            $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-            $this->db->table(self::TABLE)->eq('item', 'Relationship')->remove();
-            $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Relationship')->remove();
+                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
 
-            $this->db->closeTransaction();
+                $this->db->closeTransaction();
 
-            return true;
+                return true;
+                break;
+            default:
+                return false;
         }
 
         return false;
