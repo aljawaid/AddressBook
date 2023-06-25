@@ -45,15 +45,10 @@ return array(
     'Unable to Delete Property Set' => '',
     'Personal Property Set Added' => '',
     'Unable to Add Property Set' => '',
-    'Personal Property Set Deleted' => '',
     'Business Property Set Added' => '',
-    'Business Property Set Deleted' => '',
     'Company Property Set Added' => '',
-    'Company Property Set Deleted' => '',
     'People Property Set Added' => '',
-    'People Property Set Deleted' => '',
     'Team Property Set Added' => '',
-    'Team Property Set Deleted' => '',
     //
     // Helper/ContactsHelper.php
     //
