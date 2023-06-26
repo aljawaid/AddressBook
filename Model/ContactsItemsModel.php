@@ -142,73 +142,19 @@ class ContactsItemsModel extends Base
     {
         switch ($set) {
             case 'personal':
-                $this->db->startTransaction();
-
-                $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Relationship')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
-
-                $this->db->closeTransaction();
-
-                return true;
+                return $this->db->table(self::TABLE)->eq('property_set', 'personal')->remove();
                 break;
             case 'business':
-                $this->db->startTransaction();
-
-                $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Website')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
-
-                $this->db->closeTransaction();
-
-                return true;
+                return $this->db->table(self::TABLE)->eq('property_set', 'business')->remove();
                 break;
             case 'company':
-                $this->db->startTransaction();
-
-                $this->db->table(self::TABLE)->eq('item', 'Department')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Address')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Extension')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Contact Name')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Website')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
-
-                $this->db->closeTransaction();
-
-                return true;
+                return $this->db->table(self::TABLE)->eq('property_set', 'company')->remove();
                 break;
             case 'people':
-                $this->db->startTransaction();
-
-                $this->db->table(self::TABLE)->eq('item', 'Title')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-
-                $this->db->closeTransaction();
-
-                return true;
+                return $this->db->table(self::TABLE)->eq('property_set', 'people')->remove();
                 break;
             case 'team':
-                $this->db->startTransaction();
-
-                $this->db->table(self::TABLE)->eq('item', 'Title')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Telephone')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Mobile')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Email')->remove();
-                $this->db->table(self::TABLE)->eq('item', 'Note')->remove();
-
-                $this->db->closeTransaction();
-
-                return true;
+                return $this->db->table(self::TABLE)->eq('property_set', 'team')->remove();
                 break;
             default:
                 return false;
