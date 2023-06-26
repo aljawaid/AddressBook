@@ -21,7 +21,7 @@
         <a href="<?= $this->url->href('ContactsItemsController', 'confirmRemoveSet', array('set' => 'business', 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete remove-property-set js-modal-medium" title="<?= t('Delete Set') ?>"><i class="fa fa-minus" aria-hidden="true"></i></a>
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Business') ?></div>
         <ul class="property-set-items">
-            <li class=""><?= t('Address') ?></li>
+            <li class=""><?= t('Business Address') ?></li>
             <li class=""><?= t('Telephone') ?></li>
             <li class=""><?= t('Mobile') ?></li>
             <li class=""><?= t('Email') ?></li>
@@ -35,7 +35,7 @@
         <div class="property-set-name"><span class="property-sets-icon"></span><?= t('Company') ?></div>
         <ul class="property-set-items">
             <li class=""><?= t('Department') ?></li>
-            <li class=""><?= t('Address') ?></li>
+            <li class=""><?= t('Company Address') ?></li>
             <li class=""><?= t('Telephone') ?></li>
             <li class=""><?= t('Extension') ?></li>
             <li class=""><?= t('Contact Name') ?></li>
