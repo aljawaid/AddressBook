@@ -112,6 +112,9 @@ return array(
     'People' => '',
     'Title' => '',
     'Team' => '',
+    'Address' => '',
+    'Business Address' => '',
+    'Company Address' => '',
     //
     // Template/config/remove-set.php
     //
