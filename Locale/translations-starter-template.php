@@ -71,6 +71,7 @@ return array(
     'Department' => '',
     'Add properties individually' => '',
     'Property Type' => '',
+    'Property Set' => '',
     '--- Select Type ---' => '',
     'Address' => '',
     'Email' => '',
@@ -112,7 +113,6 @@ return array(
     'People' => '',
     'Title' => '',
     'Team' => '',
-    'Address' => '',
     'Business Address' => '',
     'Company Address' => '',
     //
