@@ -235,23 +235,6 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove Property Set - Business
-     *
-     * @access  public
-     * @author  aljawaid
-     */
-    public function removeSetBusiness()
-    {
-        if ($this->contactsItemsModel->removeSetBusiness()) {
-            $this->flash->success(t('Business Property Set Deleted'));
-        } else {
-            $this->flash->failure(t('Unable to Delete Property Set'));
-        }
-
-        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
-    }
-
-    /**
      * Insert Property Set - Company
      *
      * @access  public
@@ -263,23 +246,6 @@ class ContactsItemsController extends BaseController
             $this->flash->success(t('Company Property Set Added'));
         } else {
             $this->flash->failure(t('Unable to Add Property Set'));
-        }
-
-        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
-    }
-
-    /**
-     * Remove Property Set - Company
-     *
-     * @access  public
-     * @author  aljawaid
-     */
-    public function removeSetCompany()
-    {
-        if ($this->contactsItemsModel->removeSetCompany()) {
-            $this->flash->success(t('Company Property Set Deleted'));
-        } else {
-            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
@@ -303,23 +269,6 @@ class ContactsItemsController extends BaseController
     }
 
     /**
-     * Remove Property Set - People
-     *
-     * @access  public
-     * @author  aljawaid
-     */
-    public function removeSetPeople()
-    {
-        if ($this->contactsItemsModel->removeSetPeople()) {
-            $this->flash->success(t('People Property Set Deleted'));
-        } else {
-            $this->flash->failure(t('Unable to Delete Property Set'));
-        }
-
-        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
-    }
-
-    /**
      * Insert Property Set - Team
      *
      * @access  public
@@ -331,23 +280,6 @@ class ContactsItemsController extends BaseController
             $this->flash->success(t('Team Property Set Added'));
         } else {
             $this->flash->failure(t('Unable to Add Property Set'));
-        }
-
-        $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
-    }
-
-    /**
-     * Remove Property Set - Team
-     *
-     * @access  public
-     * @author  aljawaid
-     */
-    public function removeSetTeam()
-    {
-        if ($this->contactsItemsModel->removeSetTeam()) {
-            $this->flash->success(t('Team Property Set Deleted'));
-        } else {
-            $this->flash->failure(t('Unable to Delete Property Set'));
         }
 
         $this->response->redirect($this->helper->url->to('ContactsItemsController', 'config', array('plugin' => 'AddressBook')));
