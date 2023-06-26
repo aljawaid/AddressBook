@@ -110,10 +110,19 @@ class ContactsItemsModel extends Base
      * @param   array    $values    Form values
      * @return  bool
      * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function update(array $values)
     {
-        return $this->db->table(self::TABLE)->eq('id', $values['id'])->update($values);
+        // return $this->db->table(self::TABLE)->eq('id', $values['id'])->update($values);
+        $this->db->startTransaction();
+
+        $this->db->table(self::TABLE)->eq('id', $values['id'])->update($values);
+        $this->db->table(self::TABLE)->eq('id', $values['id'])->update(['property_set' => 'custom']);
+
+        $this->db->closeTransaction();
+
+        return true;
     }
 
     /**
