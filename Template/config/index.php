@@ -60,6 +60,7 @@
                         <th class="column-10"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
                         <th class="column-25"><?= t('Property Note') ?></th>
                         <th class="column-8 text-center"><?= t('Property Type') ?></th>
+                        <th class="column-8 text-center"><?= t('Property Set') ?></th>
                         <th class="column-20"><?= t('Actions') ?></th>
                     </tr>
                 </thead>
@@ -70,6 +71,7 @@
                             <td class=""><?= $item['item'] ?></td>
                             <td class="form-help"><?= $item['item_help'] ?></td>
                             <td class="text-center"><?= $item['item_type'] ?></td>
+                            <td class="text-center"><?= $item['property_set'] ?></td>
                             <td class="">
                                 <?php
                                     $item_id = $item['id'];
