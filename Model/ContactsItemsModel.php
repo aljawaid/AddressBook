@@ -14,7 +14,7 @@ use Kanboard\Core\Base;
 class ContactsItemsModel extends Base
 {
     /**
-     * SQL table name for Contacts Items
+     * SQL Table Name for Contacts Items
      *
      * @var  string
      */
@@ -135,7 +135,9 @@ class ContactsItemsModel extends Base
     /**
      * Delete Property Set
      *
-     * @param   set         - name of property set
+     * @param   string      $set     Name of property set
+     * @var     $set
+     * @return  bool        All rows matching the $set name will be deleted
      * @author  aljawaid
      */
     public function removeSet($set)
@@ -167,6 +169,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Personal
      * - A general person
      *
+     * @return  boolean     Position will be incremented after each record is inserted
      * @author  aljawaid
      */
     public function insertSetPersonal()
@@ -176,11 +179,11 @@ class ContactsItemsModel extends Base
         $this->db->startTransaction();
 
         $this->db->table(self::TABLE)->insert(['item' => 'Address', 'item_type' => 'address', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Relationship', 'item_type' => 'text', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'personal', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'personal', 'position' => $max['maxid'] + 2]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'personal', 'position' => $max['maxid'] + 3]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'personal', 'position' => $max['maxid'] + 4]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Relationship', 'item_type' => 'text', 'property_set' => 'personal', 'position' => $max['maxid'] + 5]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'personal', 'position' => $max['maxid'] + 6]);
 
         $this->db->closeTransaction();
 
@@ -191,6 +194,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Business
      * - A general business or organisation
      *
+     * @return  boolean     Position will be incremented after each record is inserted
      * @author  aljawaid
      */
     public function insertSetBusiness()
@@ -200,11 +204,11 @@ class ContactsItemsModel extends Base
         $this->db->startTransaction();
 
         $this->db->table(self::TABLE)->insert(['item' => 'Business Address', 'item_type' => 'address', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Website', 'item_type' => 'url', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'business', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'business', 'position' => $max['maxid'] + 2]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'business', 'position' => $max['maxid'] + 3]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'business', 'position' => $max['maxid'] + 4]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Website', 'item_type' => 'url', 'property_set' => 'business', 'position' => $max['maxid'] + 5]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'business', 'position' => $max['maxid'] + 6]);
 
         $this->db->closeTransaction();
 
@@ -215,6 +219,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Company
      * - A large business with departments and extensions
      *
+     * @return  boolean     Position will be incremented after each record is inserted
      * @author  aljawaid
      */
     public function insertSetCompany()
@@ -224,14 +229,14 @@ class ContactsItemsModel extends Base
         $this->db->startTransaction();
 
         $this->db->table(self::TABLE)->insert(['item' => 'Department', 'item_type' => 'text', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Company Address', 'item_type' => 'address', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Extension', 'item_type' => 'number', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Contact Name', 'item_type' => 'text', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Website', 'item_type' => 'url', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'company', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Company Address', 'item_type' => 'address', 'property_set' => 'company', 'position' => $max['maxid'] + 2]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'company', 'position' => $max['maxid'] + 3]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Extension', 'item_type' => 'number', 'property_set' => 'company', 'position' => $max['maxid'] + 4]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Contact Name', 'item_type' => 'text', 'property_set' => 'company', 'position' => $max['maxid'] + 5]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'company', 'position' => $max['maxid'] + 6]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'company', 'position' => $max['maxid'] + 7]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Website', 'item_type' => 'url', 'property_set' => 'company', 'position' => $max['maxid'] + 8]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'company', 'position' => $max['maxid'] + 9]);
 
         $this->db->closeTransaction();
 
@@ -242,6 +247,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - People
      * - Names of people with contact numbers
      *
+     * @return  boolean     Position will be incremented after each record is inserted
      * @author  aljawaid
      */
     public function insertSetPeople()
@@ -251,8 +257,8 @@ class ContactsItemsModel extends Base
         $this->db->startTransaction();
 
         $this->db->table(self::TABLE)->insert(['item' => 'Title', 'item_type' => 'text', 'property_set' => 'people', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'people', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'people', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'people', 'position' => $max['maxid'] + 2]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'people', 'position' => $max['maxid'] + 3]);
 
         $this->db->closeTransaction();
 
@@ -263,6 +269,7 @@ class ContactsItemsModel extends Base
      * Add Property Set - Team
      * - Names of people with contact numbers and email addresses
      *
+     * @return  boolean     Position will be incremented after each record is inserted
      * @author  aljawaid
      */
     public function insertSetTeam()
@@ -272,10 +279,10 @@ class ContactsItemsModel extends Base
         $this->db->startTransaction();
 
         $this->db->table(self::TABLE)->insert(['item' => 'Title', 'item_type' => 'text', 'property_set' => 'team', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'team', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'team', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'team', 'position' => $max['maxid'] + 1]);
-        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'team', 'position' => $max['maxid'] + 1]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Telephone', 'item_type' => 'telephone', 'property_set' => 'team', 'position' => $max['maxid'] + 2]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Mobile', 'item_type' => 'telephone', 'property_set' => 'team', 'position' => $max['maxid'] + 3]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Email', 'item_type' => 'email', 'property_set' => 'team', 'position' => $max['maxid'] + 4]);
+        $this->db->table(self::TABLE)->insert(['item' => 'Note', 'item_type' => 'textarea', 'property_set' => 'team', 'position' => $max['maxid'] + 5]);
 
         $this->db->closeTransaction();
 
