@@ -57,7 +57,7 @@
             <table id="ContactProfileTable" class="contact-profile-table">
                 <thead class="table-head">
                     <tr class="table-row">
-                        <th class="column-10"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
+                        <th class="column-13"><span class="property-icon"></span> <?= t('Contact Property') ?></th>
                         <th class="column-25"><?= t('Property Note') ?></th>
                         <th class="column-8 text-center"><?= t('Property Type') ?></th>
                         <th class="column-8 text-center"><?= t('Property Set') ?></th>
