@@ -55,7 +55,7 @@
             <tbody class="table-body">
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="table-row">
-                        <th class="contact-table-header column-25"><?= $value['item'] ?></td>
+                        <th class="contact-table-header column-25"><?= $value['item'] ?></th>
                         <?php if ($value['item_type'] == 'address'): ?>
                             <td class="contact-table-value column-75 p-none">
                                 <textarea class="address-display" readonly>
