@@ -130,6 +130,11 @@ input[type="text"].property-input, input[type="number"].property-input, input[ty
     font-size: 1em;
 }
 
+.edit-contact-modal form.modal-form .form-group input[type="text"].property-input.property-input-disabled {
+    background: #D3D3D3;
+    width: 75px;
+}
+
 .input-wrapper textarea.property-input-address, .input-wrapper textarea.property-input-note {
     vertical-align: top;
 }

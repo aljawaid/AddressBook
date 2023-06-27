@@ -39,6 +39,11 @@
     <form class="modal-form" method="post" action="<?= $this->url->href('ContactsController', 'update', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook')) ?>" autocomplete="on">
 
         <?= $this->form->csrf() ?>
+
+        <div class="form-group">
+            <?= $this->form->label(t('Contact ID'), $contacts_id . '__' . 'ContactID') ?>
+            <?= $this->form->text($contacts_id . '__' . 'ContactID', array(), array(), array('value="' . $contacts_id . '"', 'readonly'), 'property-input property-input-disabled') ?>
+        </div>
         <?php foreach ($headings as $key => $value): ?>
 
             <?php
