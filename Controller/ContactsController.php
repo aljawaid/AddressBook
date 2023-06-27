@@ -72,6 +72,7 @@ class ContactsController extends BaseController
         $this->response->html($this->helper->layout->app('addressBook:contact/details', array(
             'title' => t('Contacts'),
             'contact' => $this->contactsModel->getByIDWithHeader($this->request->getIntegerParam('contacts_id')),
+            'contact_id' => $this->request->getIntegerParam('contacts_id'),
         )));
     }
 

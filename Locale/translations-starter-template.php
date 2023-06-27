@@ -142,6 +142,7 @@ return array(
     'Contact Details' => '',
     'No contacts' => '',
     'Last updated on %s by %s' => '',
+    'Contact ID' => '',
     //
     // Template/contact/remove.php
     //

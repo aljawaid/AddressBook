@@ -53,6 +53,10 @@
     <?php else: ?>
         <table id="ContactDetailsTable" class="contact-details-table table-small table-fixed">
             <tbody class="table-body">
+                <tr class="table-row">
+                    <th class="contact-table-header column-25"><?= t('Contact ID') ?></th>
+                    <td class="contact-table-value column-75"><?= $contact_id ?></td>
+                </tr>
                 <?php foreach ($contact as $key => $value): ?>
                     <tr class="table-row">
                         <th class="contact-table-header column-25"><?= $value['item'] ?></th>
@@ -95,7 +99,7 @@
             </tbody>
             <tfoot class="table-footer">
                 <tr class="table-row">
-                    <td colspan="2"><?= e('Last updated on %s by %s', '<span class="contact-updated-date"><i class="fa fa-calendar" aria-hidden="true"></i>' . $last_updated . '</span>', '<span class="contact-updated-user"><i class="fa fa-user" aria-hidden="true"></i>' . $edited_by . '</span>') ?></td>
+                    <td colspan="3"><?= e('Last updated on %s by %s', '<span class="contact-updated-date"><i class="fa fa-calendar" aria-hidden="true"></i>' . $last_updated . '</span>', '<span class="contact-updated-user"><i class="fa fa-user" aria-hidden="true"></i>' . $edited_by . '</span>') ?></td>
                 </tr>
             </tfoot>
         </table>
