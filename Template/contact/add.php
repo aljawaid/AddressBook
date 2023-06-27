@@ -32,9 +32,9 @@
                         <?= $this->form->textarea($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-address') ?>
                     <?php else: ?>
                         <?php if ($value['id'] == 1): ?>
-                            <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="30"', 'autofocus', 'required'), 'property-input') ?>
+                            <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="50"', 'autofocus', 'required'), 'property-input') ?>
                         <?php else: ?>
-                                <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="30"'), 'property-input') ?>
+                                <?= $this->form->text($value['id'] . '_' . $trimmedItem, $values, $errors, array('maxlength="50"'), 'property-input') ?>
                         <?php endif ?>
                     <?php endif ?>
 
