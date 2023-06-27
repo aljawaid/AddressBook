@@ -92,7 +92,7 @@ class ContactsModel extends Base
     }
 
     /**
-     * Return contact values for edit form
+     * Return Contact Values for Edit Form
      *
      * @access  public
      * @return  array
@@ -106,7 +106,7 @@ class ContactsModel extends Base
 
         $return = array();
         foreach ($headings as $key => $value) {
-            $return[$key . '_' . $value] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
+            $return[$key . '__' . $value] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
         }
 
         return $return;

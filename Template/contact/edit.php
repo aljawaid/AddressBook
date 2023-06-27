@@ -40,9 +40,15 @@
 
         <?= $this->form->csrf() ?>
         <?php foreach ($headings as $key => $value): ?>
+
+            <?php
+            $trimmedItemName = ucwords(strtolower($value));
+            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+            ?>
+
             <div class="form-group">
-                <?= $this->form->label($value, $value) ?>
-                <?= $this->form->text($key . '_' . $value, $values, $errors, array('maxlength="100"', 'placeholder="' . $value . '"'), 'property-input') ?>
+                <?= $this->form->label($value, $key . '__' . $trimmedItem) ?>
+                <?= $this->form->text($key . '__' . $trimmedItem, $values, $errors, array('maxlength="100"', 'placeholder="' . $value . '"'), 'property-input') ?>
             </div>
         <?php endforeach ?>
 
