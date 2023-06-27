@@ -663,7 +663,7 @@ td.contacts-table-value {
     padding: .5em 5px;
 }
 
-#ContactDetailsTable tbody tr:first-child td:last-child, #TaskContactsTable tbody tr td:nth-of-type(2), #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
+#ContactDetailsTable tbody tr:nth-of-type(2) td:last-child, #TaskContactsTable tbody tr td:nth-of-type(2), #LinkedContactsTable tbody tr td.contacts-table-value:nth-of-type(2), #AvailableContactsTable tbody tr td.contacts-table-value:nth-of-type(2) {
     font-weight: 600;
 }
 
