@@ -7,10 +7,11 @@ use Kanboard\Core\Base;
 class ContactsHelper extends Base
 {
     /**
-     * Select items
+     * Select Items
      *
      * @return  html
      * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function selectItem(array $values, array $errors = array(), array $attributes = array())
     {
@@ -52,5 +53,20 @@ class ContactsHelper extends Base
     public function getContactsIDs($task_id)
     {
         return $this->contactsTaskModel->getByTaskId($task_id);
+    }
+
+    /**
+     * Get The Property Item Type
+     *
+     * @access  public
+     * @param   integer     $item_id
+     * @return  string      item_type
+     * @author  aljawaid
+     */
+    function getItemType($item_id)
+    {
+        $item_type = $this->contactsItemsModel->getByID($item_id);
+
+        return $item_type['item_type'];
     }
 }
