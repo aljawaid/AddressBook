@@ -57,7 +57,7 @@
                 <?php if ($item_type == 'number'): ?>
                     <?= $this->form->number($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 12345') . '"', 'step="1"'), 'property-input property-input-number') ?>
                 <?php elseif ($item_type == 'decimal2'): ?>
-                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'placeholder="' . t('Format: 0.01') . '"', 'step="0.01"'), 'property-input property-input-decimal') ?>
+                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 0.01') . '"', 'step="0.01"'), 'property-input property-input-decimal') ?>
                 <?php elseif ($item_type == 'decimal4'): ?>
                         <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 0.0001') . '"', 'step="0.0001"'), 'property-input property-input-decimal') ?>
                 <?php elseif ($item_type == 'telephone'): ?>
