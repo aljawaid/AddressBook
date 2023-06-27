@@ -774,6 +774,8 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
 
 .edit-contact-modal form.modal-form .form-group {
     display: inline-block;
+    vertical-align: text-top;
+    font-size: .9em;
 }
 
 .edit-contact-modal form.modal-form .form-group input {
