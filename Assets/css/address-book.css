@@ -128,6 +128,7 @@ input[type="text"].property-input, input[type="number"].property-input, input[ty
     height: 25px;
     width: 300px;
     font-size: 1em;
+    color: var(--pp-black);
 }
 
 .edit-contact-modal form.modal-form .form-group input[type="text"].property-input.property-input-disabled {
