@@ -140,9 +140,18 @@ return array(
     // Template/contact/details.php
     //
     'Contact Details' => '',
+    'Contact ID' => '',
     'No contacts' => '',
     'Last updated on %s by %s' => '',
-    'Contact ID' => '',
+    //
+    // Template/contact/edit.php
+    //
+    'Format: 12345' => '',
+    'Format: 0.01' => '',
+    'Format: 0.0001' => '',
+    'Format: +44 (0)1234 567890' => '',
+    'Format: someone@somewhere.com' => '',
+    'Format: https://' => '',
     //
     // Template/contact/remove.php
     //
