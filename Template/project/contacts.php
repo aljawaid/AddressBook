@@ -12,6 +12,7 @@
 
     <?php if (empty($contacts)): ?>
         <p class="alert alert-info no-contacts"><?= t('No contacts found') ?></p>
+        <p class="ab-info"><?= t('Add contacts here to link them to any tasks within this project.') ?></p>
     <?php endif ?>
     <p class="ab-info">
         <?= e('This section lists all contacts for the %s project. Once you have added contacts here, you can link any contact to any task within this project.', '<strong>' . $project['name'] . '</strong>') ?>
