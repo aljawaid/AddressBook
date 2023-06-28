@@ -34,7 +34,7 @@
 
 <div class="delete-contact-modal">
     <div class="ab-page-header">
-        <h2 class=""><span class="delete-contact-icon"></span><?= t('Delete Contact') ?></h2>
+        <h2 class=""><span class="delete-contact-icon"></span><?= $title ?></h2>
     </div>
     <div class="confirm">
         <p class="confirm-delete">

@@ -34,7 +34,7 @@
 
 <div class="delete-property-modal">
     <div class="ab-page-header">
-        <h2 class=""><span class="property-icon"></span><?= t('Delete Property') ?></h2>
+        <h2 class=""><span class="property-icon"></span><?= $title ?></h2>
     </div>
     <div class="confirm">
         <p class="confirm-delete">

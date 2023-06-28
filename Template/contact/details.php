@@ -44,7 +44,7 @@
 <div class="contact-details-modal">
     <div class="ab-page-header">
         <h2 class="">
-            <span class="contact-details-icon"></span><?= t('Contact Details') ?>
+            <span class="contact-details-icon"></span><?= $title ?>
         </h2>
     </div>
 
