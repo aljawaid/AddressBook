@@ -485,6 +485,15 @@ a.delink-btn:hover i, a.delink-btn:focus i, a.link-btn:hover i, a.link-btn:focus
     vertical-align: initial;
 }
 
+li span.ab-count-badge-sidebar.linked-badge {
+    top: 5px;
+    right: unset;
+    font-weight: normal;
+    background-color: var(--ab-button);
+    margin-left: 10px;
+    padding-right: 3px;
+}
+
 li span.ab-count-badge-sidebar {
     top: 3px;
     position: absolute;
