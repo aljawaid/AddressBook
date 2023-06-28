@@ -106,7 +106,9 @@ class ContactsModel extends Base
 
         $return = array();
         foreach ($headings as $key => $value) {
-            $return[$key . '__' . $value] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
+            $trimmedItemName = ucwords(strtolower($value));
+            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+            $return[$key . '__' . $trimmedItem] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
         }
 
         return $return;
@@ -183,7 +185,7 @@ class ContactsModel extends Base
         $contacts_id = $this->request->getIntegerParam('contacts_id');
         $create = array();
         foreach ($values as $key => $value) {
-            $item = explode('_', $key);
+            $item = explode('__', $key);
             $item_id = $item[0];
             if (!empty($value)) {
                 $create['contacts_id'] = $contacts_id;
