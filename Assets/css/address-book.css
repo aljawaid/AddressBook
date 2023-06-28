@@ -484,6 +484,26 @@ a.delink-btn:hover i, a.delink-btn:focus i, a.link-btn:hover i, a.link-btn:focus
     border: 1px inset var(--ab-button);
     vertical-align: initial;
 }
+
+li span.ab-count-badge-sidebar {
+    top: 3px;
+    position: absolute;
+    font-size: .75em;
+    padding: 0 2px;
+    border-radius: var(--border-radius-address-book);
+    font-weight: bold;
+    right: 10px;
+    opacity: .5;
+    line-height: initial;
+    border: 1px solid var(--blue-icon-dark);
+    color: white;
+    background-color: var(--blue-icon-dark);
+}
+
+li.active span.ab-count-badge-sidebar {
+    opacity: 1;
+}
+
 .btn-count {
     font-size: .7em;
     vertical-align: super;
