@@ -240,7 +240,7 @@ fieldset.ab-new-item .form-actions {
 }
 
 /* stylelint-disable selector-id-pattern */
-#config-section .sidebar {
+#config-section .sidebar, section.sidebar-container .sidebar {
     min-width: fit-content;
     margin-right: 5px;
 }
