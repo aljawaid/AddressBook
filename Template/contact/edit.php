@@ -44,37 +44,39 @@
             <?= $this->form->label(t('Contact ID'), $contacts_id . '__' . 'ContactID') ?>
             <?= $this->form->text($contacts_id . '__' . 'ContactID', array(), array(), array('value="' . $contacts_id . '"', 'readonly'), 'property-input property-input-disabled') ?>
         </div>
+
         <?php foreach ($headings as $key => $value): ?>
 
             <?php
             $trimmedItemName = ucwords(strtolower($value));
             $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
             $item_type = $this->ContactsHelper->getItemType($key);
+            $existing_value = $key . '__' . $trimmedItem;
             ?>
 
             <div class="form-group">
                 <?= $this->form->label($value, $key . '__' . $trimmedItem) ?>
                 <?php if ($item_type == 'number'): ?>
-                    <?= $this->form->number($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 12345') . '"', 'step="1"'), 'property-input property-input-number') ?>
+                    <?= $this->form->number($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: 12345') . '"', 'step="1"'), 'property-input property-input-number') ?>
                 <?php elseif ($item_type == 'decimal2'): ?>
-                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 0.01') . '"', 'step="0.01"'), 'property-input property-input-decimal') ?>
+                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: 0.01') . '"', 'step="0.01"'), 'property-input property-input-decimal') ?>
                 <?php elseif ($item_type == 'decimal4'): ?>
-                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: 0.0001') . '"', 'step="0.0001"'), 'property-input property-input-decimal') ?>
+                        <?= $this->form->input('number', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: 0.0001') . '"', 'step="0.0001"'), 'property-input property-input-decimal') ?>
                 <?php elseif ($item_type == 'telephone'): ?>
-                    <?= $this->form->input('tel', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: +44 (0)1234 567890') .'"', 'pattern="^[0-9-+\s()]*$"'), 'property-input property-input-telephone') ?>
+                    <?= $this->form->input('tel', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: +44 (0)1234 567890') .'"', 'pattern="^[0-9-+\s()]*$"'), 'property-input property-input-telephone') ?>
                 <?php elseif ($item_type == 'email'): ?>
-                    <?= $this->form->email($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: someone@somewhere.com') . '"'), 'property-input') ?>
+                    <?= $this->form->email($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: someone@somewhere.com') . '"'), 'property-input') ?>
                 <?php elseif ($item_type == 'url'): ?>
-                    <?= $this->form->input('url', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Format: https://') . '"'), 'property-input') ?>
+                    <?= $this->form->input('url', $key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Format: https://') . '"'), 'property-input') ?>
                 <?php elseif ($item_type == 'textarea'): ?>
-                    <?= $this->form->textarea($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Save notes for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-note') ?>
+                    <?= $this->form->textarea($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Save notes for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-note') ?>
                 <?php elseif ($item_type == 'address'): ?>
-                    <?= $this->form->textarea($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'title="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-address') ?>
+                    <?= $this->form->textarea($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'title="' . t('Enter address details for this contact') . '"', 'rows="3"', 'cols="37"', 'wrap="hard"'), 'property-input-address') ?>
                 <?php else: ?>
                     <?php if ($key == 1): ?>
-                        <?= $this->form->text($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'maxlength="50"', 'autofocus', 'required'), 'property-input') ?>
+                        <?= $this->form->text($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'maxlength="50"', 'autofocus', 'required'), 'property-input') ?>
                     <?php else: ?>
-                            <?= $this->form->text($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $value . '"', 'maxlength="50"'), 'property-input') ?>
+                            <?= $this->form->text($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $this->helper->text->e($values[$existing_value]) . '"', 'maxlength="50"'), 'property-input') ?>
                     <?php endif ?>
                 <?php endif ?>
             </div>
