@@ -15,7 +15,7 @@
         <p class="ab-info"><?= t('Add contacts here to link them to any tasks within this project.') ?></p>
     <?php endif ?>
     <p class="ab-info">
-        <?= e('This section lists all contacts for the %s project. Once you have added contacts here, you can link any contact to any task within this project.', '<strong>' . $project['name'] . '</strong>') ?>
+        <?= e('You currently have %s contacts in the %s project. Contacts shown here can be linked to any tasks within this project.', '<span class="ab-count-badge">' . count($contacts) . '</span>', '<strong>' . $project['name'] . '</strong>') ?>
     </p>
     <?php if (!empty($contacts)): ?>
         <section class="project-contacts-section">
