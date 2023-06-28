@@ -19,7 +19,7 @@
         background: var(--pp-red-alt-2);
         padding: 3px 3px 5px 6px;
         border-bottom-left-radius: 3px;
-        box-shadow: -1px -1px 0px 3px var(--pp-white);
+        box-shadow: -1px -1px 0 3px var(--pp-white);
     }
 
     #modal-close-button i {
