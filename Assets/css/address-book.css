@@ -174,7 +174,7 @@ input[type="number"].property-input.property-input-decimal {
 }
 
 input[type="tel"].property-input.property-input-telephone, input[type="number"].property-input.property-input-number {
-    width: 200px;
+    width: 150px;
 }
 
 label.property-label {
@@ -821,14 +821,26 @@ table#ContactDetailsTable tfoot.table-footer .table-row td {
     margin-right: 4px;
 }
 
+.edit-contact-modal form.modal-form .form-group p.form-help {
+    margin-bottom: 0;
+}
+
 .edit-contact-modal form.modal-form .form-group {
     display: inline-block;
     vertical-align: text-top;
     font-size: .9em;
+    width: min-content;
+    margin-right: 8px;
 }
 
 .edit-contact-modal form.modal-form .form-group input {
     color: var(--pp-grey);
+}
+
+.edit-contact-modal textarea.property-input-address, .edit-contact-modal textarea.property-input-note {
+    height: 50px;
+    width: 200px;
+    margin-right: .278em;
 }
 
 details.task-contacts-section summary.accordion-title {
