@@ -234,14 +234,18 @@ fieldset.ab-new-item .form-actions {
     padding-left: 10px;
 }
 
+.property-note-column {
+    max-width: 450px;
+}
+
 #ContactProfileTable td ul.property-action-bar {
     list-style-type: none;
 }
 
 #ContactProfileTable td ul.property-action-bar li {
     display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 5px;
 }
 
