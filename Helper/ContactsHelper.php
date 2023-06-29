@@ -69,4 +69,19 @@ class ContactsHelper extends Base
 
         return $item_type['item_type'];
     }
+
+    /**
+     * Get The Property Item Help
+     *
+     * @access  public
+     * @param   integer     $item_id
+     * @return  string      item_help
+     * @author  aljawaid
+     */
+    function getItemHelp($item_id)
+    {
+        $item_help = $this->contactsItemsModel->getByID($item_id);
+
+        return $item_help['item_help'];
+    }
 }
