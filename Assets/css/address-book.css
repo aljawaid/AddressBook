@@ -690,6 +690,7 @@ td.contacts-table-value {
     border-bottom: 1px solid var(--ab-blue);
     padding: .3em 5px;
     border-radius: 0;
+    font-weight: 600;
 }
 
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero, #TaskContactsTable th.contacts-table-header.cell-zero, #TaskContactsTable td.contacts-table-value.cell-zero {
@@ -934,6 +935,7 @@ span.footer-icon.tooltip span.address-book-icon {
     height: 15px;
     display: inline-block;
     vertical-align: text-bottom;
+    margin-right: 1px;
 }
 
 .property-set-wrapper p {
@@ -970,13 +972,13 @@ ul.property-set-items {
 }
 
 ul.property-set-items li {
+    /* font-weight: 600; */
     display: inline-block;
     font-size: .8em;
     background: var(--pp-light-grey);
     padding: 2px 5px;
     color: var(--pp-white);
     border-radius: var(--border-radius-address-book);
-    font-weight: 600;
     opacity: .9;
     vertical-align: middle;
 }
