@@ -41,9 +41,15 @@
                                 <!-- Arrow DOWN Button -->
                                 <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
                             </td>
-                            <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value" title="<?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>">
+                                <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value" title="<?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>">
+                                <?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value" title="<?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>">
+                                <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
+                            </td>
                             <td class="contacts-table-value text-center cell-zero">
                                 <?php if (count($values) > 3): ?>
                                     <!-- Modal Button -->
@@ -89,9 +95,15 @@
                                 <!-- Arrow UP Button -->
                                 <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn link-btn', t('Link this contact to this task')) ?>
                             </td>
-                            <td class="contacts-table-value"><?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value"><?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?></td>
-                            <td class="contacts-table-value"><?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?></td>
+                            <td class="contacts-table-value" title="<?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>">
+                                <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value" title="<?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>">
+                                <?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>
+                            </td>
+                            <td class="contacts-table-value" title="<?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>">
+                                <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
+                            </td>
                             <td class="contacts-table-value text-center cell-zero">
                                 <?php if (count($values) > 3): ?>
                                     <!-- Modal Button -->

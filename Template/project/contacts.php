@@ -33,16 +33,16 @@
                     <?php foreach ($contacts as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                         <tr class="table-row">
-                            <td class="contacts-table-value">
+                            <td class="contacts-table-value" title="<?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>">
                                 <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
                             </td>
-                            <td class="contacts-table-value">
+                            <td class="contacts-table-value" title="<?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>">
                                 <?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>
                             </td>
-                            <td class="contacts-table-value">
+                            <td class="contacts-table-value" title="<?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>">
                                 <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
                             </td>
-                            <td class="contacts-table-value">
+                            <td class="contacts-table-value" title="<?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>">
                                 <?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>
                             </td>
                             <td class="contacts-table-value">
