@@ -1,6 +1,6 @@
 <div id="ABConfigPage" class="ab-config-page">
     <div class="ab-page-header">
-        <h2 class="">
+        <h2 class="config-title">
             <span class="address-book-icon"></span> <?= t('Contact Settings') ?>
         </h2>
     </div>
