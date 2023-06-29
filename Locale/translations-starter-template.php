@@ -129,6 +129,7 @@ return array(
     //
     'Add New Contact' => '',
     'All fields are optional. Blank forms will not be created.' => '',
+    'someone@somewhere.com' => '',
     'Save notes for this contact' => '',
     'Enter address details for this contact' => '',
     'All numbers and symbols shown are allowed' => '',

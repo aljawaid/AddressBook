@@ -23,7 +23,7 @@
                     <?php elseif ($value['item_type'] == 'telephone'): ?>
                         <?= $this->form->input('tel', $value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="+44 (0)1234 567890"', 'pattern="^[0-9-+\s()]*$"'), 'property-input property-input-telephone') ?>
                     <?php elseif ($value['item_type'] == 'email'): ?>
-                        <?= $this->form->email($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="someone@somewhere.com"'), 'property-input') ?>
+                        <?= $this->form->email($value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="' . t('someone@somewhere.com') . '"'), 'property-input') ?>
                     <?php elseif ($value['item_type'] == 'url'): ?>
                         <?= $this->form->input('url', $value['id'] . '_' . $trimmedItem, $values, $errors, array('placeholder="https://"'), 'property-input') ?>
                     <?php elseif ($value['item_type'] == 'textarea'): ?>
