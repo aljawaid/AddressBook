@@ -126,19 +126,29 @@ class ContactsItemsModel extends Base
     }
 
     /**
-     * Save a new item
+     * Save a New Item
+     * - Once the record is created, the last ID is fetched to update the `property_set` to 'custom'
      *
      * @access  public
      * @param   array    $values    Form values
      * @return  boolean
      * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function save(array $values)
     {
         $max = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.position) maxid')->findOne();
         $values += array('position' => $max['maxid'] + 1);
 
-        return $this->db->table(self::TABLE)->persist($values);
+        // return $this->db->table(self::TABLE)->persist($values);
+        $this->db->startTransaction();
+
+        $this->db->table(self::TABLE)->persist($values);
+        $this->db->table(self::TABLE)->eq('id', $this->db->getLastId())->save(['property_set' => 'custom']);
+
+        $this->db->closeTransaction();
+
+        return true;
     }
 
     /**
