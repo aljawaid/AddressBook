@@ -242,6 +242,7 @@ fieldset.ab-new-item .form-actions {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 /* stylelint-disable selector-id-pattern */
