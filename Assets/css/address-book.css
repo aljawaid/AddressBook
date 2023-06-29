@@ -294,6 +294,7 @@ fieldset.ab-new-item .form-actions {
 .btn-ab-delete:focus, .btn-ab-delete:hover {
     border: 1px solid #D14836;
     color: #D14836;
+    background: var(--pp-white);
 }
 
 .btn-ab-delete:focus i, .btn-ab-delete:hover i {

@@ -45,7 +45,7 @@
             <?= t('All properties with matching names to this set will be deleted regardless of whether they contain any data') ?>
         </p>
         <div class="form-actions">
-            <?= $this->url->link(t('Delete Property Set'), 'ContactsItemsController', 'removeSet', array('set' => $set, 'plugin' => 'AddressBook'), true, 'btn btn-red') ?>
+            <?= $this->url->link(t('Delete Property Set'), 'ContactsItemsController', 'removeSet', array('set' => $set, 'plugin' => 'AddressBook'), true, 'btn btn-ab-delete') ?>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>
