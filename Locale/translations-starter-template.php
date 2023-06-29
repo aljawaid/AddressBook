@@ -98,7 +98,8 @@ return array(
     // Template/config/property-sets.php
     //
     'Property Sets' => '',
-    'Individual properties can always be added, renamed or removed. %sAny existing properties which are used for contacts in tasks and projects will also be deleted if the property names match.%s' => '',
+    'Individual properties can always be added, renamed or removed. Properties created manually will belong to the %s set.' => '',
+    'Custom' => '',
     'Add Set' => '',
     'Delete Set' => '',
     'Personal' => '',
@@ -178,7 +179,7 @@ return array(
     'This section shows contacts linked to this task %s. Contacts must be added to the Project Address Book for them to be available for linking to a task.' => '',
     'Delink this contact from this task' => '',
     'No contacts found in the Address Book' => '',
-    'This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this table when they are linked to tasks.' => '',
+    'This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this section when they are linked to tasks.' => '',
     'Link this contact to this task' => '',
     //
     // Validator/ContactsValidator.php

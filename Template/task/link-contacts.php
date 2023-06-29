@@ -73,7 +73,7 @@
             <p class="alert alert-info no-contacts"><?= t('No contacts found in the Address Book') ?></p>
         <?php endif ?>
         <p class="ab-info">
-            <?= e('This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this table when they are linked to tasks.', '<strong>' . $project['name'] . '</strong>') ?>
+            <?= e('This section lists all the contacts available for the %s project. Use the arrows to link contacts to this task or add new contacts to the Project Address Book to avail them here. Contacts are removed from this section when they are linked to tasks.', '<strong>' . $project['name'] . '</strong>') ?>
         </p>
         <?php if (!empty($contactsNotInTask)): ?>
             <?php $items = $this->ContactsHelper->getItems() ?>
