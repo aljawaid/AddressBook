@@ -48,6 +48,13 @@
             <span class="property-fields">
                 <?= $this->ContactsHelper->selectItem($values, $errors, array('autofocus', 'placeholder="' . $values['item'] . '"')) ?>
             </span>
+            <div class="form-group">
+                <?= $this->form->label(t('Property Set'), 'property_set') ?>
+                <?= $this->form->text('property_set', array(), array(), array('value="' . $values['property_set'] . '"', 'readonly'), 'property-input property-input-disabled') ?>
+                <?php if ($values['property_set'] !== 'custom'): ?>
+                    <p class="form-help"><?= e('The property set will change to %s', '<i>Custom</i>') ?></p>
+                <?php endif ?>
+            </div>
         </div>
 
         <div class="form-actions">

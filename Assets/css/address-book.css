@@ -358,6 +358,16 @@ li.property-action-item a span.rename-icon {
     vertical-align: middle;
 }
 
+.property-wrapper .form-group .property-input-disabled {
+    background: #D3D3D3;
+    width: 200px;
+}
+
+.rename-property-modal .property-wrapper .form-group p.form-help {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
 .modal-form .form-actions, .confirm, .form-actions {
     text-align: right;
 }
