@@ -16,10 +16,6 @@ class Plugin extends Base
         $this->hook->on('template:layout:css', array('template' => 'plugins/AddressBook/Assets/css/address-book.css'));
         $this->hook->on('template:layout:css', array('template' => 'plugins/AddressBook/Assets/css/address-book-icons.css'));
 
-        // JS - Asset Hook
-        //  - Keep filename lowercase
-        $this->hook->on('template:layout:js', array('template' => 'plugins/AddressBook/Assets/js/address-book.js'));
-
         // Views - Template Hook
         //  - Override name should start lowercase e.g. pluginNameExampleCamelCase
         $this->template->hook->attach('template:config:sidebar', 'addressBook:config/sidebar');
