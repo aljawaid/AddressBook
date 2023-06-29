@@ -133,7 +133,12 @@ input[type="text"].property-input, input[type="number"].property-input, input[ty
 
 .edit-contact-modal form.modal-form .form-group input[type="text"].property-input.property-input-disabled {
     background: #D3D3D3;
-    width: 75px;
+    width: 65px;
+    text-align: center;
+}
+
+.form-group.contact-id label {
+    text-align: center;
 }
 
 .input-wrapper textarea.property-input-address, .input-wrapper textarea.property-input-note {
