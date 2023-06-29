@@ -112,6 +112,11 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     height: 30px;
 }
 
+form#AddPropertyForm .input-section p.form-help {
+    display: block;
+    margin-left: initial;
+}
+
 .property-fields .modal-form-help {
     max-width: unset;
 }
@@ -227,10 +232,12 @@ fieldset.ab-new-item .form-actions {
     border-top: 2px solid var(--ab-blue);
     background-color: var(--ab-button);
     color: var(--pp-white);
+    border-radius: 0;
 }
 
 #ContactProfileTable td {
     border-bottom: 0;
+    border-radius: 0;
 }
 
 #ContactProfileTable tr:last-child td {
@@ -281,15 +288,19 @@ fieldset.ab-new-item .form-actions {
     border-radius: var(--border-radius-address-book);
     transition: var(--transition-address-book);
     border: 1px solid #D14836;
-    color: var(--pp-white);
+    color: var(--pp-white) !important;
 }
 
-.btn-ab-move i, .btn-ab-rename, .btn-ab-delete i, .btn-ab-property, .btn-add-contact, a.btn.add-property-set i {
-    color: var(--pp-white);
+.btn-ab-move i, .btn-ab-rename, a.btn-ab-delete i.fa.fa-minus, .btn-ab-property, .btn-add-contact, a.btn.add-property-set i {
+    color: var(--pp-white) !important;
 }
 
 .btn-ab-move i, .btn-ab-delete i, .add-property-set i {
     pointer-events: none;
+}
+
+#ContactProfileTable td a {
+    text-decoration: none !important;
 }
 
 .btn-ab-move, .btn-ab-rename, .btn-ab-property, .btn-add-contact, .btn.add-property-set {
@@ -306,16 +317,16 @@ fieldset.ab-new-item .form-actions {
 
 .btn-ab-delete:focus, .btn-ab-delete:hover {
     border: 1px solid #D14836;
-    color: #D14836;
+    color: #D14836 !important;
     background: var(--pp-white);
 }
 
-.btn-ab-delete:focus i, .btn-ab-delete:hover i {
-    color: #D14836;
+a.btn-ab-delete:focus i.fa.fa-minus, a.btn-ab-delete:hover i.fa.fa-minus {
+    color: #D14836 !important;
 }
 
-.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, a.btn.add-property-set:hover i, a.btn.remove-property-set:focus i {
-    color: var(--ab-blue);
+.btn-ab-move:focus i, .btn-ab-move:hover i, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, a.btn.add-property-set:hover i.fa.fa-plus, a.btn.add-property-set:focus i.fa.fa-plus {
+    color: var(--ab-blue) !important;
 }
 
 .btn.add-property-set:hover {
@@ -677,6 +688,8 @@ td.contacts-table-value {
     color: var(--pp-white);
     border-top: 1px solid var(--ab-blue);
     border-bottom: 1px solid var(--ab-blue);
+    padding: .3em 5px;
+    border-radius: 0;
 }
 
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero, #TaskContactsTable th.contacts-table-header.cell-zero, #TaskContactsTable td.contacts-table-value.cell-zero {
@@ -690,6 +703,14 @@ td.contacts-table-value {
 
 #AvailableContactsTable td.contacts-table-value, #ProjectContactsTable td.contacts-table-value, #TaskContactsTable td.contacts-table-value, #TooltipContactsTable td.contacts-table-value {
     border: 1px solid var(--ab-blue);
+}
+
+#ProjectContactsTable, #AvailableContactsTable, #LinkedContactsTable {
+    font-size: .9em;
+}
+
+#TaskContactsTable {
+    border-collapse: collapse;
 }
 
 #ProjectContactsTable th.contacts-table-header:nth-of-type(1) {

@@ -9,7 +9,7 @@
         <p class="new-item-intro">
             <?= t('Each contact is associated with a contact profile. A standard contact profile consists of many properties. Add custom properties to adjust the standard contact profile according to your requirements or choose from one of the sets below.') ?>
         </p>
-        <form method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
+        <form id="AddPropertyForm" method="post" action="<?= $this->url->href('ContactsItemsController', 'save', array('plugin' => 'AddressBook')) ?>" autocomplete="on" class="add-property-form">
             <?= $this->form->csrf() ?>
             <div class="input-section">
                 <?= $this->form->label(t('Property Name'), 'item', array('class="property-label"')) ?>
