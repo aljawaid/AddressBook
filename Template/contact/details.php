@@ -61,16 +61,12 @@
                     <tr class="table-row">
                         <th class="contact-table-header column-25"><?= $value['item'] ?></th>
                         <?php if ($value['item_type'] == 'address'): ?>
-                            <td class="contact-table-value column-75 p-none">
-                                <textarea class="address-display" readonly>
-                                    <?= $value['contact_item_value'] ?>
-                                </textarea>
+                            <td class="contact-table-value column-75">
+                                <?= $this->text->markdown($value['contact_item_value']) ?>
                             </td>
                         <?php elseif ($value['item_type'] == 'textarea'): ?>
-                            <td class="contact-table-value column-75 p-none">
-                                <textarea class="note-display" readonly>
-                                    <?= $value['contact_item_value'] ?>
-                                </textarea>
+                            <td class="contact-table-value column-75">
+                                <?= $this->text->markdown($value['contact_item_value']) ?>
                             </td>
                         <?php elseif ($value['item_type'] == 'email'): ?>
                             <td class="contact-table-value column-75">

@@ -754,10 +754,6 @@ td.contacts-table-value {
     color: var(--pp-red-alt-2);
 }
 
-#ContactDetailsTable tbody tr td.contact-table-value.p-none {
-    padding: 0;
-}
-
 ul.contacts-action-btns {
     list-style-type: none;
     text-align: center;
