@@ -289,6 +289,7 @@ fieldset.ab-new-item .form-actions {
 
 .btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, .btn.add-property-set:hover, .btn.add-property-set:focus {
     border: 1px solid var(--ab-button);
+    background: var(--pp-white);
 }
 
 .btn-ab-delete:focus, .btn-ab-delete:hover {

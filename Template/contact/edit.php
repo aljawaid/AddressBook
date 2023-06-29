@@ -126,7 +126,7 @@
         <?php endforeach ?>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-blue"><?= t('Save Edits') ?></button>
+            <button type="submit" class="btn btn-ab-rename"><?= t('Save Edits') ?></button>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </form>
