@@ -310,6 +310,15 @@ fieldset.ab-new-item .form-actions {
     background: var(--pp-white);
 }
 
+button.btn.cancel-btn {
+    margin-left: 2px;
+    transition: var(--transition-address-book);
+}
+
+.form-actions button.btn.cancel-btn.js-modal-close:hover {
+    border-color: var(--ab-button);
+}
+
 h2 span.address-book-icon {
     vertical-align: top;
     width: 24px;
@@ -378,11 +387,6 @@ li.property-action-item a span.rename-icon {
 
 .delete-property-modal .confirm p {
     text-align: left;
-}
-
-button.btn.cancel-btn {
-    margin-left: 2px;
-    transition: var(--transition-address-book);
 }
 
 a.address-book-btn, a.project-address-book-btn {
