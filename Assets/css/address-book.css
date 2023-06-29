@@ -349,10 +349,6 @@ li.property-action-item a span.rename-icon {
     transition: var(--transition-address-book);
 }
 
-#ContactProfileTable thead tr th span.property-icon {
-    vertical-align: sub;
-}
-
 .property-wrapper .property-fields {
     display: inline-block;
     vertical-align: middle;
