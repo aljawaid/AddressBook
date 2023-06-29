@@ -68,7 +68,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Use the dedicated Address Book to create and manage contacts or organisations in projects and tasks. Add custom properties to standardise a relationship between tasks and people or organisations. Each task can have contacts assigned exclusive to the project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) so they can easily have a quick reference to contact information from the task summary and from the project board view.');
+        return t('Use the dedicated Address Book to create and manage contacts or organisations in projects and tasks. Add custom properties to standardise a deeper relationship between tasks and people or places. Contacts can be linked exclusively to tasks in a project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) for quick reference from the task summary and the project board view.');
     }
 
     public function getPluginAuthor()
