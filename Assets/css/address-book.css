@@ -388,8 +388,12 @@ li.property-action-item a span.rename-icon {
     margin-right: 5px;
 }
 
-.property-fields label {
+.property-fields label, .form-group label {
     margin-bottom: 2px;
+}
+
+.property-fields p.form-help.modal-form-help {
+    height: initial;
 }
 
 .rename-property-modal .ab-page-header h2, .delete-property-modal .ab-page-header h2 {
