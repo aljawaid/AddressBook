@@ -980,6 +980,10 @@ section.property-set-section {
     vertical-align: middle;
 }
 
+a.btn.add-property-set {
+    margin-right: 5px;
+}
+
 a.btn.add-property-set, a.btn.remove-property-set {
     padding: 3px 6px 0 10px;
 }
