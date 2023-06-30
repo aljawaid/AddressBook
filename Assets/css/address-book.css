@@ -242,6 +242,11 @@ fieldset.ab-new-item .form-actions {
     background-color: var(--ab-button);
     color: var(--pp-white);
     border-radius: 0;
+    width: auto;
+}
+
+#ContactProfileTable th:first-child {
+    width: 150px;
 }
 
 #ContactProfileTable td {
@@ -253,12 +258,15 @@ fieldset.ab-new-item .form-actions {
     border-bottom: 1px solid var(--ab-blue);
 }
 
+/*
 #ContactProfileTable th:last-child {
     padding-left: 10px;
 }
+*/
 
 .property-note-column {
     max-width: 450px;
+    min-width: 250px;
 }
 
 #ContactProfileTable td ul.property-action-bar {
