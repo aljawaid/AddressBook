@@ -63,7 +63,7 @@
             $item_help = $this->ContactsHelper->getItemHelp($key);
             ?>
 
-            <div class="form-group">
+            <div class="form-group form-group-edit">
                 <?= $this->form->label($value, $key . '__' . $trimmedItem) ?>
                 <?php if ($item_type == 'number'): ?>
                     <?= $this->form->number($key . '__' . $trimmedItem, $values, $errors, array('placeholder="' . $number_value_empty_use_title_tag . '"', 'title="' . t('Format: 12345') . '"', 'step="1"'), 'property-input property-input-number') ?>

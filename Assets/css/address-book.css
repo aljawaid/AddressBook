@@ -97,13 +97,21 @@ fieldset.ab-new-item .input-section, fieldset.ab-new-item .form-actions {
     vertical-align: middle;
 }
 
-.input-section span.form-required, .property-wrapper span.form-required, .input-wrapper span.form-required {
+.input-section span.form-required, .property-wrapper span.form-required, .input-wrapper span.form-required, .form-group-edit span.form-required {
     vertical-align: top;
     transform: scale(1.7);
     display: inline-block;
     color: var(--pp-red-alt-3);
     padding-top: 0;
     padding-left: 3px;
+}
+
+.form-group-edit span.form-required {
+    /* padding: 0; */
+    /* position: absolute; */
+    /* margin-top: 9px; */
+    margin-left: -17px;
+    vertical-align: middle;
 }
 
 .input-section .form-help, .modal-form-help {
@@ -200,6 +208,7 @@ select.property-input-select {
     width: 170px;
     margin-top: 0;
     text-align: center;
+    margin-right: -3px;
 }
 
 select.property-input-select:focus, input[type="tel"].property-input:focus, input[type="url"].property-input:focus {
