@@ -33,6 +33,9 @@
                     <?php foreach ($contacts as $key => $value): ?>
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                         <tr class="table-row">
+                            <td class="contacts-table-value" title="<?= (empty($values[0])) ? "" : $values[0]['contact_item_value'] ?>">
+                                <?= (empty($values[0])) ? "" : $values[0]['contact_item_value'] ?>
+                            </td>
                             <td class="contacts-table-value" title="<?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>">
                                 <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
                             </td>
@@ -42,13 +45,10 @@
                             <td class="contacts-table-value" title="<?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>">
                                 <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
                             </td>
-                            <td class="contacts-table-value" title="<?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>">
-                                <?= (empty($values[4])) ? "" : $values[4]['contact_item_value'] ?>
-                            </td>
                             <td class="contacts-table-value">
                                 <ul class="contacts-action-btns">
                                     <li class="">
-                                        <?php if (!empty($values[5])): ?>
+                                        <?php if (!empty($values[4])): ?>
                                             <!-- Modal Button -->
                                             <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
                                                 <span class="contact-profile-icon"></span>

@@ -32,16 +32,20 @@ class ContactsHelper extends Base
     }
 
     /**
-     * Get contact items by id
+     * Get Contact Items by Contact ID
      *
      * @access  public
-     * @param   integer $contacts_id
+     * @param   integer     $contacts_id
      * @return  array
      * @author  Martin Middeke
+     * @author  aljawaid
      */
     public function getContactByID($contacts_id)
     {
-        return $this->contactsModel->getByID($contacts_id);
+        $return = $this->contactsModel->getByID($contacts_id);
+
+        // Re-index array keys so they show in the tables, autoincremented IDs are not sequential if property sets are deleted
+        return array_values($return);
     }
 
     /**
