@@ -39,6 +39,9 @@ class Plugin extends Base
         $this->route->addRoute('/settings/address-book/property-set/:set/delete/', 'ContactsItemsController', 'confirmRemoveSet', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property-set/delete/:set', 'ContactsItemsController', 'removeSet', 'AddressBook');
         $this->route->addRoute('/project/:project_id/address-book', 'ContactsController', 'project', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/address-book/contacts/:contacts_id/edit', 'ContactsController', 'edit', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/address-book/contacts/:contacts_id/delete', 'ContactsController', 'confirm', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/address-book/contacts/delete/:contacts_id', 'ContactsController', 'remove', 'AddressBook');
         $this->route->addRoute('/project/:project_id/task/:task_id/contacts', 'ContactsController', 'task', 'AddressBook');
 
         // Helper
