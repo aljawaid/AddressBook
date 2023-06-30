@@ -306,10 +306,12 @@ fieldset.ab-new-item .form-actions {
     transition: var(--transition-address-book);
     border: 1px solid #D14836;
     color: var(--pp-white) !important;
+    text-decoration: none !important;
 }
 
 .btn-ab-move i, .btn-ab-rename, a.btn-ab-delete i.fa.fa-minus, .btn-ab-property, .btn-add-contact, a.btn.add-property-set i {
     color: var(--pp-white) !important;
+    text-decoration: none !important;
 }
 
 .btn-ab-move i, .btn-ab-delete i, .add-property-set i {
@@ -330,12 +332,14 @@ fieldset.ab-new-item .form-actions {
 .btn-ab-move:focus, .btn-ab-move:hover, .btn-ab-rename:focus, .btn-ab-rename:hover, .btn-ab-property:focus, .btn-ab-property:hover, .btn-add-contact:hover, .btn-add-contact:focus, .btn.add-property-set:hover, .btn.add-property-set:focus {
     border: 1px solid var(--ab-button);
     background: var(--pp-white);
+    text-decoration: none !important;
 }
 
 .btn-ab-delete:focus, .btn-ab-delete:hover {
     border: 1px solid #D14836;
     color: #D14836 !important;
     background: var(--pp-white);
+    text-decoration: none !important;
 }
 
 a.btn-ab-delete:focus i.fa.fa-minus, a.btn-ab-delete:hover i.fa.fa-minus {
@@ -769,6 +773,7 @@ td.contacts-table-value {
     border: 1px solid var(--ab-blue);
     vertical-align: middle;
     padding: .5em 5px;
+    border-radius: 0;
 }
 
 #ContactDetailsTable tbody tr td {
@@ -792,8 +797,10 @@ td.contacts-table-value {
 
 #ContactDetailsTable td.contact-table-value a {
     transition: var(--transition-address-book);
-    color: var(--ab-button);
-    text-decoration: none;
+    color: var(--ab-blue);
+    text-decoration: none !important;
+    font-weight: 600;
+    letter-spacing: .031em;
 }
 
 #ContactDetailsTable td.contact-table-value a:hover {
@@ -863,8 +870,8 @@ ul.contacts-action-btns li a.btn-ab-delete span.delete-text {
 }
 
 table#ContactDetailsTable tfoot.table-footer .table-row td {
+    /* font-size: .9em; */
     color: var(--pp-grey);
-    font-size: .9em;
     background: #CACACA;
     border: 1px solid var(--ab-blue);
 }
@@ -944,6 +951,11 @@ span.contact-updated-date i, span.contact-updated-user i {
 span.footer-icon.tooltip {
     opacity: 1;
     color: var(--ab-blue);
+    transition: var(--transition-address-book);
+}
+
+span.footer-icon.tooltip:focus, span.footer-icon.tooltip:hover {
+    color: var(--ab-button);
 }
 
 span.footer-icon.tooltip span.address-book-icon {
