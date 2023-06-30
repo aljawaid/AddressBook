@@ -31,6 +31,13 @@ class Plugin extends Base
         $this->route->addRoute('/settings/address-book/property/:item_id/edit', 'ContactsItemsController', 'edit', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/:item_id/delete', 'ContactsItemsController', 'confirm', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/delete/:item_id', 'ContactsItemsController', 'remove', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/add/personal', 'ContactsItemsController', 'insertSetPersonal', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/add/business', 'ContactsItemsController', 'insertSetBusiness', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/add/company', 'ContactsItemsController', 'insertSetCompany', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/add/people', 'ContactsItemsController', 'insertSetPeople', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/add/team', 'ContactsItemsController', 'insertSetTeam', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/:set/delete/', 'ContactsItemsController', 'confirmRemoveSet', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property-set/delete/:set', 'ContactsItemsController', 'removeSet', 'AddressBook');
         $this->route->addRoute('/project/:project_id/address-book', 'ContactsController', 'project', 'AddressBook');
         $this->route->addRoute('/project/:project_id/task/:task_id/contacts', 'ContactsController', 'task', 'AddressBook');
 
