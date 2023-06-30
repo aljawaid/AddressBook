@@ -28,7 +28,7 @@ class Plugin extends Base
         //  - Example: $this->route->addRoute('/my/custom/route', 'MyController', 'show', 'PluginNameExampleStudlyCaps');
         $this->route->addRoute('/settings/address-book', 'ContactsItemsController', 'config', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/:item_id/move/:direction', 'ContactsItemsController', 'movePosition', 'AddressBook');
-        $this->route->addRoute('/settings/address-book/property/:item_id/rename', 'ContactsItemsController', 'edit', 'AddressBook');
+        $this->route->addRoute('/settings/address-book/property/:item_id/edit', 'ContactsItemsController', 'edit', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/:item_id/delete', 'ContactsItemsController', 'confirm', 'AddressBook');
         $this->route->addRoute('/settings/address-book/property/delete/:item_id', 'ContactsItemsController', 'remove', 'AddressBook');
         $this->route->addRoute('/project/:project_id/address-book', 'ContactsController', 'project', 'AddressBook');
