@@ -43,6 +43,9 @@ class Plugin extends Base
         $this->route->addRoute('/project/:project_id/address-book/contacts/:contacts_id/delete', 'ContactsController', 'confirm', 'AddressBook');
         $this->route->addRoute('/project/:project_id/address-book/contacts/delete/:contacts_id', 'ContactsController', 'remove', 'AddressBook');
         $this->route->addRoute('/project/:project_id/task/:task_id/contacts', 'ContactsController', 'task', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/task/:task_id/contacts/:contacts_id/link', 'ContactsController', 'addToTask', 'AddressBook');
+        $this->route->addRoute('/project/:project_id/task/:task_id/contacts/:contacts_id/delink', 'ContactsController', 'removeFromTask', 'AddressBook');
+        $this->route->addRoute('/project/address-book/contacts/:contacts_id/view', 'ContactsController', 'details', 'AddressBook');
 
         // Helper
         //  - Example: $this->helper->register('helperClassNameCamelCase', '\Kanboard\Plugin\PluginNameExampleStudlyCaps\Helper\HelperNameExampleStudlyCaps');
