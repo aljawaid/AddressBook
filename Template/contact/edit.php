@@ -1,3 +1,14 @@
+<?php $fields = count($headings); ?>
+
+<?php if ($fields < 3): ?>
+    <style type="text/css">
+        /* MODAL SIZE */
+        #modal-box {
+            width: auto !important;
+        }
+    </style>
+<?php endif ?>
+
 <style type="text/css">
     /* MODAL SIZE */
     /* #modal-box {
