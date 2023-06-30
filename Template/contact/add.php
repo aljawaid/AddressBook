@@ -8,7 +8,7 @@
             <?php foreach ($items as $key => $value): ?>
                 <?php
                 $trimmedItemName = ucwords(strtolower($value['item']));
-                $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+                $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']', '#', '°'), '', $trimmedItemName);
                 ?>
 
                 <?= $this->form->label($value['item'], $value['id'] . '_' . $trimmedItem, array('class="profile-property-label"')) ?>

@@ -107,7 +107,7 @@ class ContactsModel extends Base
         $return = array();
         foreach ($headings as $key => $value) {
             $trimmedItemName = ucwords(strtolower($value));
-            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']', '#', '°'), '', $trimmedItemName);
             $return[$key . '__' . $trimmedItem] = (empty($contact[$key])) ? '' : $contact[$key]['contact_item_value'];
         }
 

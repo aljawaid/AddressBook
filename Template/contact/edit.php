@@ -59,7 +59,7 @@
         <?php foreach ($headings as $key => $value): ?>
             <?php
             $trimmedItemName = ucwords(strtolower($value));
-            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']'), '', $trimmedItemName);
+            $trimmedItem = str_replace(array(' ', '|', '(', ')', '[', ']', '#', '°'), '', $trimmedItemName);
             $item_type = $this->ContactsHelper->getItemType($key);
             $existing_value = $key . '__' . $trimmedItem;
             $show_existing_value = $this->helper->text->e($values[$existing_value]);
