@@ -1,4 +1,4 @@
-<?php $fields = count($headings); ?>
+<?php $fields = count($headings) ?>
 
 <?php if ($fields < 3): ?>
     <style type="text/css">
@@ -52,8 +52,9 @@
         <?= $this->form->csrf() ?>
 
         <div class="form-group contact-id">
-            <?= $this->form->label(t('Contact ID'), $contacts_id . '__' . 'ContactID') ?>
-            <?= $this->form->text($contacts_id . '__' . 'ContactID', array(), array(), array('value="' . $contacts_id . '"', 'readonly'), 'property-input property-input-disabled') ?>
+            <?= $this->form->label(t('Contact ID'), 'ContactID') ?>
+            <!-- Manually build input for Contact ID - exclude `name` attribute to be excluded from form submission -->
+            <input id="form-ContactID" type="text" class="property-input property-input-disabled" value="<?= $contacts_id ?>" placeholder="" readonly="readonly">
         </div>
 
         <?php foreach ($headings as $key => $value): ?>
