@@ -524,6 +524,10 @@ a.view-contact-btn, a.delink-btn, a.link-btn {
     transition: var(--transition-address-book);
 }
 
+a.delink-btn, a.link-btn {
+    padding: 3px 8px 3px 10px;
+}
+
 a.delink-btn i {
     padding-top: 2px;
 }
@@ -717,6 +721,7 @@ td.contacts-table-value {
 #LinkedContactsTable th.contacts-table-header.cell-zero, #LinkedContactsTable td.contacts-table-value.cell-zero, #AvailableContactsTable th.contacts-table-header.cell-zero, #AvailableContactsTable td.contacts-table-value.cell-zero, #TaskContactsTable th.contacts-table-header.cell-zero, #TaskContactsTable td.contacts-table-value.cell-zero {
     border: 0;
     background: none;
+    padding: .5em 0;
 }
 
 #LinkedContactsTable td.contacts-table-value {
@@ -846,7 +851,7 @@ ul.contacts-action-btns li a.btn-ab-rename {
 ul.contacts-action-btns li a.btn-ab-rename span.edit-text {
     display: inline-table;
     vertical-align: top;
-    margin-top: 3px;
+    margin-top: 2px;
     pointer-events: none;
 }
 
@@ -865,7 +870,7 @@ ul.contacts-action-btns li a.btn-ab-delete span.delete-contact-icon {
 ul.contacts-action-btns li a.btn-ab-delete span.delete-text {
     display: inline-table;
     vertical-align: top;
-    margin-top: 6px;
+    margin-top: 5px;
     pointer-events: none;
 }
 
