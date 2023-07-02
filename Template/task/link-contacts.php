@@ -41,24 +41,24 @@
                                 <!-- Arrow DOWN Button -->
                                 <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
                             </td>
-                            <td class="contacts-table-value" title="">
+                            <td class="contacts-table-value">
                                 <?php foreach ($values as $array_key => $array_value): ?>
                                     <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 1)): ?>
-                                        <?= $values[$array_key]['contact_item_value'] ?>
+                                        <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </td>
-                            <td class="contacts-table-value" title="">
+                            <td class="contacts-table-value">
                                 <?php foreach ($values as $array_key => $array_value): ?>
                                     <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 2)): ?>
-                                        <?= $values[$array_key]['contact_item_value'] ?>
+                                        <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </td>
-                            <td class="contacts-table-value" title="">
+                            <td class="contacts-table-value">
                                 <?php foreach ($values as $array_key => $array_value): ?>
                                     <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 3)): ?>
-                                        <?= $values[$array_key]['contact_item_value'] ?>
+                                        <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                     <?php endif ?>
                                 <?php endforeach ?>
                             </td>
