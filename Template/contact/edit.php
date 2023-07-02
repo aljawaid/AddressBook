@@ -102,38 +102,38 @@
                 <?php endif ?>
 
                 <?php if ($item_type == 'telephone'): ?>
-                        <p class="form-help">
-                            <?= t('All numbers and symbols shown are allowed') ?>
-                            <?php if (!empty($item_help)): ?>
-                                <?= '- ' . $item_help ?>
-                            <?php endif ?>
-                        </p>
-                    <?php elseif ($item_type == 'number'): ?>
-                        <p class="form-help">
-                            <?= t('Only whole numbers are allowed') ?>
-                            <?php if (!empty($item_help)): ?>
-                                <?= '- ' . $item_help ?>
-                            <?php endif ?>
-                        </p>
-                    <?php elseif ($item_type == 'decimal2'): ?>
-                        <p class="form-help">
-                            <?= t('Numbers with 2 decimals are allowed') ?>
-                            <?php if (!empty($item_help)): ?>
-                                <?= '- ' . $item_help ?>
-                            <?php endif ?>
-                        </p>
-                    <?php elseif ($item_type == 'decimal4'): ?>
-                        <p class="form-help">
-                            <?= t('Numbers with 4 decimals are allowed') ?>
-                            <?php if (!empty($item_help)): ?>
-                                <?= '- ' . $item_help ?>
-                            <?php endif ?>
-                        </p>
-                    <?php elseif (!empty($item_help)): ?>
-                        <p class="form-help">
-                            <?= $item_help ?>
-                        </p>
-                    <?php endif ?>
+                    <p class="form-help">
+                        <?= t('All numbers and symbols shown are allowed') ?>
+                        <?php if (!empty($item_help)): ?>
+                            <?= '- ' . $item_help ?>
+                        <?php endif ?>
+                    </p>
+                <?php elseif ($item_type == 'number'): ?>
+                    <p class="form-help">
+                        <?= t('Only whole numbers are allowed') ?>
+                        <?php if (!empty($item_help)): ?>
+                            <?= '- ' . $item_help ?>
+                        <?php endif ?>
+                    </p>
+                <?php elseif ($item_type == 'decimal2'): ?>
+                    <p class="form-help">
+                        <?= t('Numbers with 2 decimals are allowed') ?>
+                        <?php if (!empty($item_help)): ?>
+                            <?= '- ' . $item_help ?>
+                        <?php endif ?>
+                    </p>
+                <?php elseif ($item_type == 'decimal4'): ?>
+                    <p class="form-help">
+                        <?= t('Numbers with 4 decimals are allowed') ?>
+                        <?php if (!empty($item_help)): ?>
+                            <?= '- ' . $item_help ?>
+                        <?php endif ?>
+                    </p>
+                <?php elseif (!empty($item_help)): ?>
+                    <p class="form-help">
+                        <?= $item_help ?>
+                    </p>
+                <?php endif ?>
             </div>
         <?php endforeach ?>
 
