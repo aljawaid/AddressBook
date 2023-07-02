@@ -42,10 +42,7 @@ class ContactsHelper extends Base
      */
     public function getContactByID($contacts_id)
     {
-        $return = $this->contactsModel->getByID($contacts_id);
-
-        // Re-index array keys so they show in the tables, autoincremented IDs are not sequential if property sets are deleted
-        return array_values($return);
+        return $this->contactsModel->getByID($contacts_id);
     }
 
     /**
