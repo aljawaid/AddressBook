@@ -407,7 +407,7 @@ li.property-action-item a span.rename-icon {
     margin-bottom: 0;
 }
 
-.modal-form .form-actions, .confirm, .form-actions {
+.modal-form .form-actions, .confirm .form-actions {
     text-align: right;
 }
 
