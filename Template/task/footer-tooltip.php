@@ -20,17 +20,33 @@
                 <?php foreach ($contacts as $key => $value): ?>
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="table-row">
-                        <td class="contacts-table-value" title="<?= (empty($values[0])) ? "" : $values[0]['contact_item_value'] ?>">
-                            <?= (empty($values[0])) ? "" : $values[0]['contact_item_value'] ?>
+                        <td class="contacts-table-value" title="">
+                            <?php foreach ($values as $array_key => $array_value): ?>
+                                <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 1)): ?>
+                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                <?php endif ?>
+                            <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="<?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>">
-                            <?= (empty($values[1])) ? "" : $values[1]['contact_item_value'] ?>
+                        <td class="contacts-table-value" title="">
+                            <?php foreach ($values as $array_key => $array_value): ?>
+                                <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 2)): ?>
+                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                <?php endif ?>
+                            <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="<?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>">
-                            <?= (empty($values[2])) ? "" : $values[2]['contact_item_value'] ?>
+                        <td class="contacts-table-value" title="">
+                            <?php foreach ($values as $array_key => $array_value): ?>
+                                <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 3)): ?>
+                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                <?php endif ?>
+                            <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="<?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>">
-                            <?= (empty($values[3])) ? "" : $values[3]['contact_item_value'] ?>
+                        <td class="contacts-table-value" title="">
+                            <?php foreach ($values as $array_key => $array_value): ?>
+                                <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 4)): ?>
+                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                <?php endif ?>
+                            <?php endforeach ?>
                         </td>
                     </tr>
                 <?php endforeach ?>
