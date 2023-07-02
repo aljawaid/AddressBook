@@ -20,31 +20,31 @@
                 <?php foreach ($contacts as $key => $value): ?>
                     <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                     <tr class="table-row">
-                        <td class="contacts-table-value" title="">
+                        <td class="contacts-table-value">
                             <?php foreach ($values as $array_key => $array_value): ?>
                                 <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 1)): ?>
-                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                    <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="">
+                        <td class="contacts-table-value">
                             <?php foreach ($values as $array_key => $array_value): ?>
                                 <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 2)): ?>
-                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                    <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="">
+                        <td class="contacts-table-value">
                             <?php foreach ($values as $array_key => $array_value): ?>
                                 <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 3)): ?>
-                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                    <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </td>
-                        <td class="contacts-table-value" title="">
+                        <td class="contacts-table-value">
                             <?php foreach ($values as $array_key => $array_value): ?>
                                 <?php if (current($values[$array_key]) && ($values[$array_key]['position'] == 4)): ?>
-                                    <?= $values[$array_key]['contact_item_value'] ?>
+                                    <span title="<?= $values[$array_key]['contact_item_value'] ?>"><?= $values[$array_key]['contact_item_value'] ?></span>
                                 <?php endif ?>
                             <?php endforeach ?>
                         </td>
