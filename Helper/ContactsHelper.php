@@ -64,7 +64,7 @@ class ContactsHelper extends Base
      * @return  string      item_type
      * @author  aljawaid
      */
-    function getItemType($item_id)
+    public function getItemType($item_id)
     {
         $item_type = $this->contactsItemsModel->getByID($item_id);
 
@@ -79,7 +79,7 @@ class ContactsHelper extends Base
      * @return  string      item_help
      * @author  aljawaid
      */
-    function getItemHelp($item_id)
+    public function getItemHelp($item_id)
     {
         $item_help = $this->contactsItemsModel->getByID($item_id);
 
