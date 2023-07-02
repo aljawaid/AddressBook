@@ -24,10 +24,20 @@
                         <?php $values = $this->ContactsHelper->getContactByID($value['contacts_id']) ?>
                         <tr class="table-row">
                             <td class="contacts-table-value text-center cell-zero">
-                                <!-- Modal Button -->
-                                <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View Contact') ?>">
-                                    <span class="contact-profile-icon"></span>
-                                </a>
+                                <?php foreach ($values as $array_key => $array_value): ?>
+                                    <?php $arrayValueCount = count($values) ?>
+                                <?php endforeach ?>
+                                <?php if ($arrayValueCount < 4): ?>
+                                    <!-- Modal Button -->
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
+                                        <span class="contact-profile-icon"></span>
+                                    </a>
+                                <?php else: ?>
+                                    <!-- Modal Button -->
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
+                                        <span class="contact-profile-icon"></span>
+                                    </a>
+                                <?php endif ?>
                             </td>
                             <td class="contacts-table-value" title="">
                                 <?php foreach ($values as $array_key => $array_value): ?>
