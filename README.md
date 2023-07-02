@@ -145,6 +145,7 @@ Go to `Task` &#10562; Contacts
 - Requires [Kanboard](https://github.com/kanboard/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.20`
 - **Other Plugins & Action Plugins**
   - _No known issues_
+  - Compatible with [KanboardCSS](https://github.com/aljawaid/KanboardCSS)
 - **Core Files & Templates**
   - _No template overrides_
   - Database Changes:
