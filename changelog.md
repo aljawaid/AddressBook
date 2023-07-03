@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v1.2
+
+_(most recent changes are listed on top):_
+- FIX: PostgreSQL Syntax Errors Failed Plugin Installation - fixes #7 - needs testing for usage of `UNIQUE INDEX`
+- FIX: SQLite Syntax Errors Failed Plugin Installation - fixes #6 - thanks @PopovIG
+- FIX: Target Modals Specifically for Styling Buttons - relates to 66cb3b5
+- FIX: Incorrect CSS Class Detected - potentially conflicting with other plugins
+
 ## v1.1
 
 _(most recent changes are listed on top):_
