@@ -20,7 +20,7 @@ function version_1(PDO $pdo)
 
     /* SAVE VALUES OF DYNAMIC ITEMS FOR THE CONTACT */
     $pdo->exec('CREATE TABLE IF NOT EXISTS address_book_contacts_contact (
-        contacts_id INTEGER KEY NOT NULL,
+        contacts_id INTEGER PRIMARY KEY NOT NULL,
         item_id INT NOT NULL,
         contact_item_value TEXT NOT NULL,
         updated_by_user_id INT NOT NULL,
