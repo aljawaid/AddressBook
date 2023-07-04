@@ -81,7 +81,7 @@ class ContactsTaskModel extends Base
             ->join(ContactsModel::TABLE, 'contacts_id', 'contacts_id')
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id', ContactsModel::TABLE)
             ->asc(ContactsItemsModel::TABLE . '.position')
-            ->groupBy(ContactsModel::TABLE.'.contacts_id')
+            ->groupBy(ContactsModel::TABLE . '.contacts_id')
             ->asc(ContactsModel::TABLE . '.contact_item_value');
 
         return $this->db
