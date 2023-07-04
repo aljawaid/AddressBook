@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v1.3
+
+_(most recent changes are listed on top):_
+- FIX: Syntax Errors - #9 - #6
+- FIX: SQLite Compatibility - fixes database errors, linking/delinking tasks - #9 - #6 - thanks @PopovIG
+- FIX: Amibiguous Column Name in SQLite - fixes #10 - thanks @PopovIG
+- FIX: SQLite Foreign Key Mismatch - fixes #9 - thanks @PopovIG
+
+
 ## v1.2
 
 _(most recent changes are listed on top):_
