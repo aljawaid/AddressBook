@@ -20,7 +20,8 @@ function version_1(PDO $pdo)
 
     /* SAVE VALUES OF DYNAMIC ITEMS FOR THE CONTACT */
     $pdo->exec('CREATE TABLE IF NOT EXISTS address_book_contacts_contact (
-        contacts_id INTEGER PRIMARY KEY NOT NULL,
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        contacts_id INTEGER NOT NULL,
         item_id INT NOT NULL,
         contact_item_value TEXT NOT NULL,
         updated_by_user_id INT NOT NULL,
@@ -33,7 +34,7 @@ function version_1(PDO $pdo)
         id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
         task_id INT NOT NULL,
         contacts_id INT NOT NULL,
-        FOREIGN KEY(contacts_id) REFERENCES address_book_contacts_contact(contacts_id) ON DELETE CASCADE,
+        FOREIGN KEY(contacts_id) REFERENCES address_book_contacts_contact(id) ON DELETE CASCADE,
         FOREIGN KEY(task_id) REFERENCES tasks(id) ON DELETE CASCADE
     )');
 
