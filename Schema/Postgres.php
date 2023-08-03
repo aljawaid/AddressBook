@@ -42,5 +42,5 @@ function version_1(PDO $pdo)
     )');
 
     /* ADD DEFAULTS FOR CONTACT ITEMS */
-    $pdo->exec('INSERT INTO address_book_contacts_items(item, item_type, property_set, position) VALUES ("Name", "text", "default", 1)');
+    $pdo->exec("INSERT INTO address_book_contacts_items (item, item_type, property_set, position) VALUES ('Name', 'text', 'default', '1')");
 }
