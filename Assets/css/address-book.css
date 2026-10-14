@@ -16,7 +16,7 @@
     --pp-orange: #FF6500;
     --blue-icon-dark: #034CA6;
     --ab-blue: #20369F;
-    --ab-button: rgba(32, 54, 159, .8);
+    --ab-button: rgb(32, 54, 159, .8);
     --ab-table-green: #84D040;
     --background-red: #FF000054;
     --button-blue-gradient: linear-gradient(to bottom, #7892C2 80%, #476E9E 100%);
@@ -133,6 +133,7 @@ form#AddPropertyForm .input-section p.form-help {
 input#form-item_help {
     width: 355px;
 }
+
 /* stylelint-enable selector-id-pattern */
 
 span.property-fields input#form-item_help {
@@ -215,7 +216,7 @@ select.property-input-select:focus, input[type="tel"].property-input:focus, inpu
     color: var(--pp-black);
     border: 1px solid var(--ab-blue);
     outline: 0;
-    box-shadow: 0 0 8px rgba(82, 168, 236, .6);
+    box-shadow: 0 0 8px rgb(82, 168, 236, .6);
 }
 
 fieldset.ab-new-item .form-actions {
@@ -285,6 +286,7 @@ fieldset.ab-new-item .form-actions {
     min-width: fit-content;
     margin-right: 5px;
 }
+
 /* stylelint-enable selector-id-pattern */
 
 .property-action-bar .move-buttons {
@@ -783,7 +785,7 @@ td.contacts-table-value {
 
 #ContactDetailsTable tbody tr td {
     /* color: var(--pp-white); */
-    background: rgba(32, 54, 159, .2);
+    background: rgb(32, 54, 159, .2);
     border: 1px solid var(--ab-blue);
     vertical-align: middle;
     padding: .5em 5px;
