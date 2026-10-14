@@ -20,7 +20,7 @@ class ContactsProjectModel extends Base
      *
      * @var string
      */
-    const TABLE = 'address_book_contacts_project_has_contact';
+    public const TABLE = 'address_book_contacts_project_has_contact';
 
     /**
      * Return contacts assigned to a project
@@ -50,7 +50,7 @@ class ContactsProjectModel extends Base
             ->findAllByColumn('contacts_id'));
 
         return array_values(array_filter($this->contactsModel->getAll(), function (array $contact) use ($assigned) {
-            return ! isset($assigned[$contact['contacts_id']]);
+            return !isset($assigned[$contact['contacts_id']]);
         }));
     }
 
@@ -96,7 +96,7 @@ class ContactsProjectModel extends Base
      */
     public function assignToProject($contacts_id, $project_id)
     {
-        if (! $this->contactsModel->exists($contacts_id) || ! $this->projectModel->exists($project_id)) {
+        if (!$this->contactsModel->exists($contacts_id) || !$this->projectModel->exists($project_id)) {
             return false;
         }
 
@@ -126,7 +126,7 @@ class ContactsProjectModel extends Base
 
         $this->db->startTransaction();
 
-        if (! empty($task_ids)) {
+        if (!empty($task_ids)) {
             $this->db
                 ->table(ContactsTaskModel::TABLE)
                 ->eq('contacts_id', $contacts_id)

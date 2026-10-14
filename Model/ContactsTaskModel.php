@@ -21,7 +21,7 @@ class ContactsTaskModel extends Base
      *
      * @var  string
      */
-    const TABLE = 'address_book_contacts_task_has_contact';
+    public const TABLE = 'address_book_contacts_task_has_contact';
 
     /**
      * Return all contact items
@@ -71,7 +71,7 @@ class ContactsTaskModel extends Base
             ->findAllByColumn('contacts_id'));
 
         return array_values(array_filter($this->contactsProjectModel->getAllByProjectId($project_id), function (array $contact) use ($linked) {
-            return ! isset($linked[$contact['contacts_id']]);
+            return !isset($linked[$contact['contacts_id']]);
         }));
     }
 
@@ -113,7 +113,7 @@ class ContactsTaskModel extends Base
     {
         $project_id = $this->taskFinderModel->getProjectId($task_id);
 
-        if ($project_id <= 0 || ! $this->contactsProjectModel->isAssignedToProject($contacts_id, $project_id)) {
+        if ($project_id <= 0 || !$this->contactsProjectModel->isAssignedToProject($contacts_id, $project_id)) {
             return false;
         }
 

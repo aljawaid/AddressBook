@@ -18,14 +18,14 @@ class ContactsModel extends Base
      *
      * @var string
      */
-    const CONTACT_TABLE = 'address_book_contacts';
+    public const CONTACT_TABLE = 'address_book_contacts';
 
     /**
      * SQL table name for Contacts
      *
      * @var  string
      */
-    const TABLE = 'address_book_contacts_contact';
+    public const TABLE = 'address_book_contacts_contact';
 
     /**
      * Return contact by ID
@@ -198,7 +198,7 @@ class ContactsModel extends Base
 
         $this->db->startTransaction();
 
-        if (! $this->db->table(self::CONTACT_TABLE)->persist(array('created_at' => time()))) {
+        if (!$this->db->table(self::CONTACT_TABLE)->persist(array('created_at' => time()))) {
             $this->db->cancelTransaction();
             return false;
         }
@@ -211,7 +211,7 @@ class ContactsModel extends Base
             $contactValue['last_updated'] = time();
             $contactValue['updated_by_user_id'] = $updated_by_user_id;
 
-            if (! $this->db->table(self::TABLE)->persist($contactValue)) {
+            if (!$this->db->table(self::TABLE)->persist($contactValue)) {
                 $this->db->cancelTransaction();
                 return false;
             }
@@ -237,7 +237,7 @@ class ContactsModel extends Base
         $create = array();
         $results = array();
 
-        if (! $this->exists($contacts_id)) {
+        if (!$this->exists($contacts_id)) {
             return false;
         }
 
@@ -316,7 +316,7 @@ class ContactsModel extends Base
         $contacts = array();
 
         foreach ($rows as $row) {
-            if (! isset($contacts[$row['contacts_id']])) {
+            if (!isset($contacts[$row['contacts_id']])) {
                 $contacts[$row['contacts_id']] = $row;
             }
         }

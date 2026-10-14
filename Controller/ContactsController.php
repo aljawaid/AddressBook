@@ -253,7 +253,7 @@ class ContactsController extends BaseController
 
         $this->getTask();
 
-        if (! $this->contactsTaskModel->addToTask($contacts_id, $task_id)) {
+        if (!$this->contactsTaskModel->addToTask($contacts_id, $task_id)) {
             $this->flash->failure(t('Unable to link this contact to the task'));
         }
 
@@ -361,7 +361,7 @@ class ContactsController extends BaseController
      */
     private function requireProjectContact($contacts_id, $project_id)
     {
-        if (! $this->contactsProjectModel->isAssignedToProject($contacts_id, $project_id)) {
+        if (!$this->contactsProjectModel->isAssignedToProject($contacts_id, $project_id)) {
             throw new PageNotFoundException();
         }
     }

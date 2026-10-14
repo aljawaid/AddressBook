@@ -171,7 +171,7 @@ class ContactsDirectoryController extends BaseController
     {
         $contacts_id = $this->request->getIntegerParam('contacts_id');
 
-        if (! $this->contactsModel->exists($contacts_id)) {
+        if (!$this->contactsModel->exists($contacts_id)) {
             throw new PageNotFoundException();
         }
 

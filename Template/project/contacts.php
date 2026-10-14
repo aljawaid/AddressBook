@@ -102,7 +102,7 @@
         </section>
     <?php endif ?>
     <hr class="ab-section-divider">
-    <?php if ($this->user->hasProjectAccess('ContactsController', 'assignToProject', $project['id']) && ! empty($availableContacts)): ?>
+    <?php if ($this->user->hasProjectAccess('ContactsController', 'assignToProject', $project['id']) && !empty($availableContacts)): ?>
         <section class="assign-contact-section">
             <h3><?= t('Assign Existing Contact') ?></h3>
             <form method="post" action="<?= $this->url->href('ContactsController', 'assignToProject', array('project_id' => $project['id'], 'plugin' => 'AddressBook')) ?>">

@@ -10,6 +10,8 @@
 
 declare(strict_types=1);
 
+// phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols -- Standalone integration test executes immediately and defines local helpers.
+
 $kanboardRoot = dirname(__DIR__, 4);
 
 define('PLUGINS_DIR', $kanboardRoot . '/plugins');
@@ -52,14 +54,14 @@ echo 'AddressBook global directory integration test passed.' . PHP_EOL;
 
 function assertTrue(bool $actual, string $message): void
 {
-    if (! $actual) {
+    if (!$actual) {
         throw new RuntimeException($message);
     }
 }
 
 function assertFalse(bool $actual, string $message): void
 {
-    assertTrue(! $actual, $message);
+    assertTrue(!$actual, $message);
 }
 
 function assertSame($expected, $actual, string $message): void

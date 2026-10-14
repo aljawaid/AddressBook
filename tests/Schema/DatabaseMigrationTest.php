@@ -8,13 +8,15 @@
 
 declare(strict_types=1);
 
+// phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols -- Standalone schema test executes immediately and defines local helpers.
+
 $driver = getenv('ADDRESS_BOOK_TEST_DRIVER') ?: 'sqlite';
 $dsn = getenv('ADDRESS_BOOK_TEST_DSN') ?: 'sqlite::memory:';
 $username = getenv('ADDRESS_BOOK_TEST_USERNAME') ?: null;
 $password = getenv('ADDRESS_BOOK_TEST_PASSWORD') ?: null;
 $schemaFile = dirname(__DIR__, 2) . '/Schema/' . ucfirst($driver) . '.php';
 
-if (! is_file($schemaFile)) {
+if (!is_file($schemaFile)) {
     throw new RuntimeException('Unsupported database driver: ' . $driver);
 }
 
