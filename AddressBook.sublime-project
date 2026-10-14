@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "name": "AddressBook",
+            "path": ".",
+            "folder_exclude_patterns": [
+                ".git",
+                "node_modules",
+                "vendor"
+            ],
+            "file_exclude_patterns": [
+                "*.sublime-workspace"
+            ]
+        }
+    ]
+}
