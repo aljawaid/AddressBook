@@ -85,3 +85,64 @@ jobs:
           }
           echo $pluginName." loaded on Kanboard ".APP_VERSION." with PHP ".PHP_VERSION.PHP_EOL;
           '
+
+  database-migrations:
+    name: Database migrations
+    runs-on: ubuntu-24.04
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_DATABASE: addressbook
+          MYSQL_ROOT_PASSWORD: addressbook
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: addressbook
+          POSTGRES_PASSWORD: addressbook
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - name: Checkout plugin
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@4424c9aab975b57bd706ee5a39c6b4334d6e4f60 # 2.40.0
+        with:
+          php-version: '8.5'
+          extensions: pdo_mysql, pdo_pgsql, pdo_sqlite
+          coverage: none
+
+      - name: Test SQLite migration
+        run: php tests/Schema/DatabaseMigrationTest.php
+
+      - name: Test MySQL migration
+        env:
+          ADDRESS_BOOK_TEST_DRIVER: mysql
+          ADDRESS_BOOK_TEST_DSN: mysql:host=127.0.0.1;port=3306;dbname=addressbook
+          ADDRESS_BOOK_TEST_USERNAME: root
+          ADDRESS_BOOK_TEST_PASSWORD: addressbook
+        run: php tests/Schema/DatabaseMigrationTest.php
+
+      - name: Test PostgreSQL migration
+        env:
+          ADDRESS_BOOK_TEST_DRIVER: postgres
+          ADDRESS_BOOK_TEST_DSN: pgsql:host=127.0.0.1;port=5432;dbname=addressbook
+          ADDRESS_BOOK_TEST_USERNAME: postgres
+          ADDRESS_BOOK_TEST_PASSWORD: addressbook
+        run: php tests/Schema/DatabaseMigrationTest.php

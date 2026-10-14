@@ -143,9 +143,18 @@ Go to `Task` &#10562; Contacts
 - **Core Files & Templates**
   - _No template overrides_
   - Database Changes:
-    - `01` New database table created as `address_book_contacts_items`
-    - `01` New database table created as `address_book_contacts_contact`
-    - `01` New database table created as `address_book_contacts_task_has_contact`
+    - `03` Original database tables:
+      - `address_book_contacts_items`
+      - `address_book_contacts_contact`
+      - `address_book_contacts_task_has_contact`
+    - `02` New database tables:
+      - `address_book_contacts`
+      - `address_book_contacts_project_has_contact`
+    - `02` Original tables rebuilt under their existing names with normalised foreign keys:
+      - `address_book_contacts_contact`
+      - `address_book_contacts_task_has_contact`
+    - `01` Original table retained without structural changes:
+      - `address_book_contacts_items`
 
 </details>
 <details>

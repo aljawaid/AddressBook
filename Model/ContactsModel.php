@@ -14,6 +14,13 @@ use Kanboard\Core\Base;
 class ContactsModel extends Base
 {
     /**
+     * SQL table name for stable contact identities
+     *
+     * @var string
+     */
+    const CONTACT_TABLE = 'address_book_contacts';
+
+    /**
      * SQL table name for Contacts
      *
      * @var  string
@@ -55,15 +62,38 @@ class ContactsModel extends Base
      */
     public function getAll()
     {
-        $firstPosition = $this->db->table(ContactsItemsModel::TABLE)->columns('id')->eq('position', 1)->findOne();
-
-        return $this->db
+        $rows = $this->db
             ->table(self::TABLE)
             ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
+            ->asc(self::TABLE . '.contacts_id')
             ->asc(ContactsItemsModel::TABLE . '.position')
-            ->groupBy('contacts_id')
-            ->asc(self::TABLE . '.contact_item_value')
             ->findAll();
+
+        return $this->getContactSummaries($rows);
+    }
+
+    /**
+     * Return selected contacts without relying on database-specific grouping rules
+     *
+     * @access public
+     * @param  array $contact_ids
+     * @return array
+     */
+    public function getAllByIds(array $contact_ids)
+    {
+        if (empty($contact_ids)) {
+            return array();
+        }
+
+        $rows = $this->db
+            ->table(self::TABLE)
+            ->in(self::TABLE . '.contacts_id', array_unique($contact_ids))
+            ->join(ContactsItemsModel::TABLE, 'id', 'item_id')
+            ->asc(self::TABLE . '.contacts_id')
+            ->asc(ContactsItemsModel::TABLE . '.position')
+            ->findAll();
+
+        return $this->getContactSummaries($rows);
     }
 
     /**
@@ -150,25 +180,46 @@ class ContactsModel extends Base
      */
     public function create(array $values)
     {
-        $create = array();
-        $results = array();
-        $maxContacts = $this->db->table(self::TABLE)->columns('max(' . self::TABLE . '.contacts_id) maxid')->findOne();
-        $maxContacts_id = $maxContacts['maxid'];
+        $contactValues = array();
+
         foreach ($values as $key => $value) {
             if (!empty($value)) {
-                $create['contacts_id'] = $maxContacts_id + 1;
                 $item = explode('_', $key);
-                $create['item_id'] = $item[0];
-                $create['contact_item_value'] = $value;
-                $create['last_updated'] = time();
-                if ($this->userSession->isLogged()) {
-                    $create['updated_by_user_id'] = $this->userSession->getId();
-                }
-                $results[] = $this->db->table(self::TABLE)->persist($create);
+                $contactValues[] = array(
+                    'item_id' => $item[0],
+                    'contact_item_value' => $value,
+                );
             }
         }
 
-        return !in_array(false, $results, true);
+        if (empty($contactValues)) {
+            return false;
+        }
+
+        $this->db->startTransaction();
+
+        if (! $this->db->table(self::CONTACT_TABLE)->persist(array('created_at' => time()))) {
+            $this->db->cancelTransaction();
+            return false;
+        }
+
+        $contact_id = (int) $this->db->getLastId();
+        $updated_by_user_id = $this->userSession->isLogged() ? $this->userSession->getId() : 0;
+
+        foreach ($contactValues as $contactValue) {
+            $contactValue['contacts_id'] = $contact_id;
+            $contactValue['last_updated'] = time();
+            $contactValue['updated_by_user_id'] = $updated_by_user_id;
+
+            if (! $this->db->table(self::TABLE)->persist($contactValue)) {
+                $this->db->cancelTransaction();
+                return false;
+            }
+        }
+
+        $this->db->closeTransaction();
+
+        return $contact_id;
     }
 
     /**
@@ -184,6 +235,12 @@ class ContactsModel extends Base
     {
         $contacts_id = $this->request->getIntegerParam('contacts_id');
         $create = array();
+        $results = array();
+
+        if (! $this->exists($contacts_id)) {
+            return false;
+        }
+
         foreach ($values as $key => $value) {
             $item = explode('__', $key);
             $item_id = $item[0];
@@ -232,6 +289,42 @@ class ContactsModel extends Base
      */
     public function remove($contacts_id)
     {
-        return $this->db->table(self::TABLE)->eq('contacts_id', $contacts_id)->remove();
+        return $this->db->table(self::CONTACT_TABLE)->eq('id', $contacts_id)->remove();
+    }
+
+    /**
+     * Return true when a stable contact identity exists
+     *
+     * @access public
+     * @param  integer $contacts_id
+     * @return boolean
+     */
+    public function exists($contacts_id)
+    {
+        return $this->db->table(self::CONTACT_TABLE)->eq('id', $contacts_id)->exists();
+    }
+
+    /**
+     * Collapse ordered property rows to one deterministic summary row per contact
+     *
+     * @access private
+     * @param  array $rows
+     * @return array
+     */
+    private function getContactSummaries(array $rows)
+    {
+        $contacts = array();
+
+        foreach ($rows as $row) {
+            if (! isset($contacts[$row['contacts_id']])) {
+                $contacts[$row['contacts_id']] = $row;
+            }
+        }
+
+        uasort($contacts, function (array $left, array $right) {
+            return strcasecmp($left['contact_item_value'], $right['contact_item_value']);
+        });
+
+        return array_values($contacts);
     }
 }
