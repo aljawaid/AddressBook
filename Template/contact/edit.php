@@ -47,7 +47,12 @@
     <div class="ab-page-header">
         <h2 class=""><span class="contact-settings-icon"></span><?= $title ?></h2>
     </div>
-    <form class="modal-form" method="post" action="<?= $this->url->href('ContactsController', 'update', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook')) ?>" autocomplete="on">
+    <?php
+    $formController = isset($form_controller) ? $form_controller : 'ContactsController';
+    $formAction = isset($form_action) ? $form_action : 'update';
+    $formParams = isset($form_params) ? $form_params : array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook');
+    ?>
+    <form class="modal-form" method="post" action="<?= $this->url->href($formController, $formAction, $formParams) ?>" autocomplete="on">
 
         <?= $this->form->csrf() ?>
 

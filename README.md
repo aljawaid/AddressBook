@@ -31,13 +31,15 @@
     </a>
 </p>
 
-Use the dedicated Address Book to create and manage contacts or organisations in projects and tasks. Add custom properties to standardise a deeper relationship between tasks and people or places. Contacts can be linked exclusively to tasks in a project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) for quick reference from the task summary and the project board view.
+Use the dedicated Address Book to create and manage contacts or organisations in a global directory. Assign contacts to individual projects before linking them to project tasks. Add custom properties to standardise a deeper relationship between tasks and people or places. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) for quick reference from the task summary and the project board view.
 
 <p align="right">[<a href="#user-content-readme-bottom">&#8595; Bottom</a>] [<a href="#screenshots">&#8594; Next</a>] [<a href="#user-content-readme-top">&#8593; Top</a>]</p>
 
 ## Features
 
-- Use the contact profile to create contacts per project or per task
+- Create each contact once in the global directory
+- Assign global contacts to one or more projects
+- Allow project managers to add and remove project assignments
 - Easily link contacts to tasks
 - Show linked contacts at a glance on each task summary
 - Show linked contacts at a glance in the board view
@@ -103,11 +105,11 @@ Use the dedicated Address Book to create and manage contacts or organisations in
 
 ## Usage
 
-Go to `Settings` &#10562; Address Book
+Go to `Settings` &#10562; Global Address Book to manage contacts
 
 _or_
 
-Go to `Project Settings` &#10562; Address Book
+Go to `Project Settings` &#10562; Address Book to assign contacts to a project
 
 _or_
 

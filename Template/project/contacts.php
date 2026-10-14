@@ -4,9 +4,9 @@
         <h2 class=""><span class="project-contacts-icon"></span><?= t('Project Contacts') ?></h2>
     </div>
 
-    <?php if ($this->user->hasAccess('UserListController', 'show')): ?>
-        <a href="<?= $this->url->href('ContactsItemsController', 'config', array('plugin' => 'AddressBook')) ?>" class="btn address-book-btn">
-            <span class="address-book-icon"></span> <?= t('Address Book Settings') ?>
+    <?php if ($this->user->hasAccess('ContactsDirectoryController', 'index')): ?>
+        <a href="<?= $this->url->href('ContactsDirectoryController', 'index', array('plugin' => 'AddressBook')) ?>" class="btn address-book-btn">
+            <span class="address-book-icon"></span> <?= t('Global Address Book') ?>
         </a>
     <?php endif ?>
 
@@ -16,6 +16,7 @@
     <?php endif ?>
     <p class="ab-info">
         <?= e('You currently have %s contacts in the %s project. Contacts shown here can be linked to any tasks within this project.', '<span class="ab-count-badge">' . count($contacts) . '</span>', '<strong>' . $project['name'] . '</strong>') ?>
+        <?= $this->app->tooltipLink('<i class="fa fa-info-circle" aria-hidden="true"></i>', $this->url->href('ContactsController', 'assignmentHelp', array('project_id' => $project['id'], 'plugin' => 'AddressBook'))) ?>
     </p>
     <?php if (!empty($contacts)): ?>
         <section class="project-contacts-section">
@@ -69,29 +70,29 @@
                                         <?php endforeach ?>
                                         <?php if ($arrayValueCount < 4): ?>
                                             <!-- Modal Button -->
-                                                <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
+                                                <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
                                                     <span class="contact-profile-icon"></span>
                                                 </a>
                                         <?php else: ?>
                                             <!-- Modal Button -->
-                                            <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
+                                            <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
                                                 <span class="contact-profile-icon"></span>
                                             </a>
                                         <?php endif ?>
                                     </li>
-                                    <li class="">
-                                        <!-- Modal Button -->
-                                        <a href="<?= $this->url->href('ContactsController', 'edit', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-large" title="<?=t('Edit Contact') ?>">
-                                            <span class="contact-settings-icon"></span>
-                                            <span class="edit-text"><?= t('Edit') ?></span>
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a href="<?= $this->url->href('ContactsController', 'confirm', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-delete js-modal-medium" title="<?=t('Delete Contact') ?>">
-                                            <span class="delete-contact-icon"></span>
-                                            <span class="delete-text"><?= t('Delete') ?></span>
-                                        </a>
-                                    </li>
+                                    <?php if ($this->user->hasAccess('ContactsDirectoryController', 'edit')): ?>
+                                        <li>
+                                            <a href="<?= $this->url->href('ContactsDirectoryController', 'edit', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn btn-ab-rename js-modal-large" title="<?= t('Edit Contact') ?>">
+                                                <span class="contact-settings-icon"></span>
+                                                <span class="edit-text"><?= t('Edit') ?></span>
+                                            </a>
+                                        </li>
+                                    <?php endif ?>
+                                    <?php if ($this->user->hasProjectAccess('ContactsController', 'removeFromProject', $project['id'])): ?>
+                                        <li>
+                                            <?= $this->url->link(t('Remove from project'), 'ContactsController', 'confirmRemoveFromProject', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, 'btn btn-ab-delete js-modal-medium', t('Remove this contact from the project without deleting it')) ?>
+                                        </li>
+                                    <?php endif ?>
                                 </ul>
                             </td>
                         </tr>
@@ -101,7 +102,23 @@
         </section>
     <?php endif ?>
     <hr class="ab-section-divider">
-    <?php if (isset($addNew) && $addNew): ?>
+    <?php if ($this->user->hasProjectAccess('ContactsController', 'assignToProject', $project['id']) && ! empty($availableContacts)): ?>
+        <section class="assign-contact-section">
+            <h3><?= t('Assign Existing Contact') ?></h3>
+            <form method="post" action="<?= $this->url->href('ContactsController', 'assignToProject', array('project_id' => $project['id'], 'plugin' => 'AddressBook')) ?>">
+                <?= $this->form->csrf() ?>
+                <label for="form-contacts_id"><?= t('Global Contact') ?></label>
+                <select id="form-contacts_id" name="contacts_id" required>
+                    <?php foreach ($availableContacts as $availableContact): ?>
+                        <option value="<?= (int) $availableContact['contacts_id'] ?>"><?= $this->text->e($availableContact['contact_item_value']) ?></option>
+                    <?php endforeach ?>
+                </select>
+                <button type="submit" class="btn"><?= t('Assign to Project') ?></button>
+            </form>
+        </section>
+        <hr class="ab-section-divider">
+    <?php endif ?>
+    <?php if (isset($addNew) && $addNew && $this->user->hasProjectAccess('ContactsController', 'save', $project['id'])): ?>
         <section class="add-new-contact-section">
             <?= $this->render('addressBook:contact/add', array('items' => $items, 'project_id' => $project['id'], 'values' => $values, 'errors' => $errors)) ?>
         </section>

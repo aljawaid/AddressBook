@@ -13,7 +13,7 @@ return array(
     //
     // GENERAL
     //
-    'Use the dedicated Address Book to create and manage contacts or organisations in projects and tasks. Add custom properties to standardise a deeper relationship between tasks and people or places. Contacts can be linked exclusively to tasks in a project. Users can sort their contact properties to show the first 3 properties (e.g. name, number and email) for quick reference from the task summary and the project board view.' => '',
+    'Use the dedicated Address Book to create and manage contacts or organisations in a global directory. Assign contacts to individual projects before linking them to project tasks. Add custom properties to standardise a deeper relationship between tasks and people or places.' => '',
     //
     // Controller/ContactsController.php
     //
@@ -29,6 +29,11 @@ return array(
     'Task Contacts' => '',
     'Linked Contacts' => '',
     'Available Contacts' => '',
+    'Unable to link this contact to the task' => '',
+    'Contact assigned to this project' => '',
+    'Unable to assign this contact to the project' => '',
+    'Contact removed from this project' => '',
+    'Unable to remove this contact from the project' => '',
     //
     // Controller/ContactsItemsController.php
     //
@@ -87,8 +92,13 @@ return array(
     'Add Property' => '',
     'Contact Profile' => '',
     'There are currently %s properties which together build a standard contact profile.' => '',
+    'There is currently only 1 property which builds a standard contact profile.' => '',
     'Contact Property' => '',
     'Actions' => '',
+    'Contact' => '',
+    'Assigned Projects' => '',
+    'Not assigned' => '',
+    'Contacts are stored once in the global directory. Project managers can assign them to individual projects without creating duplicate records.' => '',
     'Move Property' => '',
     'Edit' => '',
     'The first property can never be deleted' => '',
@@ -125,6 +135,8 @@ return array(
     // Template/config/sidebar.php
     //
     'Address Book' => '',
+    'Global Address Book' => '',
+    'Contact Properties' => '',
     //
     // Template/contact/add.php
     //
@@ -144,7 +156,10 @@ return array(
     'Contact Details' => '',
     'Contact ID' => '',
     'No contacts' => '',
+    'No contacts have been linked to this task' => '',
     'Last updated on %s by %s' => '',
+    'Send Email' => '',
+    'Opens in a new window' => '',
     //
     // Template/contact/edit.php
     //
@@ -167,6 +182,16 @@ return array(
     'You currently have %s contacts in the %s project. Contacts shown here can be linked to any tasks within this project.' => '',
     'View more information for this contact' => '',
     'View Contact' => '',
+    'Remove from project' => '',
+    'Remove this contact from the project without deleting it' => '',
+    'Remove Contact from Project' => '',
+    'Remove %s from the %s project?' => '',
+    'This also removes the contact from tasks in this project. The global contact and assignments to other projects are not deleted.' => '',
+    'Assign Existing Contact' => '',
+    'Global Contact' => '',
+    'Assign to Project' => '',
+    'Contacts are stored once in the global directory and can be assigned to more than one project.' => '',
+    'Removing a contact from this project also removes its task links in this project, but does not delete the global contact or its assignments elsewhere.' => '',
     //
     // Template/task/footer-tooltip.php
     //

@@ -34,6 +34,11 @@
 </style>
 
 <div class="delete-contact-modal">
+    <?php
+    $removeController = isset($remove_controller) ? $remove_controller : 'ContactsController';
+    $removeAction = isset($remove_action) ? $remove_action : 'remove';
+    $removeParams = isset($remove_params) ? $remove_params : array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook');
+    ?>
     <div class="ab-page-header">
         <h2 class=""><span class="delete-contact-icon"></span><?= $title ?></h2>
     </div>
@@ -43,7 +48,7 @@
         </p>
 
         <div class="form-actions">
-            <?= $this->url->link(t('Delete Contact'), 'ContactsController', 'remove', array('project_id' => $project['id'], 'contacts_id' => $contacts_id, 'plugin' => 'AddressBook'), true, 'btn btn-ab-delete') ?>
+            <?= $this->url->link(t('Delete Contact'), $removeController, $removeAction, $removeParams, true, 'btn btn-ab-delete') ?>
             <button class="btn cancel-btn js-modal-close" href="#"><?= t('Cancel') ?></button>
         </div>
     </div>

@@ -1,8 +1,13 @@
 <div class="add-contact-wrapper">
+    <?php
+    $formController = isset($form_controller) ? $form_controller : 'ContactsController';
+    $formAction = isset($form_action) ? $form_action : 'save';
+    $formParams = isset($form_params) ? $form_params : array('project_id' => $project_id, 'plugin' => 'AddressBook');
+    ?>
     <fieldset class="add-contact-profile relative">
         <legend class="<?= (count($items) == 1) ? 'single-property' : '' ?>"><span class="add-contact-icon"></span><?= t('Add New Contact') ?></legend>
         <span class="form-help"><?= t('All fields are optional. Blank forms will not be created.') ?></span>
-        <form method="post" action="<?= $this->url->href('ContactsController', 'save', array('project_id' => $project_id, 'plugin' => 'AddressBook')) ?>" class="add-contact-form" autocomplete="on">
+        <form method="post" action="<?= $this->url->href($formController, $formAction, $formParams) ?>" class="add-contact-form" autocomplete="on">
             <?= $this->form->csrf() ?>
 
             <?php foreach ($items as $key => $value): ?>

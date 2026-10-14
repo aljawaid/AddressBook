@@ -39,7 +39,7 @@
                         <tr class="table-row">
                             <td class="contacts-table-value text-center cell-zero">
                                 <!-- Arrow DOWN Button -->
-                                <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn delink-btn', t('Delink this contact from this task')) ?>
+                                <?= $this->url->link('<i class="fa fa-arrow-down" aria-hidden="true"></i>', 'ContactsController', 'removeFromTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), true, 'btn delink-btn', t('Delink this contact from this task')) ?>
                             </td>
                             <td class="contacts-table-value">
                                 <?php foreach ($values as $array_key => $array_value): ?>
@@ -68,12 +68,12 @@
                                 <?php endforeach ?>
                                 <?php if ($arrayValueCount < 4): ?>
                                     <!-- Modal Button -->
-                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
                                         <span class="contact-profile-icon"></span>
                                     </a>
                                 <?php else: ?>
                                     <!-- Modal Button -->
-                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
                                         <span class="contact-profile-icon"></span>
                                     </a>
                                 <?php endif ?>
@@ -113,7 +113,7 @@
                         <tr class="table-row">
                             <td class="contacts-table-value text-center cell-zero">
                                 <!-- Arrow UP Button -->
-                                <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), false, 'btn link-btn', t('Link this contact to this task')) ?>
+                                <?= $this->url->link('<i class="fa fa-arrow-up" aria-hidden="true"></i>', 'ContactsController', 'addToTask', array('contacts_id' => $value['contacts_id'], 'project_id' => $project['id'], 'task_id' => $task['id'], 'plugin' => 'AddressBook'), true, 'btn link-btn', t('Link this contact to this task')) ?>
                             </td>
                             <td class="contacts-table-value">
                                 <?php foreach ($values as $array_key => $array_value): ?>
@@ -142,12 +142,12 @@
                                 <?php endforeach ?>
                                 <?php if ($arrayValueCount < 4): ?>
                                     <!-- Modal Button -->
-                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn no-info" title="<?= t('View Contact') ?>">
                                         <span class="contact-profile-icon"></span>
                                     </a>
                                 <?php else: ?>
                                     <!-- Modal Button -->
-                                    <a href="<?= $this->url->href('ContactsController', 'details', array('contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
+                                    <a href="<?= $this->url->href('ContactsController', 'details', array('project_id' => $project['id'], 'contacts_id' => $value['contacts_id'], 'plugin' => 'AddressBook'), false, '', false) ?>" class="btn js-modal-medium view-contact-btn" title="<?= t('View more information for this contact') ?>">
                                         <span class="contact-profile-icon"></span>
                                     </a>
                                 <?php endif ?>

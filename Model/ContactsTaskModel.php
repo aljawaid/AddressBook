@@ -8,6 +8,8 @@ use Kanboard\Model\UserModel;
 /**
  * Contacts Task Model
  *
+ * Project-scoped task links are covered by tests/Integration/GlobalDirectoryTest.php.
+ *
  * @package  Model
  * @author   Martin Middeke
  * @author   aljawaid
@@ -56,18 +58,19 @@ class ContactsTaskModel extends Base
      *
      * @access  public
      * @param   integer $task_id
+     * @param   integer $project_id
      * @return  array
      * @author  Martin Middeke
      * @author  aljawaid
      */
-    public function getNotLinked($task_id)
+    public function getNotLinked($task_id, $project_id)
     {
         $linked = array_flip($this->db
             ->table(self::TABLE)
             ->eq('task_id', $task_id)
             ->findAllByColumn('contacts_id'));
 
-        return array_values(array_filter($this->contactsModel->getAll(), function (array $contact) use ($linked) {
+        return array_values(array_filter($this->contactsProjectModel->getAllByProjectId($project_id), function (array $contact) use ($linked) {
             return ! isset($linked[$contact['contacts_id']]);
         }));
     }
@@ -108,7 +111,9 @@ class ContactsTaskModel extends Base
      */
     public function addToTask($contacts_id, $task_id)
     {
-        if (! $this->contactsModel->exists($contacts_id)) {
+        $project_id = $this->taskFinderModel->getProjectId($task_id);
+
+        if ($project_id <= 0 || ! $this->contactsProjectModel->isAssignedToProject($contacts_id, $project_id)) {
             return false;
         }
 
@@ -116,7 +121,7 @@ class ContactsTaskModel extends Base
             return true;
         }
 
-        return $this->db->table(self::TABLE)->persist(array('contacts_id' => $contacts_id, 'task_id' => $task_id));
+        return $this->db->table(self::TABLE)->persist(array('contacts_id' => $contacts_id, 'task_id' => $task_id)) !== false;
     }
 
     /**

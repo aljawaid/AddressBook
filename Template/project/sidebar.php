@@ -1,4 +1,4 @@
-<?php $projectContacts = $this->model->contactsModel->getAll(); ?>
+<?php $projectContacts = $this->model->contactsProjectModel->getAllByProjectId($project['id']); ?>
 
 <style type="text/css">
     li {

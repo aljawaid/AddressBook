@@ -86,6 +86,10 @@ jobs:
           echo $pluginName." loaded on Kanboard ".APP_VERSION." with PHP ".PHP_VERSION.PHP_EOL;
           '
 
+      - name: Test global contact directory
+        working-directory: kanboard
+        run: php plugins/AddressBook/tests/Integration/GlobalDirectoryTest.php
+
   database-migrations:
     name: Database migrations
     runs-on: ubuntu-24.04
