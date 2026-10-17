@@ -984,13 +984,18 @@ span.footer-icon.tooltip span.address-book-icon {
     color: var(--ab-blue);
 }
 
-section.property-set-section {
+/* Keep set controls, names and property chips aligned while allowing long sets to wrap. */
+#ABConfigPage section.property-set-section {
+    display: grid;
+    grid-template-columns: auto auto minmax(110px, auto) minmax(0, 1fr);
+    align-items: center;
+    gap: 4px 5px;
     margin-block: 3px;
 }
 
-.property-set-name {
-    width: 110px;
-    margin-left: 10px;
+#ABConfigPage .property-set-name {
+    width: auto;
+    margin-left: 5px;
     color: var(--ab-blue);
 }
 
@@ -1007,20 +1012,35 @@ a.btn.add-property-set, a.btn.remove-property-set {
     padding: 3px 6px 0 10px;
 }
 
-ul.property-set-items {
-    display: inline-block;
+#ABConfigPage ul.property-set-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-ul.property-set-items li {
-    /* font-weight: 600; */
+#ABConfigPage ul.property-set-items li {
     display: inline-block;
     font-size: .8em;
     background: var(--pp-light-grey);
+    margin: 0;
     padding: 2px 5px;
     color: var(--pp-white);
     border-radius: var(--border-radius-address-book);
     opacity: .9;
     vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+    #ABConfigPage section.property-set-section {
+        grid-template-columns: auto auto minmax(0, 1fr);
+    }
+
+    #ABConfigPage ul.property-set-items {
+        grid-column: 1 / -1;
+    }
 }
 
 hr.property-set-divider {
