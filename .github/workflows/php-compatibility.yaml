@@ -49,6 +49,9 @@ jobs:
           coverage: none
           tools: composer:v2
 
+      - name: Test presentation compatibility
+        run: php plugin/tests/PresentationCompatibilityTest.php
+
       - name: Lint all PHP files
         shell: bash
         run: |
