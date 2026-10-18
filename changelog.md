@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.4.0
+
+_(most recent changes are listed on top):_
+- FIX: BUG: Restore AddressBook Dark Theme Contrast
+- FIX: BUG: Restore AddressBook Icons And Property Set Alignment
+- NEW: Add Brazilian Portuguese Translation
+- NEW: Add Global Contact Directory And Project Assignments
+- FIX: BUG: Normalise Contact Storage Across Databases
+- FIX: Verify Current Kanboard And PHP Compatibility
+- FIX: PostgreSQL Syntax - #12
+- FIX: PostgreSQL Syntax Error
+
+
 ## v1.3
 
 _(most recent changes are listed on top):_
